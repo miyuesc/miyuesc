@@ -1,0 +1,258 @@
+.blog {
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  min-height: 90vh;
+  .loading {
+    position: fixed;
+    top: calc(~"50vh - 30px");
+    left: calc(~"50vw - 30px");
+  }
+}
+.main {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  .cover {
+    width: 100%;
+    height: 200px;
+    background: url("http://ww1.sinaimg.cn/large/0067sbCSly1g4df1yby5mj31z4140avg.jpg")
+      center center no-repeat;
+    background-size: 100% 100%;
+    padding-top: 280px;
+    transition: all 1s ease-in-out;
+    span {
+      font-size: 60px;
+      margin: auto;
+      background: linear-gradient(to left, #477f71 33%, #0d737f 73%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: "PingFang SS", sans-serif;
+    }
+  }
+  .articles-box {
+    //position: absolute;
+    width: 1200px;
+    //top: 520px;
+    //margin-left: calc(~"50% - 600px");
+    margin: auto;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 48px;
+    .error-img {
+      width: 100%;
+      img {
+        margin-left: calc(~"50% - 120px");
+      }
+      .error-text {
+        text-align: center;
+        font-family: "Algerian", sans-serif;
+        font-size: 28px;
+      }
+    }
+    .articles {
+      text-align: left;
+      .article-card {
+        width: 100%;
+        height: 240px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(100, 100, 100, 0.4);
+        margin-bottom: 36px;
+        transition: all 0.5s;
+        .article-title {
+          padding: 16px;
+          font-size: 24px;
+          font-family: "PingFang SC", sans-serif;
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline #666666;
+          }
+        }
+        .article-time {
+          padding-left: 16px;
+          width: 148px;
+          font-size: 12px;
+          color: #aaaaaa;
+          float: left;
+          line-height: 20px;
+        }
+        .article-tag {
+          //width: 60px;
+          float: left;
+          margin-right: 12px;
+          span {
+            padding: 4px 6px;
+            border-radius: 4px;
+            background: #eeeeee;
+            font-size: 14px;
+          }
+        }
+        .article-desc {
+          height: 108px;
+          width: 360px;
+          padding: 16px;
+          overflow: hidden;
+          float: left;
+          font-size: 14px;
+          text-indent: 2rem;
+          text-overflow: ellipsis;
+        }
+        .article-cover {
+          float: right;
+          width: 360px;
+          height: 240px;
+          overflow: hidden;
+          border-radius: 0 8px 8px 0;
+          img {
+            transition: all 0.5s;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        &:hover {
+          box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
+          transform: translateY(-3px);
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .tags-list {
+      height: auto;
+      text-align: left;
+      padding: 12px 12px 60px 12px;
+      .tag-box-title {
+        height: 36px;
+        line-height: 36px;
+        font-size: 32px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+        margin-left: 20px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      img {
+        height: 36px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+      .tags {
+        padding-top: 24px;
+        .tag-item {
+          display: inline-block;
+          height: 28px;
+          position: relative;
+          margin: 12px 8px;
+          transition: all 0.5s ease-in-out;
+          .tag-name {
+            margin-left: 12px;
+            line-height: 28px;
+            padding: 6px 12px 6px 12px;
+            font-size: 14px;
+            background: #42a6f8;
+            text-decoration: none;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            font-family: "PingFang SC", sans-serif;
+            &:before {
+              content: "";
+              position: absolute;
+              top: -2px;
+              left: -4px;
+              border-color: transparent #42a6f8 transparent transparent;
+              border-style: solid;
+              border-width: 16px 16px 16px 0;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: 11px;
+              left: 4px;
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: #fafafa;
+              box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.3);
+            }
+          }
+          &:hover {
+            transform: translateY(-3px);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .category-list {
+      height: auto;
+      text-align: left;
+      padding: 12px 12px 60px 12px;
+      .category-box-title {
+        height: 36px;
+        line-height: 36px;
+        font-size: 32px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+        margin-left: 20px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      img {
+        height: 36px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+      .categories {
+        transition: all 1s;
+        padding-top: 24px;
+        .category-item {
+          display: inline-block;
+          height: 28px;
+          position: relative;
+          margin: 12px 8px;
+          transition: all 0.5s ease-in-out;
+          &:hover {
+            transform: translateY(-3px);
+            cursor: pointer;
+          }
+          .border-left {
+            width: 16px;
+            height: 32px;
+            background-image: url("../../assets/icons/border-left.svg");
+            background-size: cover;
+            float: left;
+          }
+          .border-right {
+            width: 16px;
+            height: 32px;
+            background-image: url("../../assets/icons/border-left.svg");
+            background-size: cover;
+            transform: rotate(180deg);
+            float: left;
+          }
+          .category-name {
+            line-height: 30px;
+            text-align: center;
+            font-size: 16px;
+            border-top: 1px solid crimson;
+            border-bottom: 1px solid crimson;
+            float: left;
+            text-decoration: none;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+            font-family: "PingFang SC", sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
