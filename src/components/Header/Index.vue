@@ -12,7 +12,7 @@
           :key="k"
           @click="toPage(i.path)"
         >
-          <embed :src="i.icon" />
+          <img :src="i.icon" />
           <span>{{ i.label }}</span>
         </li>
       </ul>

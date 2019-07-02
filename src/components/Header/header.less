@@ -20,6 +20,9 @@
     line-height: 60px;
     font-size: 24px;
     cursor: pointer;
+    * {
+      vertical-align: middle;
+    }
     font-family: "Bradley Hand ITC";
     &:hover {
       transition: all 0.5s ease;
@@ -52,28 +55,32 @@
         font-weight: lighter;
         float: left;
         cursor: pointer;
+        vertical-align: middle;
+        * {
+          vertical-align: middle;
+        }
         &:hover {
           transition: all 300ms ease;
           color: #ffa500;
-          &:after {
-            width: 100%;
-            transition: all 300ms ease;
+          &:before {
+            transform: translate(-60%, 0) scaleX(1);
           }
         }
-        &:after {
-          position: absolute;
+        &:before {
           content: "";
-          width: 0;
-          height: 4px;
-          background: orange;
+          position: absolute;
+          left: 60%;
           bottom: 0;
-          left: 0;
-          transition: all 300ms ease;
+          width: 120%;
+          height: 4px;
+          background-color: #ffa500;
+          transform-origin: center;
+          transform: translate(-60%, 0) scaleX(0);
+          transition: transform 0.3s ease-in-out;
         }
-        embed {
-          width: 16px;
-          height: 16px;
-          margin: auto;
+        img {
+          width: 18px;
+          height: 18px;
         }
         span {
           margin-left: 6px;

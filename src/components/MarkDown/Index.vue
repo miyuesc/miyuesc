@@ -69,11 +69,50 @@ export default class MarkDown extends Vue {
   table > tr > .hljs-ln-numbers {
     width: 24px;
   }
+  .hljs-ln {
+    width: 100%;
+    tr {
+      width: 100%;
+      &:hover {
+        background: #e9e9e9;
+      }
+    }
+  }
   blockquote {
     margin-inline-start: 12px;
     border-left: 4px solid #bcbcbc;
     background: #eeeeee;
     padding: 6px 12px;
+  }
+  .hljs {
+    position: relative;
+    padding-top: 32px;
+    &:before {
+      content: "example";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 26px;
+      line-height: 26px;
+      background-color: #e3e3e3;
+      text-align: center;
+      /*transform-origin: center;*/
+      /*transform: translate(-60%, 0) scaleX(0);*/
+      /*transition: transform 0.3s ease-in-out;*/
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 12px;
+      border-radius: 7px;
+      width: 14px;
+      height: 14px;
+      background: #ff5f57;
+      box-shadow: 20px 0 0 0 #ffbd2e, 40px 0 0 0 #28ca42;
+    }
   }
 }
 </style>

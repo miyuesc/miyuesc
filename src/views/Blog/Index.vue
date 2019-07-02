@@ -17,7 +17,7 @@
           <article class="article-card" v-for="(i, k) in articles" :key="k">
             <div style="width: 400px; height: 100%; float: left">
               <div class="article-title" @click="gotoPost(i.number)">
-                {{ i.title }}
+                <span>{{ i.title }}</span>
               </div>
               <div class="article-time">Released at {{ i.updateTime }}</div>
               <div

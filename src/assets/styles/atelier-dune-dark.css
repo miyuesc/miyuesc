@@ -141,7 +141,7 @@ a {
 }
 .hidden-anchor {
   position: relative;
-  top: -100px;
+  top: -60px;
   display: block;
   height: 0;
   overflow: hidden;
