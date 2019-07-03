@@ -2,11 +2,11 @@
   //position: absolute;
   //top: 0;
   //left: 0;
-  min-height: calc(~"100vh - 78px");
+  min-height: calc(~"100vh - 0.78rem");
   .loading {
     position: fixed;
-    top: calc(~"50vh - 30px");
-    left: calc(~"50vw - 30px");
+    top: calc(~"50vh - 0.3rem");
+    left: calc(~"50vw - 0.3rem");
   }
 }
 .main {
@@ -16,14 +16,14 @@
   box-sizing: border-box;
   .cover {
     width: 100%;
-    height: 200px;
+    height: 2rem;
     background: url("http://ww1.sinaimg.cn/large/0067sbCSly1g4df1yby5mj31z4140avg.jpg")
       center center no-repeat;
     background-size: 100% 100%;
-    padding-top: 280px;
+    padding-top: 2.8rem;
     transition: all 1s ease-in-out;
     span {
-      font-size: 60px;
+      font-size: 0.6rem;
       margin: auto;
       background: linear-gradient(to left, #477f71 33%, #0d737f 73%);
       -webkit-background-clip: text;
@@ -33,37 +33,38 @@
   }
   .articles-box {
     //position: absolute;
-    width: 1200px;
-    //top: 520px;
-    //margin-left: calc(~"50% - 600px");
+    width: 12rem;
+    //top: 520rem;
+    //margin-left: calc(~"50% - 600rem");
     margin: auto;
-    margin-top: 36px;
+    margin-top: 0.36rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-column-gap: 48px;
+    grid-column-gap: 0.48rem;
+    justify-items: end;
     .error-img {
       width: 100%;
       img {
-        margin-left: calc(~"50% - 120px");
+        margin-left: calc(~"50% - 1.2rem");
       }
       .error-text {
         text-align: center;
         font-family: "Algerian", sans-serif;
-        font-size: 28px;
+        font-size: 0.28rem;
       }
     }
     .articles {
       text-align: left;
       .article-card {
         width: 100%;
-        height: 240px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(100, 100, 100, 0.4);
-        margin-bottom: 36px;
+        height: 2.40rem;
+        border-radius: 0.08rem;
+        box-shadow: 0 0 .10rem rgba(100, 100, 100, 0.4);
+        margin-bottom: 0.36rem;
         transition: all 0.5s;
         .article-title {
-          padding: 16px;
-          font-size: 24px;
+          padding: 0.16rem;
+          font-size: 0.24rem;
           font-family: "PingFang SC", sans-serif;
           span {
             position: relative;
@@ -79,9 +80,9 @@
               content: "";
               position: absolute;
               left: 50%;
-              bottom: -2px;
+              bottom: -0.02rem;
               width: 100%;
-              height: 2px;
+              height: 0.02rem;
               background-color: #050505;
               transform-origin: center;
               transform: translate(-50%, 0) scaleX(0);
@@ -90,50 +91,53 @@
           }
         }
         .article-time {
-          padding-left: 16px;
-          width: 148px;
-          font-size: 12px;
+          padding-left: 0.14rem;
+          width: 1.48rem;
+          font-size: 0.1rem;
           color: #aaaaaa;
           float: left;
-          line-height: 20px;
+          line-height: 0.2rem;
         }
         .article-tag {
-          //width: 60px;
+          //width: 60rem;
           float: left;
-          margin-right: 12px;
+          line-height: 0.2rem;
+          margin-right: 0.12rem;
+          padding: 0 0.06rem;
+          border-radius: 0.04rem;
+          background: #eeeeee;
+          font-size: 0.14rem;
           span {
-            padding: 4px 6px;
-            border-radius: 4px;
-            background: #eeeeee;
-            font-size: 14px;
           }
         }
         .article-desc {
-          height: 108px;
-          width: 360px;
-          padding: 16px;
+          height: 1.08rem;
+          width: 3.6rem;
+          padding: .16rem;
           overflow: hidden;
           float: left;
-          font-size: 14px;
-          text-indent: 2rem;
+          font-size: .14rem;
+          text-indent: 0.2rem;
           text-overflow: ellipsis;
         }
         .article-cover {
           float: right;
-          width: 360px;
-          height: 240px;
+          width: calc(~"100% - 4rem");
+          height: 2.4rem;
           overflow: hidden;
-          border-radius: 0 8px 8px 0;
+          border-radius: 0 0.08rem 0.08rem 0;
           img {
             transition: all 0.5s;
+            width: 3.6rem;
+            height: 2.4rem;
             &:hover {
               cursor: pointer;
             }
           }
         }
         &:hover {
-          box-shadow: 0 0 10px rgba(100, 100, 100, 0.8);
-          //transform: translateY(-3px);
+          box-shadow: 0 0 0.10rem rgba(100, 100, 100, 0.8);
+          //transform: translateY(-3rem);
           .article-cover {
             img {
               transform: scale(1.1);
@@ -142,137 +146,154 @@
         }
       }
     }
-    .tags-list {
-      height: auto;
-      text-align: left;
-      padding: 12px 12px 60px 12px;
-      .tag-box-title {
-        height: 36px;
-        line-height: 36px;
-        font-size: 32px;
-        display: inline-block;
-        box-sizing: border-box;
-        vertical-align: middle;
-        margin-left: 20px;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      img {
-        height: 36px;
-        display: inline-block;
-        box-sizing: border-box;
-        vertical-align: middle;
-      }
-      .tags {
-        padding-top: 24px;
-        .tag-item {
-          display: inline-block;
-          height: 28px;
-          position: relative;
-          margin: 12px 8px;
-          transition: all 0.5s ease-in-out;
-          .tag-name {
-            margin-left: 12px;
-            line-height: 28px;
-            padding: 6px 12px 6px 12px;
-            font-size: 14px;
-            background: #42a6f8;
-            text-decoration: none;
-            border-bottom-right-radius: 4px;
-            border-top-right-radius: 4px;
-            font-family: "PingFang SC", sans-serif;
-            &:before {
-              content: "";
-              position: absolute;
-              top: -2px;
-              left: -4px;
-              border-color: transparent #42a6f8 transparent transparent;
-              border-style: solid;
-              border-width: 16px 16px 16px 0;
-            }
-            &:after {
-              content: "";
-              position: absolute;
-              top: 11px;
-              left: 4px;
-              width: 6px;
-              height: 6px;
-              border-radius: 50%;
-              background: #fafafa;
-              box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.3);
+    .lists {
+      .tags-list {
+        height: auto;
+        text-align: left;
+        padding: .12rem .12rem .60rem .12rem;
+        .tags-title{
+          height: 0.36rem;
+          .tag-box-title {
+            height: .36rem;
+            line-height: .36rem;
+            font-size: .32rem;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: middle;
+            margin-left: .20rem;
+            &:hover {
+              cursor: pointer;
             }
           }
+          img {
+            height: .36rem;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+          }
+        }
+        .tags {
+          display: inline-block;
+          .tag-item {
+            height: .28rem;
+            margin: .12rem .8rem;
+            transition: all 0.5s ease-in-out;
+            .tag-name {
+              margin-left: .12rem;
+              line-height: .28rem;
+              padding: .06rem .12rem .06rem .12rem;
+              font-size: .14rem;
+              background: #42a6f8;
+              text-decoration: none;
+              border-bottom-right-radius: .04rem;
+              border-top-right-radius: .04rem;
+              position: relative;
+              font-family: "PingFang SC", sans-serif;
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -0.16rem;
+                border-color: transparent #42a6f8 transparent transparent;
+                border-style: solid;
+                border-width: .16rem .16rem .16rem 0;
+              }
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0.13rem;
+                left: -0.06rem;
+                width: 0.06rem;
+                height: 0.06rem;
+                border-radius: 50%;
+                background: #fafafa;
+                box-shadow: -0.01rem -0.01rem 0.01rem 0 rgba(0, 0, 0, 0.3);
+              }
+            }
+            &:hover {
+              transform: translateY(-.03rem);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .category-list {
+        height: auto;
+        text-align: left;
+        padding: .12rem .12rem .60rem .12rem;
+        .category-box-title {
+          height: .36rem;
+          line-height: .36rem;
+          font-size: .32rem;
+          display: inline-block;
+          box-sizing: border-box;
+          vertical-align: middle;
+          margin-left: .20rem;
           &:hover {
-            transform: translateY(-3px);
             cursor: pointer;
+          }
+        }
+        img {
+          height: .36rem;
+          display: inline-block;
+          box-sizing: border-box;
+          vertical-align: middle;
+        }
+        .categories {
+          transition: all 1s;
+          //padding-top: .24rem;
+          .category-item {
+            display: inline-block;
+            height: .28rem;
+            //position: relative;
+            margin: .12rem .08rem;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              transform: translateY(-.03rem);
+              cursor: pointer;
+            }
+            .border-left {
+              width: .16rem;
+              height: .32rem;
+              background-image: url("../../assets/icons/border-left.svg");
+              background-size: cover;
+              float: left;
+            }
+            .border-right {
+              width: .16rem;
+              height: .32rem;
+              background-image: url("../../assets/icons/border-left.svg");
+              background-size: cover;
+              transform: rotate(180deg);
+              float: left;
+            }
+            .category-name {
+              line-height: .30rem;
+              text-align: center;
+              font-size: .16rem;
+              border-top: .01rem solid crimson;
+              border-bottom: .01rem solid crimson;
+              float: left;
+              text-decoration: none;
+              border-bottom-right-radius: .04rem;
+              border-top-right-radius: .04rem;
+              font-family: "PingFang SC", sans-serif;
+            }
           }
         }
       }
     }
-    .category-list {
-      height: auto;
-      text-align: left;
-      padding: 12px 12px 60px 12px;
-      .category-box-title {
-        height: 36px;
-        line-height: 36px;
-        font-size: 32px;
-        display: inline-block;
-        box-sizing: border-box;
-        vertical-align: middle;
-        margin-left: 20px;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      img {
-        height: 36px;
-        display: inline-block;
-        box-sizing: border-box;
-        vertical-align: middle;
-      }
-      .categories {
-        transition: all 1s;
-        padding-top: 24px;
-        .category-item {
-          display: inline-block;
-          height: 28px;
-          position: relative;
-          margin: 12px 8px;
-          transition: all 0.5s ease-in-out;
-          &:hover {
-            transform: translateY(-3px);
-            cursor: pointer;
-          }
-          .border-left {
-            width: 16px;
-            height: 32px;
-            background-image: url("../../assets/icons/border-left.svg");
-            background-size: cover;
-            float: left;
-          }
-          .border-right {
-            width: 16px;
-            height: 32px;
-            background-image: url("../../assets/icons/border-left.svg");
-            background-size: cover;
-            transform: rotate(180deg);
-            float: left;
-          }
-          .category-name {
-            line-height: 30px;
-            text-align: center;
-            font-size: 16px;
-            border-top: 1px solid crimson;
-            border-bottom: 1px solid crimson;
-            float: left;
-            text-decoration: none;
-            border-bottom-right-radius: 4px;
-            border-top-right-radius: 4px;
-            font-family: "PingFang SC", sans-serif;
-          }
-        }
+  }
+}
+@media screen and (max-width: 900px) {
+  .main {
+    justify-content: space-around;
+    .articles-box {
+      margin-bottom: 0.32rem;
+      width: 98%;
+      display: block;
+      .articles {
+        width: 100%;
       }
     }
   }

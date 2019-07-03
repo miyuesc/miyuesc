@@ -4,7 +4,7 @@
       <img
         src="../../assets/icons/loading.gif"
         alt="loading"
-        style="margin: auto; width: 60px; height: 60px"
+        style="margin: auto; width: .60rem; height: .60rem"
       />
     </div>
 
@@ -15,7 +15,7 @@
       <div class="articles-box">
         <div class="articles">
           <article class="article-card" v-for="(i, k) in articles" :key="k">
-            <div style="width: 400px; height: 100%; float: left">
+            <div style="width: 4.00rem; height: 100%; float: left">
               <div class="article-title" @click="gotoPost(i.number)">
                 <span>{{ i.title }}</span>
               </div>
@@ -26,7 +26,7 @@
                 :key="index"
                 :style="{ color: '#' + tag.color }"
               >
-                <span>{{ tag.name }}</span>
+                {{ tag.name }}
               </div>
               <div class="article-desc">
                 <mark-down :content="i.body" :only-render="true"></mark-down>
@@ -35,8 +35,6 @@
             <div class="article-cover">
               <img
                 :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
-                width="360px"
-                height="240px"
                 @click="gotoPost(i.number)"
               />
             </div>
@@ -54,11 +52,11 @@
             </p>
           </div>
         </div>
-        <div>
+        <div v-if="!isMobile" class="lists">
           <div class="tags-list">
             <div class="tags-title">
               <img src="../../assets/icons/tag.svg" />
-              <span class="tag-box-title" @click="resetFilter">Tags</span>
+              <span style="vertical-align: top" class="tag-box-title" @click="resetFilter">Tags</span>
             </div>
             <div class="tags">
               <div
@@ -75,8 +73,8 @@
           <div class="category-list">
             <div class="category-title">
               <img src="../../assets/icons/category.svg" />
-              <span class="category-box-title" @click="resetFilter"
-                >Categories</span
+              <div class="category-box-title" @click="resetFilter"
+                >Categories</div
               >
             </div>
             <div class="categories">
@@ -87,7 +85,7 @@
                 @click="queryFilter(category.number, 'category')"
               >
                 <div class="border-left"></div>
-                <span class="category-name">{{ category.title }}</span>
+                <div class="category-name">{{ category.title }}</div>
                 <div class="border-right"></div>
               </div>
             </div>
@@ -117,11 +115,14 @@ export default class Blog extends Vue {
   articles: any[] = [];
   tags: any[] = [];
   categories: any[] = [];
+  isMobile: Boolean = true;
+  $isMobile: any;
 
   async created() {
     await this.queryTag();
     await this.getCategory();
     this.getAllBlog();
+    this.isMobile = this.$isMobile;
   }
   getAllBlog() {
     queryPosts(this.filter).then((data: any) => {
