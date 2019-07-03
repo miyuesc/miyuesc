@@ -35,7 +35,7 @@ export default class BackToTop extends Vue {
 <style scoped lang="less">
 .back-to-top {
   position: fixed;
-  right: 36px;
+  right: 0.36rem;
   transition: 600ms all cubic-bezier(0.25, 0.1, 0.3, 1.5);
   outline: none;
   img {

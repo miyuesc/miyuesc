@@ -51,8 +51,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  font-size: 14px;
 }
+/*html {*/
+/*  font-size: 0.625vw;*/
+/*}*/
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -60,7 +62,7 @@ body {
   text-align: center;
   color: #2c3e50;
   background: #ffffff;
-  overflow-x: hidden;
+  overflow: hidden;
   box-sizing: border-box;
   cursor: url("/Arrow.cur"), auto;
 }

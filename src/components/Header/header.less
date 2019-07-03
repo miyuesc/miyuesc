@@ -1,6 +1,6 @@
 .header {
   width: 100vw;
-  height: 60px;
+  height: 0.6rem;
   position: fixed;
   top: 0;
   background: transparent;
@@ -8,18 +8,19 @@
   font-weight: bolder;
   z-index: 100;
   &:hover {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0.01rem 0.4rem -0.08rem rgba(0, 0, 0, 0.8);
   }
   .blog-logo {
-    width: 300px;
-    height: 60px;
+    width: 3rem;
+    height: 0.6rem;
     position: absolute;
-    left: 20px;
+    left: 0.2rem;
     top: 0;
-    line-height: 60px;
-    font-size: 24px;
+    line-height: 0.6rem;
+    font-size: 0.24rem;
     cursor: pointer;
+    text-align: left;
     * {
       vertical-align: middle;
     }
@@ -39,21 +40,21 @@
     top: 0;
     .menus {
       position: absolute;
-      right: 10px;
-      min-width: 600px;
+      right: 0.01rem;
+      min-width: 6rem;
       list-style: none;
       margin: 0;
       .menu-item {
         position: relative;
         display: inline-block;
-        //width: 100px;
-        height: 60px;
-        margin: 0 24px;
-        line-height: 60px;
-        font-size: 16px;
+        //width: 10rem;
+        height: 0.6rem;
+        margin: 0 0.24rem;
+        line-height: 0.6rem;
+        font-size: 0.16rem;
         color: #666666;
         font-weight: lighter;
-        float: left;
+        float: right;
         cursor: pointer;
         vertical-align: middle;
         * {
@@ -72,24 +73,24 @@
           left: 60%;
           bottom: 0;
           width: 120%;
-          height: 4px;
+          height: 0.04rem;
           background-color: #ffa500;
           transform-origin: center;
           transform: translate(-60%, 0) scaleX(0);
           transition: transform 0.3s ease-in-out;
         }
         img {
-          width: 18px;
-          height: 18px;
+          width: 0.18rem;
+          height: 0.18rem;
         }
         span {
-          margin-left: 6px;
+          margin-left: 0.06rem;
         }
       }
     }
   }
 }
 .clear_styl {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 0.4rem -0.08rem rgba(0, 0, 0, 0.8);
 }

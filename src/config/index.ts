@@ -43,24 +43,9 @@ export default {
    */
   menus: [
     {
-      path: "/",
-      label: "Home",
-      icon: require("../assets/icons/icon_homepage.svg")
-    },
-    {
-      path: "/Blog",
-      label: "Blog",
-      icon: require("../assets/icons/icon_file.svg")
-    },
-    // {
-    //   path: "/tag",
-    //   label: "Tag",
-    //   require("../assets/icons/icon_synergy.svg")
-    // },
-    {
-      path: "/archive",
-      label: "Archive",
-      icon: require("../assets/icons/icon_timeline.svg")
+      path: "/about",
+      label: "About",
+      icon: require("../assets/icons/icon_warn.svg")
     },
     {
       path: "/link",
@@ -68,10 +53,25 @@ export default {
       icon: require("../assets/icons/icon_link.svg")
     },
     {
-      path: "/about",
-      label: "About",
-      icon: require("../assets/icons/icon_warn.svg")
+      path: "/archive",
+      label: "Archive",
+      icon: require("../assets/icons/icon_timeline.svg")
+    },
+    {
+      path: "/Blog",
+      label: "Blog",
+      icon: require("../assets/icons/icon_file.svg")
+    },
+    {
+      path: "/",
+      label: "Home",
+      icon: require("../assets/icons/icon_homepage.svg")
     }
+    // {
+    //   path: "/tag",
+    //   label: "Tag",
+    //   require("../assets/icons/icon_synergy.svg")
+    // },
   ],
 
   /**

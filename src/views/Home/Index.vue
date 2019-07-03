@@ -30,7 +30,10 @@
           @mouseleave="showCode = false"
         >
           <a :href="i.link" rel="noopener noreferrer" target="_blank">
-            <img :src="i.icon" alt="i.label" style="width: 20px; height: 20px"
+            <img
+              :src="i.icon"
+              alt="i.label"
+              style="width: 0.2rem; height: 0.2rem"
           /></a>
           <div
             v-if="i.code"
@@ -64,7 +67,7 @@ export default class Home extends Vue {
   showCode: boolean = false;
   contacts: any[] = config.contact;
   subTitle: string = config.subTitle;
-  doLoading: boolean = true;
+  doLoading: boolean = false;
 
   created() {
     this.background = this.bgs[this.bgIndex];

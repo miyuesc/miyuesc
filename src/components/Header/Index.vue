@@ -1,8 +1,8 @@
 <template>
   <div class="header" :class="isTop ? '' : 'clear_styl'">
     <div class="blog-logo" @click="toPage('/')">
-      <img src="../../assets/logo.png" alt="" style="height: 24px" />
-      <span>MiyueSC Official Blog</span>
+      <img src="../../assets/logo.png" alt="" style="height: .24rem" />
+      <span v-if="!isMobile">MiyueSC Official Blog</span>
     </div>
     <div class="nav">
       <ul class="menus">
@@ -27,11 +27,14 @@ import config from "@/config/index";
 export default class BlogHeader extends Vue {
   menus: any[] = config.menus;
   isTop: Boolean = true;
+  isMobile: Boolean = true;
+  $isMobile: any;
 
   toPage(path: any) {
     this.$router.push({ path: path });
   }
   created() {
+    this.isMobile = this.$isMobile;
     const top = document.documentElement.scrollTop || document.body.scrollTop;
     if (!top) {
       this.isTop = true;

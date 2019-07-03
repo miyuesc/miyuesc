@@ -16,6 +16,10 @@ Vue.directive("highlight", function(el) {
   });
 });
 
+// @ts-ignore
+import isMobile from "ismobilejs";
+Vue.prototype.$isMobile = isMobile.phone;
+
 // 引入gitalk评论模块
 import "gitalk/dist/gitalk.css";
 

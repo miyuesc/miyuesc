@@ -79,10 +79,13 @@ export default class MarkDown extends Vue {
     }
   }
   blockquote {
-    margin-inline-start: 12px;
+    margin: 12px 0;
     border-left: 4px solid #bcbcbc;
-    background: #eeeeee;
-    padding: 6px 12px;
+    background: #f6f6f6;
+    padding: 2px 12px;
+    p {
+      margin: 4px 0;
+    }
   }
   .hljs {
     position: relative;
@@ -95,7 +98,7 @@ export default class MarkDown extends Vue {
       width: 100%;
       height: 26px;
       line-height: 26px;
-      background-color: #e3e3e3;
+      background-color: #dbdbdb;
       text-align: center;
       /*transform-origin: center;*/
       /*transform: translate(-60%, 0) scaleX(0);*/
