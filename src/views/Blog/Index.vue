@@ -56,7 +56,12 @@
           <div class="tags-list">
             <div class="tags-title">
               <img src="../../assets/icons/tag.svg" />
-              <span style="vertical-align: top" class="tag-box-title" @click="resetFilter">Tags</span>
+              <span
+                style="vertical-align: top"
+                class="tag-box-title"
+                @click="resetFilter"
+                >Tags</span
+              >
             </div>
             <div class="tags">
               <div
@@ -66,16 +71,16 @@
                 :style="{ color: '#' + tag.color }"
                 @click="queryFilter(tag.name, 'tag')"
               >
-                <span class="tag-name">{{ tag.name }}</span>
+                <div class="tag-name">{{ tag.name }}</div>
               </div>
             </div>
           </div>
           <div class="category-list">
             <div class="category-title">
               <img src="../../assets/icons/category.svg" />
-              <div class="category-box-title" @click="resetFilter"
-                >Categories</div
-              >
+              <div class="category-box-title" @click="resetFilter">
+                Categories
+              </div>
             </div>
             <div class="categories">
               <div

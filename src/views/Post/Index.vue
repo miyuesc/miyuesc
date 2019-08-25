@@ -4,7 +4,7 @@
       <img
         src="../../assets/icons/loading.gif"
         alt="loading"
-        style="margin: auto; width: 60px; height: 60px"
+        style="margin: auto; width: 0.6rem; height: 0.6rem"
       />
     </div>
 
@@ -15,7 +15,7 @@
           backgroundImage: 'url(' + background + ')'
         }"
       ></div>
-      <div class="main-body">
+      <div class="main-body" :class="!isMobile ? 'main-body-web' : ''">
         <div class="post-body">
           <div class="post-title">
             <span>{{ articleInfo.title }}</span>
@@ -23,8 +23,13 @@
           <div class="post-info">
             <div class="info-created">发布时间：{{ updateTime }}</div>
             <div class="info-tags">
-              <div class="info-tag" v-for="i in articleInfo.labels" :key="i.id">
-                <span :style="{ background: '#' + i.color }">{{ i.name }}</span>
+              <div
+                class="info-tag"
+                v-for="i in articleInfo.labels"
+                :key="i.id"
+                :style="{ background: '#' + i.color }"
+              >
+                {{ i.name }}
               </div>
             </div>
           </div>
@@ -38,22 +43,22 @@
               :id="articleInfo.id"
               :number="articleInfo.number"
               :title="articleInfo.title"
-              style="border-top: 1px dashed #b5b5b5"
+              style="border-top: 0.01rem dashed #b5b5b5"
             ></comment>
           </div>
         </div>
-        <div class="post-menu" id="post-menu">
+        <div class="post-menu" id="post-menu" v-if="!isMobile">
           <ul class="post-menu-ul" :class="menuBarFixed ? 'isFixed' : ''">
             <li
               v-for="(m, k) in postMenus"
               :key="k"
               class="post-menu-li"
               :style="{
-                textIndent: (m.level - 1) * 16 + 'px'
+                textIndent: (m.level - 1) * 0.16 + 'rem'
               }"
               :class="currentIndex === k ? 'active' : ''"
             >
-              <a :href="m.href" @click="currentIndex = k">
+              <a :href="m.href" @click="currentIndex = k" :title="m.title">
                 {{ m.title }}
               </a>
             </li>
@@ -90,21 +95,26 @@ export default class Post extends Vue {
   postMenus: any[] = [];
   winListener: any = null;
   currentIndex: number = 0;
+  isMobile: Boolean = true;
+  $isMobile: any;
 
   async created() {
+    this.isMobile = this.$isMobile;
     this.number = this.$route.params.number;
     this.getArticleInfo()
       .then(() => {
         this.$nextTick(() => {
           this.initComment = true;
-          this.doLoading = false;
+          setTimeout(() => {
+            this.doLoading = false;
+          }, 100)
         });
       })
       .then(() => {
         this.winListener = window.addEventListener("scroll", () => {
           const offsetTop: number =
             document.documentElement.scrollTop || document.body.scrollTop;
-          this.menuBarFixed = offsetTop > 360;
+          this.menuBarFixed = offsetTop > 320;
           this.currentIndex = offsetTop === 0 ? 0 : this.currentIndex;
         });
         // let data: any = document.getElementsByClassName("hidden-anchor");

@@ -1,9 +1,9 @@
 <template>
-  <div class="footer">
-    <div style="font-size: 0.14rem">
+  <div class="footer" style="background: #ffffff">
+    <p style="font-size: 0.14rem">
       Copyright © 2019 MiyueSC. All rights reserved.
-    </div>
-    <div style="font-size: 0.12rem">Brought to you withby MiyueSC！</div>
+    </p>
+    <p style="font-size: 0.12rem">Brought to you withby MiyueSC！</p>
   </div>
 </template>
 <script lang="ts">
@@ -17,13 +17,13 @@ export default class BlogFooter extends Vue {}
 .footer {
   border-top: 0.01rem solid rgba(183, 183, 183, 0.6);
   color: darkgrey;
-  width: 12rem;
-  /*height: 0.48rem;*/
-  line-height: 0.16rem;
-  padding: 0.06rem;
-  margin: auto;
-  margin-top: 0.24rem;
-  font-family: "Apple Color Emoji", "Ubuntu", sans-serif;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0.04rem 10vw;
+  position: relative;
+  z-index: 99;
+  font-family: "PingFang SS", "Microsoft YaHei UI", "Apple Color Emoji",
+    "Ubuntu", sans-serif;
   div {
     padding: 0;
     margin: 0 auto;

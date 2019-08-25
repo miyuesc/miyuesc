@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="loading" v-if="doLoading">
+    <div class="loading" v-if="doLoading && !isMobile">
       <img src="../../assets/icons/loading.gif" alt="loading" />
     </div>
 
@@ -67,9 +67,12 @@ export default class Home extends Vue {
   showCode: boolean = false;
   contacts: any[] = config.contact;
   subTitle: string = config.subTitle;
-  doLoading: boolean = false;
+  doLoading: boolean = true;
+  isMobile: Boolean = true;
+  $isMobile: any;
 
   created() {
+    this.isMobile = this.$isMobile;
     this.background = this.bgs[this.bgIndex];
   }
 

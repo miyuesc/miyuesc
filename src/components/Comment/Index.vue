@@ -35,9 +35,9 @@ export default class Comment extends Vue {
 
 <style scoped lang="less">
 .comment {
-  width: 800px;
+  width: 80%;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 1.2rem;
   height: auto;
   text-align: left !important;
 }

@@ -7,7 +7,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
+  padding: 0.05em;
   color: #333;
   background: #f6f6f6;
 }
@@ -99,49 +99,58 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 pre {
-  margin-bottom: 20px;
-  /*padding: 18px;*/
-  font-size: 13px;
+  margin-bottom: 0.2rem;
+  font-size: 0.14rem;
   word-wrap: normal;
   word-break: break-word !important;
   white-space: pre;
   overflow: auto;
   color: #a6a28c;
-  border-radius: 8px;
+  border-radius: 0.08rem;
+}
+p > code {
+  background: rgba(103, 193, 246, 0.7);
+  border-radius: 0.04rem;
+  font-family: Consolas, Monaco, "Andale Mono", monospace;
+  color: #ffffff;
+  padding: 0.02rem 0.04rem;
+  margin: 0 0.04rem auto;
 }
 p {
-  line-height: 22px;
   color: #555555;
+  font-size: 0.16rem;
+  line-height: 0.26rem;
   font-family: "PingFang SS", "Microsoft YaHei UI", sans-serif;
-  /*text-indent: 24px;*/
 }
 li {
-  line-height: 22px;
+  font-size: 0.15rem;
+  line-height: 0.22rem;
   color: #555555;
   font-family: "PingFang SS", "Microsoft YaHei UI", sans-serif;
 }
 pre > code {
-  line-height: 20px;
+  line-height: 0.2rem;
   font-family: "PingFang SC", "Microsoft YaHei UI", sans-serif;
-  padding: 36px;
+  padding: 0.36rem;
   font-weight: lighter;
+  overflow-y: hidden;
 }
 
 .hljs-ln-numbers {
-  width: 24px;
-  padding: 2px 6px;
-  border-right: 2px solid #bcbcbc;
+  width: 0.24rem;
+  padding: 0.02rem 0.06rem;
+  border-right: 0.02rem solid #bcbcbc;
   text-align: center;
 }
 .hljs-ln-code {
-  padding-left: 6px;
+  padding-left: 0.06rem;
 }
 a {
   color: #aaaaaa;
 }
 .hidden-anchor {
   position: relative;
-  top: -60px;
+  top: -0.6rem;
   display: block;
   height: 0;
   overflow: hidden;
@@ -149,6 +158,40 @@ a {
 h1,
 h2,
 h3 {
-  border-bottom: 1px solid #e4e4e4;
-  padding-bottom: 6px;
+  border-bottom: 0.01rem solid #e4e4e4;
+  padding-bottom: 0.06rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-indent: 0.28rem;
+}
+
+h1 {
+  font-size: 0.24rem;
+}
+h2 {
+  font-size: 0.22rem;
+}
+h3 {
+  font-size: 0.2rem;
+}
+h4 {
+  font-size: 0.16rem;
+}
+h5 {
+  font-size: 0.14rem;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0 0 0 0.2rem;
+  font-size: 0.14rem;
+}
+
+.markdown > p {
+  text-indent: 0.28rem;
 }

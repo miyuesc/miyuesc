@@ -19,6 +19,9 @@ renderer.image = function(href: string, title: string, text: string) {
 renderer.link = function(href: string, title: string, text: string) {
   return `<a href=${href} target="_blank">${text}</a>`;
 };
+renderer.codespan = (code: string) => {
+  return `<code class="line-code" type="text" datatype="text">${code}</code>`;
+};
 marked.setOptions({
   renderer,
   highlight: (code: any) => hljs.highlightAuto(code).value
@@ -66,55 +69,63 @@ export default class MarkDown extends Vue {
 
 <style lang="less">
 .markdown {
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: normal !important;
+  table {
+    padding-bottom: 0.2rem;
+  }
   table > tr > .hljs-ln-numbers {
-    width: 24px;
+    width: 0.24rem;
   }
   .hljs-ln {
     width: 100%;
     tr {
-      width: 100%;
+      width: auto;
+      font-size: 0.14rem;
       &:hover {
         background: #e9e9e9;
       }
     }
   }
   blockquote {
-    margin: 12px 0;
-    border-left: 4px solid #bcbcbc;
+    margin: 0.12rem 0;
+    width: 96%;
+    border-left: 0.04rem solid #bcbcbc;
     background: #f6f6f6;
-    padding: 2px 12px;
+    padding: 0.02rem 0.12rem;
     p {
-      margin: 4px 0;
+      margin: 0.04rem 0;
+      font-size: 0.14rem;
+      line-height: 0.16rem;
     }
   }
   .hljs {
     position: relative;
-    padding-top: 32px;
+    padding-top: 0.32rem;
+    padding-bottom: 0.06rem;
     &:before {
       content: "example";
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
-      height: 26px;
-      line-height: 26px;
+      height: 0.26rem;
+      line-height: 0.26rem;
       background-color: #dbdbdb;
       text-align: center;
-      /*transform-origin: center;*/
-      /*transform: translate(-60%, 0) scaleX(0);*/
-      /*transition: transform 0.3s ease-in-out;*/
     }
 
     &:after {
       content: "";
       position: absolute;
-      top: 5px;
-      left: 12px;
-      border-radius: 7px;
-      width: 14px;
-      height: 14px;
+      top: 0.05rem;
+      left: 0.12rem;
+      border-radius: 0.07rem;
+      width: 0.14rem;
+      height: 0.14rem;
       background: #ff5f57;
-      box-shadow: 20px 0 0 0 #ffbd2e, 40px 0 0 0 #28ca42;
+      box-shadow: 0.2rem 0 0 0 #ffbd2e, 0.4rem 0 0 0 #28ca42;
     }
   }
 }

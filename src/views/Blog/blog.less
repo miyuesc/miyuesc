@@ -57,9 +57,9 @@
       text-align: left;
       .article-card {
         width: 100%;
-        height: 2.40rem;
+        height: 2.4rem;
         border-radius: 0.08rem;
-        box-shadow: 0 0 .10rem rgba(100, 100, 100, 0.4);
+        box-shadow: 0 0 0.1rem rgba(100, 100, 100, 0.4);
         margin-bottom: 0.36rem;
         transition: all 0.5s;
         .article-title {
@@ -113,10 +113,10 @@
         .article-desc {
           height: 1.08rem;
           width: 3.6rem;
-          padding: .16rem;
+          padding: 0.16rem;
           overflow: hidden;
           float: left;
-          font-size: .14rem;
+          font-size: 0.14rem;
           text-indent: 0.2rem;
           text-overflow: ellipsis;
         }
@@ -136,7 +136,7 @@
           }
         }
         &:hover {
-          box-shadow: 0 0 0.10rem rgba(100, 100, 100, 0.8);
+          box-shadow: 0 0 0.1rem rgba(100, 100, 100, 0.8);
           //transform: translateY(-3rem);
           .article-cover {
             img {
@@ -150,23 +150,23 @@
       .tags-list {
         height: auto;
         text-align: left;
-        padding: .12rem .12rem .60rem .12rem;
-        .tags-title{
+        padding: 0.12rem 0.12rem 0.6rem 0.12rem;
+        .tags-title {
           height: 0.36rem;
           .tag-box-title {
-            height: .36rem;
-            line-height: .36rem;
-            font-size: .32rem;
+            height: 0.36rem;
+            line-height: 0.36rem;
+            font-size: 0.32rem;
             display: inline-block;
             box-sizing: border-box;
             vertical-align: middle;
-            margin-left: .20rem;
+            margin-left: 0.2rem;
             &:hover {
               cursor: pointer;
             }
           }
           img {
-            height: .36rem;
+            height: 0.36rem;
             display: inline-block;
             box-sizing: border-box;
             vertical-align: top;
@@ -174,19 +174,22 @@
         }
         .tags {
           display: inline-block;
+          margin-top: 0.24rem;
           .tag-item {
-            height: .28rem;
-            margin: .12rem .8rem;
+            height: 0.28rem;
+            margin: 0 0.24rem 0.24rem 0;
             transition: all 0.5s ease-in-out;
+            float: left;
+            box-shadow: 0.1rem 0.1rem 0.1rem #adadad;
             .tag-name {
-              margin-left: .12rem;
-              line-height: .28rem;
-              padding: .06rem .12rem .06rem .12rem;
-              font-size: .14rem;
+              margin-left: 0.12rem;
+              line-height: 0.28rem;
+              padding: 0.02rem 0.12rem 0.02rem 0.12rem;
+              font-size: 0.14rem;
               background: #42a6f8;
               text-decoration: none;
-              border-bottom-right-radius: .04rem;
-              border-top-right-radius: .04rem;
+              border-bottom-right-radius: 0.04rem;
+              border-top-right-radius: 0.04rem;
               position: relative;
               font-family: "PingFang SC", sans-serif;
               &:before {
@@ -196,7 +199,7 @@
                 left: -0.16rem;
                 border-color: transparent #42a6f8 transparent transparent;
                 border-style: solid;
-                border-width: .16rem .16rem .16rem 0;
+                border-width: 0.16rem 0.16rem 0.16rem 0;
               }
               &:after {
                 content: "";
@@ -211,7 +214,7 @@
               }
             }
             &:hover {
-              transform: translateY(-.03rem);
+              transform: translateY(-0.03rem);
               cursor: pointer;
             }
           }
@@ -220,63 +223,64 @@
       .category-list {
         height: auto;
         text-align: left;
-        padding: .12rem .12rem .60rem .12rem;
-        .category-box-title {
-          height: .36rem;
-          line-height: .36rem;
-          font-size: .32rem;
-          display: inline-block;
-          box-sizing: border-box;
-          vertical-align: middle;
-          margin-left: .20rem;
-          &:hover {
-            cursor: pointer;
+        padding: 0.12rem 0.12rem 0.6rem 0.12rem;
+        .category-title {
+          height: 0.36rem;
+          .category-box-title {
+            height: 0.36rem;
+            line-height: 0.36rem;
+            font-size: 0.32rem;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+            margin-left: 0.2rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          img {
+            height: 0.36rem;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
           }
         }
-        img {
-          height: .36rem;
-          display: inline-block;
-          box-sizing: border-box;
-          vertical-align: middle;
-        }
         .categories {
-          transition: all 1s;
-          //padding-top: .24rem;
+          margin-top: 0.24rem;
           .category-item {
-            display: inline-block;
-            height: .28rem;
-            //position: relative;
-            margin: .12rem .08rem;
+            height: 0.28rem;
+            float: left;
+            margin: 0 0.08rem 0.24rem;
             transition: all 0.5s ease-in-out;
             &:hover {
-              transform: translateY(-.03rem);
+              transform: translateY(-0.03rem);
               cursor: pointer;
             }
             .border-left {
-              width: .16rem;
-              height: .32rem;
+              width: 0.16rem;
+              height: 0.32rem;
               background-image: url("../../assets/icons/border-left.svg");
               background-size: cover;
               float: left;
             }
             .border-right {
-              width: .16rem;
-              height: .32rem;
+              width: 0.16rem;
+              height: 0.32rem;
               background-image: url("../../assets/icons/border-left.svg");
               background-size: cover;
               transform: rotate(180deg);
               float: left;
             }
             .category-name {
-              line-height: .30rem;
+              line-height: 0.3rem;
               text-align: center;
-              font-size: .16rem;
-              border-top: .01rem solid crimson;
-              border-bottom: .01rem solid crimson;
+              font-size: 0.16rem;
+              border-top: 0.01rem solid crimson;
+              border-bottom: 0.01rem solid crimson;
               float: left;
               text-decoration: none;
-              border-bottom-right-radius: .04rem;
-              border-top-right-radius: .04rem;
+              border-bottom-right-radius: 0.04rem;
+              border-top-right-radius: 0.04rem;
               font-family: "PingFang SC", sans-serif;
             }
           }
