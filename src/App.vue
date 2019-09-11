@@ -25,6 +25,12 @@ import BackToTop from "@/components/BackToTop/Index.vue";
 //     BackToTop
 //   }
 // })
+
+const deviceWidth =
+  document.documentElement.clientWidth > 1920
+    ? document.documentElement.clientWidth
+    : 1920;
+
 export default {
   name: "App",
   data() {
@@ -43,6 +49,23 @@ export default {
       // this.transitionName = toDepth < fromDepth ? "slide-left" : "slide-right";
       this.transitionName = "slide";
     }
+  },
+  methods: {
+    // 设置字体
+    setRem() {
+      if (this.$isMobile) {
+        document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+      } else {
+        document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+      }
+    }
+  },
+  beforeCreate() {
+    if (this.$isMobile) {
+      document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+    } else {
+      document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+    }
   }
 };
 </script>
@@ -51,11 +74,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  user-select: none;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  font-family: Lato, PingFang SC, Microsoft YaHei, sans-serif;
 }
 /*html {*/
 /*  font-size: 0.625vw;*/

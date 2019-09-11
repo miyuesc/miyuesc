@@ -8,7 +8,7 @@ import VueAxios from "vue-axios";
 // 引入highlight代码高亮插件
 // @ts-ignore
 import hljs from "highlight.js";
-import "@/assets/styles/atelier-dune-dark.css"; //样式文件
+import "highlight.js/styles/agate.css"; //样式文件
 Vue.directive("highlight", function(el) {
   let blocks: any = el.querySelectorAll("pre code");
   blocks.forEach((block: any) => {

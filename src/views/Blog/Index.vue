@@ -51,6 +51,22 @@
               And I will complement as soon as possible
             </p>
           </div>
+          <div class="buttons">
+            <button
+              v-show="filter.page > 1"
+              class="page-button pre-button"
+              @click="changePage('pre')"
+            >
+              上一页
+            </button>
+            <button
+              v-show="total > filter.page * filter.pageSize"
+              class="page-button next-button"
+              @click="changePage('next')"
+            >
+              下一页
+            </button>
+          </div>
         </div>
         <div v-if="!isMobile" class="lists">
           <div class="tags-list">
@@ -102,7 +118,7 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Prop, Model, Watch } from "vue-property-decorator";
-import { queryPosts, queryCategory } from "@/utils/services";
+import { queryPosts, queryCategory, queryPostsTotal } from "@/utils/services";
 import MarkDown from "@/components/MarkDown/Index.vue";
 
 @Component({
@@ -114,21 +130,31 @@ export default class Blog extends Vue {
   doLoading: boolean = true;
   filter: any = {
     page: 1,
-    pageSize: 10,
+    pageSize: 5,
     filter: ""
   };
+  total: number = 0;
   articles: any[] = [];
   tags: any[] = [];
   categories: any[] = [];
   isMobile: Boolean = true;
   $isMobile: any;
 
+  preNotDisabled() {
+    return this.filter.page >= 1;
+  }
+  nextNotDisabled() {
+    return this.total > this.filter.page * this.filter.pageSize;
+  }
+
   async created() {
     await this.queryTag();
     await this.getCategory();
     this.getAllBlog();
     this.isMobile = this.$isMobile;
+    this.test();
   }
+  // 获取所有文章
   getAllBlog() {
     queryPosts(this.filter).then((data: any) => {
       this.doLoading = false;
@@ -139,17 +165,37 @@ export default class Blog extends Vue {
       });
     });
   }
+  test() {
+    queryPostsTotal().then((data: any) => {
+      // console.log(data);
+      this.total = data.repository.issues.totalCount;
+    });
+  }
+  changePage(type: string) {
+    this.doLoading = true;
+    type === "next" ? this.filter.page++ : this.filter.page--;
+    queryPosts(this.filter).then((data: any) => {
+      this.articles = data;
+      this.articles.forEach((i: any) => {
+        i.updateTime = i.updated_at.toString().substring(0, 10);
+      });
+      this.doLoading = false;
+    });
+  }
   // 获取标签列表
   async queryTag() {
     this.tags = await this.$store.dispatch("queryTag");
   }
+  // 获取分类列表
   async getCategory() {
     this.categories = await queryCategory();
     // console.log(this.categories);
   }
+  // 查看文章
   gotoPost(number: any) {
     this.$router.push({ name: "post", params: { number } });
   }
+  // 筛选查看
   queryFilter(filter: any, type: string) {
     this.doLoading = true;
     this.filter.filter =
@@ -162,6 +208,7 @@ export default class Blog extends Vue {
       this.doLoading = false;
     });
   }
+  // 重置筛选
   resetFilter() {
     this.doLoading = true;
     this.filter = { page: 1, pageSize: 10, filter: "" };

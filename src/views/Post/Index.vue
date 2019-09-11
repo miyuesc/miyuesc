@@ -37,6 +37,7 @@
             <mark-down
               :content="articleInfo.body"
               :only-render="false"
+              @created="initTitle"
             ></mark-down>
             <comment
               v-if="initComment"
@@ -93,7 +94,7 @@ export default class Post extends Vue {
   background: string = "";
   updateTime: string = "";
   postMenus: any[] = [];
-  winListener: any = null;
+  // winListener: any = null;
   currentIndex: number = 0;
   isMobile: Boolean = true;
   $isMobile: any;
@@ -107,19 +108,23 @@ export default class Post extends Vue {
           this.initComment = true;
           setTimeout(() => {
             this.doLoading = false;
-          }, 100)
+          }, 100);
         });
       })
       .then(() => {
-        this.winListener = window.addEventListener("scroll", () => {
-          const offsetTop: number =
-            document.documentElement.scrollTop || document.body.scrollTop;
-          this.menuBarFixed = offsetTop > 320;
-          this.currentIndex = offsetTop === 0 ? 0 : this.currentIndex;
-        });
-        // let data: any = document.getElementsByClassName("hidden-anchor");
+        window.addEventListener("scroll", this.winListener);
       });
   }
+
+  async winListener() {
+    const offsetTop: number =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    this.menuBarFixed = offsetTop > 320;
+    this.currentIndex = offsetTop === 0 ? 0 : this.currentIndex;
+
+    this.scrollHandler();
+  }
+
   async getArticleInfo() {
     this.articleInfo = await this.$store.dispatch("queryPost", {
       number: this.number
@@ -128,42 +133,34 @@ export default class Post extends Vue {
     this.background = this.articleInfo.body.match(/http\S*png/)
       ? this.articleInfo.body.match(/http\S*png/)
       : this.articleInfo.body.match(/http\S*jpg/);
-    this.getTitle(this.articleInfo.body).then((data: any) => {
-      this.postMenus = data;
-    });
   }
 
-  async getTitle(content: any) {
-    let nav = [];
+  initTitle(titles: any) {
+    this.postMenus = titles;
+  }
 
-    let tempArr: any[] = [];
-    content.replace(/(#+)[^#][^\n]*?(?:\n)/g, function(
-      match: any,
-      m1: any,
-      m2: any
-    ) {
-      let title = match.replace("\n", "");
-      let level = m1.length;
-      tempArr.push({
-        title: title.replace(/^#+/, "").replace(/\([^)]*?\)/, ""),
-        level: level,
-        children: []
+  scrollHandler() {
+    const idPrefix = "h-";
+    const distance = 160;
+    let list = [];
+    for (let i = 0; i < this.postMenus.length; i++) {
+      let dom: any = document.getElementById(`${idPrefix}${i}`);
+      list.push({
+        y: dom.getBoundingClientRect().top + 10, // 利用dom.getBoundingClientRect().top可以拿到元素相对于显示器的动态y轴坐标
+        index: i
       });
-    });
+    }
 
-    // 处理标题
-    nav = tempArr.filter(item => item.level <= 5);
-    let index = 0;
-    return (nav = nav.map(item => {
-      item.href = `#h-${index}`;
-      item.index = index++;
-      return item;
-    }));
+    let readingVO = list
+      .filter(item => item.y > distance)
+      .sort((a, b) => {
+        return a.y - b.y;
+      })[0]; // 对所有的y值为正标的题，按y值升序排序。第一个标题就是当前处于阅读中的段落的标题。也即要高亮的标题
+    this.currentIndex = readingVO.index >= 1 ? readingVO.index - 1 : 0; // for循环i加了1
   }
 
-  beforeDestroy() {
-    this.winListener = window.removeEventListener("scroll", () => {});
-    this.winListener = null;
+  beforeDestroy(): void {
+    window.removeEventListener("scroll", this.winListener);
   }
 }
 </script>

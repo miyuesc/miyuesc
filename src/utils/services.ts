@@ -4,6 +4,8 @@ import { Vue } from "vue-property-decorator";
 const GRAPHQL_URL = "https://api.github.com/graphql";
 const GITHUB_API = "https://api.github.com/repos";
 
+import documents from "./documents";
+
 const { username, repository, token } = config;
 const blog = `${GITHUB_API}/${username}/${repository}`;
 const access_token = token.join("");
@@ -17,6 +19,27 @@ const checkStatus = (response: any) => {
   error.response = response;
   throw error;
 };
+
+// 构建 GraphQL
+const createCall = async (document: any) => {
+  try {
+    const payload = JSON.stringify({ query: document });
+    const response = await Vue.axios(GRAPHQL_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `token ${access_token}`
+      },
+      data: payload
+    });
+    checkStatus(response);
+    const body = await response.data;
+    return body.data;
+  } catch (err) {}
+};
+
+// 获取文章总数
+export const queryPostsTotal = async () =>
+  createCall(documents.queryArchivesCount({ username, repository }));
 
 // 获取文章列表
 export const queryPosts = async ({ page = 1, pageSize = 10, filter = "" }) => {

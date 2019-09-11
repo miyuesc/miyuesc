@@ -66,17 +66,24 @@
           padding: 0.16rem;
           font-size: 0.24rem;
           font-family: "PingFang SC", sans-serif;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: calc(100% - 0.32rem);
           span {
             position: relative;
+            //width: 100%;
+            //max-width: 3.68rem;
+            overflow: hidden;
             &:hover {
               transition: all 300ms ease;
               color: #050505;
               cursor: pointer;
-              &:before {
+              &::after {
                 transform: translate(-50%, 0) scaleX(1);
               }
             }
-            &:before {
+            &::after {
               content: "";
               position: absolute;
               left: 50%;
@@ -85,7 +92,7 @@
               height: 0.02rem;
               background-color: #050505;
               transform-origin: center;
-              transform: translate(-50%, 0) scaleX(0);
+              transform: translate(-100%, 0) scaleX(0);
               transition: transform 0.3s ease-in-out;
             }
           }
@@ -112,6 +119,7 @@
         }
         .article-desc {
           height: 1.08rem;
+          max-height: 1.1rem;
           width: 3.6rem;
           padding: 0.16rem;
           overflow: hidden;
@@ -119,6 +127,23 @@
           font-size: 0.14rem;
           text-indent: 0.2rem;
           text-overflow: ellipsis;
+          position: relative;
+          display: -webkit-box;
+          /* autoprefixer: off */
+          -webkit-box-orient: vertical;
+          .markdown {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            /deep/ p {
+              display: -webkit-box !important;
+              overflow: hidden !important;
+              text-overflow: ellipsis !important;
+              -webkit-line-clamp: 3 !important;
+              /* autoprefixer: off */
+              -webkit-box-orient: vertical;
+            }
+          }
         }
         .article-cover {
           float: right;
@@ -141,6 +166,65 @@
           .article-cover {
             img {
               transform: scale(1.1);
+            }
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+        width: calc(100% - 0.96rem);
+        padding: .48rem;
+        justify-content: center;
+        .page-button {
+          z-index: 1;
+          font-size: .24rem;
+          position: relative;
+          font-family: inherit;
+          color: white;
+          padding: 0.16em 0.24em;
+          outline: none;
+          border: none;
+          background-color: hsl(236, 32%, 26%);
+          margin: 0 .24rem;
+          &::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fc2f70;
+            transform: scaleX(0);
+            transition: transform 0.25s ease-in-out;
+          }
+          &:hover{
+            cursor: pointer;
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+        }
+        .pre-button {
+          //float: left;
+          align-self: end;
+          &::before {
+            transform-origin: center left;
+          }
+          &:hover {
+            &::before {
+              transform-origin: center left;
+            }
+          }
+        }
+        .next-button {
+          align-self: end;
+          &::before {
+            transform-origin: center right;
+          }
+          &:hover {
+            &::before {
+              transform-origin: center right;
             }
           }
         }

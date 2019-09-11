@@ -33,6 +33,8 @@
       margin: auto;
       position: relative;
       .post-body {
+        box-shadow: 0 0 .14rem #cacbcc;
+        padding: .4rem;
         .post-title {
           font-size: 0.36rem;
           padding: 0.12rem;
@@ -84,42 +86,46 @@
         //top: 0;
         //left: 848rem;
         .post-menu-ul {
-          border-left: 0.01rem solid #dddddd;
+          border-left: 1px solid rgba(44, 62, 80, .6);
           list-style: none;
           text-align: left;
           padding-left: 0;
           position: absolute;
           .post-menu-li {
-            height: 0.22rem;
+            height: 0.32rem;
             width: 100%;
             padding-left: 0.2rem;
             overflow: hidden;
+            font-family: Lato, PingFang SC, Microsoft YaHei, sans-serif;
             &:hover {
-              border-left: 0.02rem solid #e889ff;
+              border-left: 0.02rem solid #ff773e;
               padding-left: 0.18rem;
               height: auto;
             }
             a {
-              height: 0.22rem;
+              height: 0.32rem;
+              line-height: .32rem;
               width: 2.4rem;
               display: block;
               overflow: hidden;
               white-space: nowrap;
               text-overflow: ellipsis;
               text-decoration: none;
+              color: #2c3e50;
               &:hover {
-                color: #e889ff;
+                color: #ff773e;
                 //width: auto;
                 max-width: 4.2rem;
               }
             }
           }
           .active {
-            color: #e889ff;
-            border-left: 0.02rem solid #e889ff;
+            color: #ff773e;
+            border-left: 0.02rem solid #ff773e;
             padding-left: 0.18rem;
+            background: #89ffdc;
             a {
-              color: #e889ff;
+              color: #ff773e;
             }
           }
         }

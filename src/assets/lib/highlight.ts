@@ -1,5 +1,5 @@
-// import 'highlight.js/styles/atelier-dune-dark.css'
-import "../styles/atelier-dune-dark.css";
+// import 'highlight.js/styles/atelier-dune-dark.less'
+import "../styles/atelier-dune-dark.less";
 
 // @ts-ignore
 import hljs from "highlight.js/lib/highlight";

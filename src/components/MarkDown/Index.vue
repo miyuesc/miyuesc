@@ -6,27 +6,6 @@ import marked from "marked";
 import { Component, Prop, Vue } from "vue-property-decorator";
 import hljs from "@/assets/lib/highlight";
 
-const renderer = new marked.Renderer();
-renderer.heading = function(text: string, level: number) {
-  return `<a class="hidden-anchor" ref="hiddenAnchor"></a><h${level +
-    1} class="hljs-title">${text}</h${level + 1}>`;
-};
-renderer.image = function(href: string, title: string, text: string) {
-  return `<span class="img-box" data-src="${href}" data-sub-html="<h4>${text}</h4>"><img src="${href}" loading="lazy" alt="${text}" />${
-    text ? `<span>${text}</span>` : ""
-  }</span>`;
-};
-renderer.link = function(href: string, title: string, text: string) {
-  return `<a href=${href} target="_blank">${text}</a>`;
-};
-renderer.codespan = (code: string) => {
-  return `<code class="line-code" type="text" datatype="text">${code}</code>`;
-};
-marked.setOptions({
-  renderer,
-  highlight: (code: any) => hljs.highlightAuto(code).value
-});
-
 @Component
 export default class MarkDown extends Vue {
   @Prop({ type: String, default: "" })
@@ -41,6 +20,35 @@ export default class MarkDown extends Vue {
   html: any = "";
 
   doMarked() {
+    const renderer = new marked.Renderer();
+    let titles: any[] = [];
+    let index: number = -1;
+
+    renderer.heading = function(text: string, level: number) {
+      index++;
+      titles.push({
+        level: level,
+        title: text.replace(/&nbsp;/g, " "),
+        href: `#h-${index}`
+      });
+      return `<a class="hidden-anchor" ref="hiddenAnchor" id="h-${index}"></a><h${level +
+        1} class="hljs-title">${text}</h${level + 1}>`;
+    };
+    renderer.image = function(href: string, title: string, text: string) {
+      return `<span class="img-box" data-src="${href}"><img src="${href}" loading="lazy" alt="${text}" />
+  </span>`;
+    };
+    renderer.link = function(href: string, title: string, text: string) {
+      return `<a href=${href} target="_blank">${text}</a>`;
+    };
+    renderer.codespan = (code: string) => {
+      return `<code class="line-code" type="text" datatype="text">${code}</code>`;
+    };
+    marked.setOptions({
+      renderer,
+      highlight: (code: any) => hljs.highlightAuto(code).value
+    });
+
     if (this.onlyRender && this.content.split("summary_start")[1]) {
       // 显示简介
       this.html = marked(
@@ -48,15 +56,11 @@ export default class MarkDown extends Vue {
       );
     } else {
       this.html = marked(this.content.split("summary_end")[1]); // 显示正文
+      this.$emit("created", titles);
       this.$nextTick(() => {
         hljs.initLineNumbersOnLoad({
           target: "#post"
         });
-        document
-          .querySelectorAll(".hidden-anchor")
-          .forEach((a: any, index: number) => {
-            a.id = `h-${index}`;
-          });
       });
     }
   }
@@ -72,6 +76,14 @@ export default class MarkDown extends Vue {
   word-break: normal !important;
   word-wrap: normal !important;
   white-space: normal !important;
+
+  .img-box {
+    image,
+    img {
+      width: 90%;
+      text-align: center;
+    }
+  }
   table {
     padding-bottom: 0.2rem;
   }
@@ -83,9 +95,6 @@ export default class MarkDown extends Vue {
     tr {
       width: auto;
       font-size: 0.14rem;
-      &:hover {
-        background: #e9e9e9;
-      }
     }
   }
   blockquote {
@@ -102,30 +111,37 @@ export default class MarkDown extends Vue {
   }
   .hljs {
     position: relative;
-    padding-top: 0.32rem;
-    padding-bottom: 0.06rem;
+    padding-top: 0.36rem;
+    padding-bottom: 0.12rem;
+    background-color: rgb(21, 23, 24);
+    min-height: 0.4rem;
+    min-width: auto;
+    border-radius: 0.05rem;
+    box-shadow: rgba(0, 0, 0, 0.55) 0 0.2rem 0.6rem 0;
     &:before {
-      content: "example";
+      content: "code";
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
-      height: 0.26rem;
-      line-height: 0.26rem;
-      background-color: #dbdbdb;
+      height: 0.36rem;
+      line-height: 0.28rem;
+      /*padding-top: 0.04rem;*/
+      /*background-color: #dbdbdb;*/
       text-align: center;
+      color: rgb(207, 210, 209);
     }
 
     &:after {
       content: "";
       position: absolute;
-      top: 0.05rem;
+      top: 0.12rem;
       left: 0.12rem;
-      border-radius: 0.07rem;
-      width: 0.14rem;
-      height: 0.14rem;
-      background: #ff5f57;
-      box-shadow: 0.2rem 0 0 0 #ffbd2e, 0.4rem 0 0 0 #28ca42;
+      border-radius: 50%;
+      width: 0.12rem;
+      height: 0.12rem;
+      background: #ff5f56;
+      box-shadow: 0.2rem 0 0 0 #ffbd2e, 0.4rem 0 0 0 #27c93f;
     }
   }
 }
