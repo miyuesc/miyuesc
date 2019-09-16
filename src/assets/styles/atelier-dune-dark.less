@@ -14,6 +14,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   position: relative;
   transition: all ease-in-out .2s;
   text-indent: unset;
+}
+.h-title {
   &:hover {
     color: #ffa500;
   }
@@ -49,9 +51,12 @@ p > code {
 }
 p {
   color: #2c3e50;
-  font-size: 0.16rem;
+  font-size: 0.14rem;
   line-height: 0.26rem;
   font-family: Lato,PingFang SC,Microsoft YaHei,sans-serif;
+  code {
+    background: #151718;
+  }
 }
 li {
   font-size: 0.15rem;
@@ -75,6 +80,15 @@ pre > code {
 }
 .hljs-ln-code {
   padding-left: 0.06rem;
+  * {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, sans-serif !important;
+  }
+  .hljs-title {
+    color: #ff5f56;
+  }
+  .hljs-params {
+    color: #fb9759;
+  }
 }
 a {
   color: #aaaaaa;
@@ -92,14 +106,6 @@ h3 {
   border-bottom: 0.01rem solid #e4e4e4;
   padding-bottom: 0.06rem;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-indent: 0.28rem;
-}
 
 h1 {
   font-size: 0.24rem;
@@ -110,20 +116,18 @@ h2 {
 h3 {
   font-size: 0.2rem;
 }
-h4 {
-  font-size: 0.16rem;
-}
-h5 {
-  font-size: 0.14rem;
-}
-h6 {
-  font-size: 0.14rem;
+h4,h5,h6 {
+  font-size: 0.18rem;
 }
 ol,
 ul {
   margin: 0;
-  padding: 0 0 0 0.2rem;
+  //padding: 0 0 0 0.2rem;
   font-size: 0.14rem;
+  li {
+    padding-left: 0;
+    margin-left: 0;
+  }
 }
 
 .markdown > p {

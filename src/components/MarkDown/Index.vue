@@ -24,15 +24,20 @@ export default class MarkDown extends Vue {
     let titles: any[] = [];
     let index: number = -1;
 
-    renderer.heading = function(text: string, level: number) {
-      index++;
-      titles.push({
-        level: level,
-        title: text.replace(/&nbsp;/g, " "),
-        href: `#h-${index}`
-      });
-      return `<a class="hidden-anchor" ref="hiddenAnchor" id="h-${index}"></a><h${level +
-        1} class="hljs-title">${text}</h${level + 1}>`;
+    renderer.heading = function(text: string, level: number, raw: string) {
+      if (level < 4) {
+        index++;
+        titles.push({
+          level: level,
+          title: text.replace(/&nbsp;/g, " "),
+          href: `#h-${index}`,
+          raw: raw
+        });
+        return `<a class="hidden-anchor" ref="hiddenAnchor" id="h-${index}"></a><h${level +
+          1} class="hljs-title h-title">${text}</h${level + 1}>`;
+      } else {
+        return `<h${level + 1}>${text}</h${level + 1}`;
+      }
     };
     renderer.image = function(href: string, title: string, text: string) {
       return `<span class="img-box" data-src="${href}"><img src="${href}" loading="lazy" alt="${text}" />
@@ -41,12 +46,11 @@ export default class MarkDown extends Vue {
     renderer.link = function(href: string, title: string, text: string) {
       return `<a href=${href} target="_blank">${text}</a>`;
     };
-    renderer.codespan = (code: string) => {
-      return `<code class="line-code" type="text" datatype="text">${code}</code>`;
-    };
     marked.setOptions({
       renderer,
-      highlight: (code: any) => hljs.highlightAuto(code).value
+      highlight: (code: any) => {
+        return hljs.highlightAuto(code).value;
+      }
     });
 
     if (this.onlyRender && this.content.split("summary_start")[1]) {
@@ -103,10 +107,10 @@ export default class MarkDown extends Vue {
     border-left: 0.04rem solid #bcbcbc;
     background: #f6f6f6;
     padding: 0.02rem 0.12rem;
-    p {
+    * {
       margin: 0.04rem 0;
       font-size: 0.14rem;
-      line-height: 0.16rem;
+      line-height: 0.2rem;
     }
   }
   .hljs {

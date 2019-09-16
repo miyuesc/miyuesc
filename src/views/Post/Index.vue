@@ -156,7 +156,12 @@ export default class Post extends Vue {
       .sort((a, b) => {
         return a.y - b.y;
       })[0]; // 对所有的y值为正标的题，按y值升序排序。第一个标题就是当前处于阅读中的段落的标题。也即要高亮的标题
-    this.currentIndex = readingVO.index >= 1 ? readingVO.index - 1 : 0; // for循环i加了1
+    this.currentIndex =
+      readingVO.index >= 1
+        ? readingVO.index === list.length
+          ? readingVO.index
+          : readingVO.index - 1
+        : 0; // for循环i加了1
   }
 
   beforeDestroy(): void {
