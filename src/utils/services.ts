@@ -34,7 +34,9 @@ const createCall = async (document: any) => {
     checkStatus(response);
     const body = await response.data;
     return body.data;
-  } catch (err) {}
+  } catch (err) {
+    return "error";
+  }
 };
 
 // 获取文章总数

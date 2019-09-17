@@ -24,14 +24,13 @@ export default class MarkDown extends Vue {
     let titles: any[] = [];
     let index: number = -1;
 
-    renderer.heading = function(text: string, level: number, raw: string) {
+    renderer.heading = function(text: string, level: number) {
       if (level < 4) {
         index++;
         titles.push({
           level: level,
           title: text.replace(/&nbsp;/g, " "),
-          href: `#h-${index}`,
-          raw: raw
+          href: `#h-${index}`
         });
         return `<a class="hidden-anchor" ref="hiddenAnchor" id="h-${index}"></a><h${level +
           1} class="hljs-title h-title">${text}</h${level + 1}>`;
@@ -115,8 +114,8 @@ export default class MarkDown extends Vue {
   }
   .hljs {
     position: relative;
-    padding-top: 0.36rem;
-    padding-bottom: 0.12rem;
+    padding-top: 0.48rem;
+    padding-bottom: 0.16rem;
     background-color: rgb(21, 23, 24);
     min-height: 0.4rem;
     min-width: auto;
@@ -128,8 +127,8 @@ export default class MarkDown extends Vue {
       left: 0;
       top: 0;
       width: 100%;
-      height: 0.36rem;
-      line-height: 0.28rem;
+      height: 0.48rem;
+      line-height: 0.48rem;
       /*padding-top: 0.04rem;*/
       /*background-color: #dbdbdb;*/
       text-align: center;
@@ -139,7 +138,7 @@ export default class MarkDown extends Vue {
     &:after {
       content: "";
       position: absolute;
-      top: 0.12rem;
+      top: 0.18rem;
       left: 0.12rem;
       border-radius: 50%;
       width: 0.12rem;

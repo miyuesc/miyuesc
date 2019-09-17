@@ -62,6 +62,20 @@
               <a :href="m.href" @click="currentIndex = k" :title="m.title">
                 {{ m.title }}
               </a>
+              <ul v-show="currentIndex === k">
+                <li
+                  v-for="(i, j) in m.children"
+                  :key="j"
+                  class="post-menu-li"
+                  :style="{
+                    textIndent: (i.level - 1) * 0.16 + 'rem'
+                  }"
+                >
+                  <a :href="i.href" @click="currentIndex = k" :title="i.title">
+                    {{ i.title }}
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -75,6 +89,7 @@ import MarkDown from "@/components/MarkDown/Index.vue";
 import Comment from "@/components/Comment/Index.vue";
 import { formatJSONDate } from "@/utils/format";
 // import { queryPost } from "@/utils/services";
+import { title } from "@/utils/interface";
 
 const w: any = window;
 const d: any = document;
@@ -136,7 +151,31 @@ export default class Post extends Vue {
   }
 
   initTitle(titles: any) {
-    this.postMenus = titles;
+    // this.postMenus = titles;
+    let test: Array<title> = [];
+    let firstTitleLevel = titles[0].level;
+    let key = 0;
+
+    test[0] = {
+      parent: 0,
+      ...titles[0],
+      children: []
+    };
+
+    for (let i = 1; i < titles.length; i++) {
+      if (firstTitleLevel - titles[i].level === 0) {
+        test.push({ parent: 0, ...titles[i], children: [] });
+        key++;
+      } else {
+        test[key].children.push({
+          parent: key,
+          ...titles[i],
+          children: []
+        });
+      }
+    }
+
+    this.postMenus = test;
   }
 
   scrollHandler() {
@@ -156,12 +195,7 @@ export default class Post extends Vue {
       .sort((a, b) => {
         return a.y - b.y;
       })[0]; // 对所有的y值为正标的题，按y值升序排序。第一个标题就是当前处于阅读中的段落的标题。也即要高亮的标题
-    this.currentIndex =
-      readingVO.index >= 1
-        ? readingVO.index === list.length
-          ? readingVO.index
-          : readingVO.index - 1
-        : 0; // for循环i加了1
+    this.currentIndex = readingVO.index >= 1 ? readingVO.index - 1 : 0; // for循环i加了1
   }
 
   beforeDestroy(): void {
