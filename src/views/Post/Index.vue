@@ -49,35 +49,10 @@
           </div>
         </div>
         <div class="post-menu" id="post-menu" v-if="!isMobile">
-          <ul class="post-menu-ul" :class="menuBarFixed ? 'isFixed' : ''">
-            <li
-              v-for="(m, k) in postMenus"
-              :key="k"
-              class="post-menu-li"
-              :style="{
-                textIndent: (m.level - 1) * 0.16 + 'rem'
-              }"
-              :class="currentIndex === k ? 'active' : ''"
-            >
-              <a :href="m.href" @click="currentIndex = k" :title="m.title">
-                {{ m.title }}
-              </a>
-              <ul v-show="currentIndex === k">
-                <li
-                  v-for="(i, j) in m.children"
-                  :key="j"
-                  class="post-menu-li"
-                  :style="{
-                    textIndent: (i.level - 1) * 0.16 + 'rem'
-                  }"
-                >
-                  <a :href="i.href" @click="currentIndex = k" :title="i.title">
-                    {{ i.title }}
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <nav-titles
+            :data="postMenus"
+            :class="menuBarFixed ? 'isFixed' : ''"
+          ></nav-titles>
         </div>
       </div>
     </div>
@@ -87,6 +62,7 @@
 import { Vue, Component, Prop, Model, Watch } from "vue-property-decorator";
 import MarkDown from "@/components/MarkDown/Index.vue";
 import Comment from "@/components/Comment/Index.vue";
+import NavTitles from "@/components/NavTitles/Index.vue";
 import { formatJSONDate } from "@/utils/format";
 // import { queryPost } from "@/utils/services";
 import { title } from "@/utils/interface";
@@ -97,7 +73,8 @@ const d: any = document;
 @Component({
   components: {
     MarkDown,
-    Comment
+    Comment,
+    NavTitles
   }
 })
 export default class Post extends Vue {
@@ -109,7 +86,6 @@ export default class Post extends Vue {
   background: string = "";
   updateTime: string = "";
   postMenus: any[] = [];
-  // winListener: any = null;
   currentIndex: number = 0;
   isMobile: Boolean = true;
   $isMobile: any;
@@ -136,8 +112,6 @@ export default class Post extends Vue {
       document.documentElement.scrollTop || document.body.scrollTop;
     this.menuBarFixed = offsetTop > 320;
     this.currentIndex = offsetTop === 0 ? 0 : this.currentIndex;
-
-    this.scrollHandler();
   }
 
   async getArticleInfo() {
@@ -151,7 +125,6 @@ export default class Post extends Vue {
   }
 
   initTitle(titles: any) {
-    // this.postMenus = titles;
     let test: Array<title> = [];
     let firstTitleLevel = titles[0].level;
     let key = 0;
@@ -176,26 +149,6 @@ export default class Post extends Vue {
     }
 
     this.postMenus = test;
-  }
-
-  scrollHandler() {
-    const idPrefix = "h-";
-    const distance = 160;
-    let list = [];
-    for (let i = 0; i < this.postMenus.length; i++) {
-      let dom: any = document.getElementById(`${idPrefix}${i}`);
-      list.push({
-        y: dom.getBoundingClientRect().top + 10, // 利用dom.getBoundingClientRect().top可以拿到元素相对于显示器的动态y轴坐标
-        index: i
-      });
-    }
-
-    let readingVO = list
-      .filter(item => item.y > distance)
-      .sort((a, b) => {
-        return a.y - b.y;
-      })[0]; // 对所有的y值为正标的题，按y值升序排序。第一个标题就是当前处于阅读中的段落的标题。也即要高亮的标题
-    this.currentIndex = readingVO.index >= 1 ? readingVO.index - 1 : 0; // for循环i加了1
   }
 
   beforeDestroy(): void {

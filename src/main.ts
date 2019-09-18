@@ -5,6 +5,8 @@ import store from "./store";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
+Vue.use(VueAxios, axios);
+
 // 引入highlight代码高亮插件
 // @ts-ignore
 import hljs from "highlight.js";
@@ -22,8 +24,6 @@ Vue.prototype.$isMobile = isMobile.phone;
 
 // 引入gitalk评论模块
 import "gitalk/dist/gitalk.css";
-
-Vue.use(VueAxios, axios);
 
 Vue.config.productionTip = false;
 

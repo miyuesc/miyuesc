@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { queryPost, queryTag } from "@/utils/services";
+import {queryPost, queryTag, increaseHot, queryHot} from "@/utils/services";
 
 Vue.use(Vuex);
 
@@ -18,6 +18,16 @@ export default new Vuex.Store({
     // 获取文章详情
     async queryPost(context, { number }) {
       return await queryPost(number);
-    }
+    },
+
+    // 获取文章热度
+    async queryHot(context, { ids }) {
+      return await queryHot(ids);
+    },
+
+    // 增加热度
+    async increaseHot(context, { post }) {
+      return await increaseHot(post)
+    },
   }
 });
