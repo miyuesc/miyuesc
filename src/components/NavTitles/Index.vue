@@ -4,15 +4,19 @@
       <a
         class="nav-list-li-a"
         :href="nav.href"
-        :class="currentIndex === index ? 'active' : ''"
+        :class="
+          current === nav || nav.children.includes(current) ? 'active' : ''
+        "
         >{{ nav.title }}</a
       >
       <ul
         class="nav-children-list"
-        v-show="nav.children && currentIndex === index"
+        v-if="current === nav || nav.children.includes(current)"
       >
         <li v-for="(n, i) in nav.children" :key="i">
-          <a :href="n.href">{{ n.title }}</a>
+          <a :href="n.href" :class="current === n ? 'reading' : ''">{{
+            n.title
+          }}</a>
         </li>
       </ul>
     </li>
@@ -26,29 +30,32 @@ import { title } from "@/utils/interface";
 export default class NavTitles extends Vue {
   @Prop({ type: Array, default: () => [], required: true })
   data!: Array<title>;
-
-  currentIndex: number = 0;
+  current: any = null;
 
   winScrollHandler() {
-    const distance = 100;
-    let list = [];
-    for (let i = 0; i < this.data.length; i++) {
+    const topDistance = 100;
+    let titlesList: title[] = [];
+    let distanceList: any[] = [];
+    this.data.forEach(i => {
+      titlesList.push(i);
+      if (i.children.length) titlesList.push(...i.children);
+    });
+    for (let i = 0; i < titlesList.length; i++) {
       let dom: any = document.getElementById(
-        `${this.data[i].href.replace(/#/g, "")}`
+        `${titlesList[i].href.replace(/#/g, "")}`
       );
-      list.push({
+      distanceList.push({
         y: dom.getBoundingClientRect().top + 10, // 利用dom.getBoundingClientRect().top可以拿到元素相对于显示器的动态y轴坐标
-        index: i
+        index: i,
+        item: titlesList[i]
       });
     }
-
-    let readingVO = list.filter(item => item.y > distance)[0];
-
-    this.currentIndex = readingVO
-      ? readingVO.index > 1
-        ? readingVO.index - 1
-        : 0
-      : this.data.length - 1;
+    let readingVO = distanceList.filter(item => item.y > topDistance)[0];
+    this.current = readingVO
+      ? distanceList[readingVO.index - 1]
+        ? distanceList[readingVO.index - 1].item
+        : distanceList[0].item
+      : distanceList[distanceList.length - 1].item;
   }
 
   created() {
@@ -115,6 +122,7 @@ export default class NavTitles extends Vue {
       li {
         font-family: Lato, PingFang SC, Microsoft YaHei, sans-serif;
         a {
+          transition: all ease-in-out 0.4s;
           display: block;
           overflow: hidden;
           white-space: nowrap;
@@ -127,6 +135,17 @@ export default class NavTitles extends Vue {
             color: #ff773e;
             max-width: 4.2rem;
             height: auto;
+          }
+        }
+        .reading {
+          color: #ff773e;
+          padding-left: 0.18rem;
+          &::before {
+            content: "\27A5   ";
+            /*font-size: 0.12rem;*/
+          }
+          &:hover {
+            padding-left: 0.2rem;
           }
         }
       }
