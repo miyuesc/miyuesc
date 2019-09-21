@@ -19,12 +19,12 @@ export default class Comment extends Vue {
 
   mounted() {
     const gitalk: any = new Gitalk({
-      // clientID: config.gitalk.clientID,
-      // clientSecret: config.gitalk.clientSecret,
-      // repo: config.gitalk.repo,
-      // owner: config.gitalk.owner,
-      // admin: config.gitalk.admin,
-      ...config.gitalk,
+      clientID: config.gitalk.clientID,
+      clientSecret: config.gitalk.clientSecret,
+      repo: config.gitalk.repo,
+      owner: config.gitalk.owner,
+      admin: config.gitalk.admin,
+      // ...config.gitalk,
       id: this.id + "-" + this.number,
       title: this.title
     });

@@ -1,6 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import {queryPost, queryTag, increaseHot, queryHot} from "@/utils/services";
+import {
+  queryPost,
+  queryTag,
+  increaseHot,
+  queryHot,
+  queryClosed
+} from "@/utils/services";
 
 Vue.use(Vuex);
 
@@ -27,7 +33,11 @@ export default new Vuex.Store({
 
     // 增加热度
     async increaseHot(context, { post }) {
-      return await increaseHot(post)
+      return await increaseHot(post);
     },
+
+    async queryClosed(context, { type }) {
+      return await queryClosed(type);
+    }
   }
 });

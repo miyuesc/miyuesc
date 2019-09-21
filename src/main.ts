@@ -25,6 +25,9 @@ Vue.prototype.$isMobile = isMobile.phone;
 // 引入gitalk评论模块
 import "gitalk/dist/gitalk.css";
 
+import Loading from "@/components/Loading/index";
+Vue.use(Loading);
+
 Vue.config.productionTip = false;
 
 const vm = new Vue({

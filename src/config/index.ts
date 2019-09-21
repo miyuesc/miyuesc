@@ -27,7 +27,7 @@ export default {
     repo: "miyuesc.github.io", // 存放评论的仓库
     owner: "miyuesc", // 仓库的创建者，
     admin: ["miyuesc"], // 如果仓库有多个人可以操作，那么在这里以数组形式写出
-    distractionFreeMode: false // 是否开始无干扰模式【背景遮罩】
+    distractionFreeMode: true // 是否开始无干扰模式【背景遮罩】
   },
 
   /**
@@ -58,12 +58,12 @@ export default {
       icon: require("../assets/icons/icon_timeline.svg")
     },
     {
-      path: "/Blog",
+      path: "/blog",
       label: "Blog",
       icon: require("../assets/icons/icon_file.svg")
     },
     {
-      path: "/",
+      path: "/home",
       label: "Home",
       icon: require("../assets/icons/icon_homepage.svg")
     }

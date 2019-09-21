@@ -5,6 +5,11 @@ const routes: any[] = [
     component: () => import("@/views/Home/Index.vue")
   },
   {
+    path: "/home",
+    name: "home",
+    component: () => import("@/views/Home/Index.vue")
+  },
+  {
     path: "/about",
     name: "about",
     component: () => import("@/views/About/Index.vue")

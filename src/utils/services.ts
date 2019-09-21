@@ -2,6 +2,7 @@ import config from "@/config";
 import { Vue } from "vue-property-decorator";
 import documents from "./documents";
 import AV from "./leancloud";
+import { AxiosResponse } from "axios";
 
 const GRAPHQL_URL = "https://api.github.com/graphql";
 const GITHUB_API = "https://api.github.com/repos";
@@ -130,4 +131,27 @@ export const increaseHot = (post: any) => {
       }
     });
   });
+};
+
+export const queryClosed = async (type: any) => {
+  try {
+    let { data: data } = await Vue.axios.get(
+      `${blog}/issues?${closed}&labels=${type}`
+    );
+    return data;
+  } catch (e) {
+    return e;
+  }
+
+  // return new Promise(resolve => {
+  //   Vue.axios
+  //     .get(`${blog}/issues?${closed}&labels=${type}`)
+  //     .then((res: AxiosResponse) => {
+  //       if (res.status) {
+  //         return res.data;
+  //       } else {
+  //         return [];
+  //       }
+  //     });
+  // });
 };
