@@ -61,11 +61,11 @@ export default {
     }
   },
   beforeCreate() {
-    if (this.$isMobile) {
-      document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
-    } else {
-      document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
-    }
+    // if (this.$isMobile) {
+    //   document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+    // } else {
+    //   document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+    // }
   }
 };
 </script>

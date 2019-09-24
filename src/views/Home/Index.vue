@@ -26,7 +26,7 @@
           v-for="(i, k) in contacts"
           :key="k"
           :class="i.code ? 'has_code' : ''"
-          @mouseenter="showCode = i.code && !showCode ? true : false"
+          @mouseenter="showCode = !!(i.code && !showCode)"
           @mouseleave="showCode = false"
         >
           <a :href="i.link" rel="noopener noreferrer" target="_blank">
@@ -49,7 +49,17 @@
       </ul>
     </div>
     <div class="main-content">
-      <h2>Hello World</h2>
+      <div class="news-div">NEWS</div>
+      <div class="news">
+        <div class="news-item" v-for="i in newsData" :key="i.number">
+          <img
+            :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
+            @click="gotoPost(i.number)"
+            :alt="i.title"
+          />
+          <div class="news-item-title">{{ i.title }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +67,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import config from "@/config/index";
+import { queryPosts } from "@/utils/services";
 
 @Component({})
 export default class Home extends Vue {
@@ -66,14 +77,27 @@ export default class Home extends Vue {
   bgOpacity: boolean = false;
   showCode: boolean = false;
   contacts: any[] = config.contact;
+  newsData: any[] = [];
   subTitle: string = config.subTitle;
   doLoading: boolean = true;
   isMobile: Boolean = true;
   $isMobile: any;
+  filter: any = {
+    page: 1,
+    pageSize: 3
+  };
 
   created() {
     this.isMobile = this.$isMobile;
     this.background = this.bgs[this.bgIndex];
+    this.queryNews();
+  }
+
+  queryNews() {
+    queryPosts(this.filter).then((data: any) => {
+      this.doLoading = false;
+      this.newsData = data;
+    });
   }
 
   bgDownload() {

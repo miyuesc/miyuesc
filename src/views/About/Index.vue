@@ -22,23 +22,27 @@
             <div class="work-main-content">
               工作内容：
               <ul>
-                <li v-for="j in i.mainContent" :key="j.label">
-                  {{ j.text }}
+                <li v-for="(j, jk) in i.mainContent" :key="j.label">
+                  {{ `${jk} : ${j.text}` }}
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="about-item project-experience">
-          <div class="project-item" v-for="(i, k) in projectExperience" :key="k">
-            <div>{{ i.projectName }}</div>
-            <div>{{ i.time }}</div>
-            <div>{{ i.role }}</div>
+          <div
+            class="project-item"
+            v-for="(i, k) in projectExperience"
+            :key="k"
+          >
+            <div class="project-item-name">{{ i.projectName }}</div>
+            <div>时间：{{ i.time }}</div>
+            <div>角色：{{ i.role }}</div>
             <div class="project-desc">
               项目内容：
               <ul>
-                <li v-for="n in i.peojectDesc" :key="n.label">
-                  {{ n.text }}
+                <li v-for="(n, nk) in i.peojectDesc" :key="n.label">
+                  {{ `${nk} : ${n.text}` }}
                 </li>
               </ul>
             </div>
@@ -50,7 +54,8 @@
                 </li>
               </ul>
             </div>
-            <div>{{ i.technology }}</div>
+            <div>技术栈：{{ i.technology }}</div>
+            <hr />
           </div>
         </div>
       </div>

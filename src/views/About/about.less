@@ -33,7 +33,7 @@
       border-radius: 0.06rem;
       padding: .2rem .4rem;
       font-size: 0.2rem;
-      line-height: 0.24rem;
+      line-height: 0.32rem;
       flex-direction: column;
       .about-item {
         margin: 0.2rem 0;
@@ -96,6 +96,11 @@
         width: 100%;
         flex-direction: column;
         .project-item {
+          .project-item-name {
+            color: #fb9759;
+            font-weight: bold;
+            padding: 0.2rem 0;
+          }
           &::before{
             content: ""
           }
@@ -114,4 +119,8 @@
       }
     }
   }
+}
+.attr-item-title {
+  width: 0.8rem;
+  text-align: justify;
 }
