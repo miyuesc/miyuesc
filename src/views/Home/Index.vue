@@ -51,7 +51,12 @@
     <div class="main-content">
       <div class="news-div">NEWS</div>
       <div class="news">
-        <div class="news-item" v-for="i in newsData" :key="i.number">
+        <div
+          class="news-item"
+          @click="getPost(i.number)"
+          v-for="i in newsData"
+          :key="i.number"
+        >
           <img
             :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
             @click="gotoPost(i.number)"
@@ -101,7 +106,7 @@ export default class Home extends Vue {
   }
 
   bgDownload() {
-    this.doLoading = false;
+    // this.doLoading = false;
   }
   changeBg(direction: any) {
     // this.doLoading = true;
@@ -125,6 +130,10 @@ export default class Home extends Vue {
       }
       this.background = this.bgs[this.bgIndex];
     }, 800);
+  }
+  // 查看文章
+  getPost(number: any) {
+    this.$router.push({ name: "post", params: { number } });
   }
 }
 </script>
