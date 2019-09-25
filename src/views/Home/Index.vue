@@ -1,71 +1,70 @@
 <template>
   <div class="home">
-    <div class="loading" v-if="doLoading && !isMobile">
-      <img src="../../assets/icons/loading.gif" alt="loading" />
-    </div>
-
-    <section id="background" class="background">
-      <img
-        :src="background"
-        @load="bgDownload"
-        :class="bgOpacity ? 'changing' : '0'"
-      />
-    </section>
-    <div class="title" data-value="HI,MIYUESC!">HI,MIYUESC!</div>
-    <div class="tools">
-      <div class="text">
-        <img src="../../assets/icons/quotes.svg" style="float: left" />
-        <span>{{ subTitle }}</span>
-        <img src="../../assets/icons/quotes.svg" style="float: right" />
-      </div>
-      <ul class="tools-box">
-        <li @click="changeBg('pre')">
-          <img src="../../assets/icons/angle-left.svg" />
-        </li>
-        <li
-          v-for="(i, k) in contacts"
-          :key="k"
-          :class="i.code ? 'has_code' : ''"
-          @mouseenter="showCode = !!(i.code && !showCode)"
-          @mouseleave="showCode = false"
-        >
-          <a :href="i.link" rel="noopener noreferrer" target="_blank">
-            <img
-              :src="i.icon"
-              alt="i.label"
-              style="width: 0.2rem; height: 0.2rem"
-          /></a>
-          <div
-            v-if="i.code"
-            class="code"
-            :style="{ opacity: showCode ? 1 : 0 }"
+    <loading v-if="doLoading"> </loading>
+    <template v-else>
+      <section id="background" class="background">
+        <img
+          :src="background"
+          @load="bgDownload"
+          :class="bgOpacity ? 'changing' : '0'"
+        />
+      </section>
+      <div class="title" data-value="HI,MIYUESC!">HI,MIYUESC!</div>
+      <div class="tools">
+        <div class="text">
+          <img src="../../assets/icons/quotes.svg" style="float: left" />
+          <span>{{ subTitle }}</span>
+          <img src="../../assets/icons/quotes.svg" style="float: right" />
+        </div>
+        <ul class="tools-box">
+          <li @click="changeBg('pre')">
+            <img src="../../assets/icons/angle-left.svg" />
+          </li>
+          <li
+            v-for="(i, k) in contacts"
+            :key="k"
+            :class="i.code ? 'has_code' : ''"
+            @mouseenter="showCode = !!(i.code && !showCode)"
+            @mouseleave="showCode = false"
           >
-            <img :src="i.code" class="code-image" />
+            <a :href="i.link" rel="noopener noreferrer" target="_blank">
+              <img
+                :src="i.icon"
+                alt="i.label"
+                style="width: 0.2rem; height: 0.2rem"
+            /></a>
+            <div
+              v-if="i.code"
+              class="code"
+              :style="{ opacity: showCode ? 1 : 0 }"
+            >
+              <img :src="i.code" class="code-image" />
+            </div>
+          </li>
+          <li @click="changeBg('next')">
+            <img src="../../assets/icons/angle-right.svg" />
+          </li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <div class="news-div">NEWS</div>
+        <div class="news">
+          <div
+            class="news-item"
+            @click="getPost(i.number)"
+            v-for="i in newsData"
+            :key="i.number"
+          >
+            <img
+              :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
+              @click="gotoPost(i.number)"
+              :alt="i.title"
+            />
+            <div class="news-item-title">{{ i.title }}</div>
           </div>
-        </li>
-        <li @click="changeBg('next')">
-          <img src="../../assets/icons/angle-right.svg" />
-        </li>
-      </ul>
-    </div>
-    <div class="main-content">
-      <div class="news-div">NEWS</div>
-      <div class="news">
-        <div
-          class="news-item"
-          @click="getPost(i.number)"
-          v-for="i in newsData"
-          :key="i.number"
-        >
-          <img
-            :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
-            @click="gotoPost(i.number)"
-            :alt="i.title"
-          />
-          <div class="news-item-title">{{ i.title }}</div>
         </div>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
