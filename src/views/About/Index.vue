@@ -1,6 +1,7 @@
 <template>
   <div class="about">
-    <div class="main">
+    <loading v-if="doLoading"> </loading>
+    <div class="main" v-else>
       <div class="cover">
         <span>ABOUT ME</span>
       </div>
@@ -70,12 +71,15 @@ import { education, personal, project, work } from "@/utils/interface";
 @Component({})
 export default class About extends Vue {
   loaded: boolean = true;
+  doLoading: boolean = true;
   educationExperience: education = about.educationExperience;
   personalAdvantage: personal = about.personalAdvantage;
   workExperience: work[] = about.workExperience;
   projectExperience: project[] = about.projectExperience;
 
-  created() {}
+  created() {
+    setTimeout(() => (this.doLoading = false), 300);
+  }
 }
 </script>
 

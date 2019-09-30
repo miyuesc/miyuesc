@@ -1,12 +1,6 @@
 <template>
   <div class="blog">
-    <div class="loading" v-if="doLoading">
-      <img
-        src="../../assets/icons/loading.gif"
-        alt="loading"
-        style="margin: auto; width: .60rem; height: .60rem"
-      />
-    </div>
+    <loading v-if="doLoading"> </loading>
 
     <div class="main" v-else>
       <div class="cover">
@@ -36,6 +30,7 @@
               <img
                 :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
                 @click="gotoPost(i.number)"
+                :alt="i.title"
               />
             </div>
           </article>

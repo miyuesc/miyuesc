@@ -1,12 +1,6 @@
 <template>
   <div class="post">
-    <div class="loading" v-if="doLoading">
-      <img
-        src="../../assets/icons/loading.gif"
-        alt="loading"
-        style="margin: auto; width: 0.6rem; height: 0.6rem"
-      />
-    </div>
+    <loading v-if="doLoading"> </loading>
 
     <div class="main" v-else>
       <div

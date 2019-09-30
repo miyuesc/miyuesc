@@ -7,6 +7,7 @@
           :src="background"
           @load="bgDownload"
           :class="bgOpacity ? 'changing' : '0'"
+          alt="background"
         />
       </section>
       <div class="title" data-value="HI,MIYUESC!">HI,MIYUESC!</div>
