@@ -3,6 +3,7 @@ import { Vue } from "vue-property-decorator";
 import documents from "./documents";
 import AV from "./leancloud";
 import { AxiosResponse } from "axios";
+import { reject } from "q";
 
 const GRAPHQL_URL = "https://api.github.com/graphql";
 const GITHUB_API = "https://api.github.com/repos";
@@ -43,6 +44,16 @@ const createCall = async (document: any) => {
 // 获取所有文章总数
 export const queryPostsTotal = async () =>
   createCall(documents.queryArchivesCount({ username, repository }));
+// 获取分类文章总数
+export const queryTagTotal = async ({ label = "", milestone = "" }) =>
+  createCall(
+    documents.queryFilterArchivesCount({
+      username,
+      repository,
+      label,
+      milestone
+    })
+  );
 
 // 获取文章列表
 export const queryPosts = async ({ page = 1, pageSize = 10, filter = "" }) => {
@@ -132,8 +143,8 @@ export const increaseHot = (post: any) => {
     });
   });
 };
-
-export const queryClosed = async (type: any) => {
+// 获取closed状态issues
+export const queryClosed = async (type: string) => {
   try {
     let { data: data } = await Vue.axios.get(
       `${blog}/issues?${closed}&labels=${type}`
@@ -142,16 +153,43 @@ export const queryClosed = async (type: any) => {
   } catch (e) {
     return e;
   }
+};
 
-  // return new Promise(resolve => {
-  //   Vue.axios
-  //     .get(`${blog}/issues?${closed}&labels=${type}`)
-  //     .then((res: AxiosResponse) => {
-  //       if (res.status) {
-  //         return res.data;
-  //       } else {
-  //         return [];
-  //       }
-  //     });
-  // });
+// 测试插入时间线
+export const queryAddArchive = async (post: any) => {
+  return new Promise((resolve, reject) => {
+    const query = new AV.Query("Archive");
+    const Archive: any = AV.Object.extend("Archive");
+    let { title, id, summary, isYear, date } = post;
+    query.equalTo("id", id);
+    query.find().then((res: any) => {
+      if (res.length > 0) {
+        reject("已存在记录！");
+      } else {
+        const newAr = new Archive();
+        newAr.set("id", id);
+        newAr.set("title", title);
+        newAr.set("date", date.substring(0, 10));
+        newAr.set("summary", summary);
+        newAr.set("isYear", isYear);
+        newAr.set("year", Number(date.substring(0, 4)));
+        newAr
+          .save()
+          .then((res: any) => resolve(res))
+          .catch((error: any) => reject(error));
+      }
+    });
+  });
+};
+// 测试查询时间线
+export const queryArchive = async () => {
+  return new Promise((resolve, reject) => {
+    const query = new AV.Query("Archive");
+    query
+      .find()
+      .then((res: any) => {
+        resolve(res);
+      })
+      .catch((error: any) => reject(error));
+  });
 };

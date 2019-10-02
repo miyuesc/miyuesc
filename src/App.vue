@@ -51,21 +51,26 @@ export default {
     }
   },
   methods: {
-    // 设置字体
+    // 设置字号
     setRem() {
-      if (this.$isMobile) {
-        document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+      const html = document.documentElement;
+      const hWidth = html.getBoundingClientRect().width;
+      // html.style.fontSize = fz <= 100 ? fz + "px" : "100px";
+      if (hWidth > 750) {
+        html.style.fontSize = "100px";
       } else {
-        document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
+        html.style.fontSize = `${hWidth / 7.5}px`;
       }
     }
   },
-  beforeCreate() {
+  created() {
     // if (this.$isMobile) {
     //   document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
     // } else {
     //   document.documentElement.style.fontSize = `${deviceWidth / 19.2}px`;
     // }
+    this.setRem();
+    window.addEventListener("resize", this.setRem());
   }
 };
 </script>

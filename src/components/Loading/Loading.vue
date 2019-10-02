@@ -27,6 +27,7 @@ export default class Loading extends Vue {}
   display: flex;
   img {
     margin: auto;
+    max-width: 50vw;
   }
 }
 </style>

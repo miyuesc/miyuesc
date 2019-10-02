@@ -113,7 +113,13 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Prop, Model, Watch } from "vue-property-decorator";
-import { queryPosts, queryCategory, queryPostsTotal } from "@/utils/services";
+import {
+  queryPosts,
+  queryCategory,
+  queryPostsTotal,
+  queryTagTotal,
+  queryArchive
+} from "@/utils/services";
 import MarkDown from "@/components/MarkDown/Index.vue";
 
 @Component({
@@ -147,7 +153,7 @@ export default class Blog extends Vue {
     await this.getCategory();
     this.getAllBlog();
     this.isMobile = this.$isMobile;
-    this.test();
+    queryArchive().then((res: any) => {});
   }
   // 获取所有文章
   getAllBlog() {
@@ -159,13 +165,12 @@ export default class Blog extends Vue {
         i.updateTime = i.updated_at.toString().substring(0, 10);
       });
     });
-  }
-  test() {
     queryPostsTotal().then((data: any) => {
       // console.log(data);
       this.total = data.repository.issues.totalCount;
     });
   }
+
   changePage(type: string) {
     this.doLoading = true;
     type === "next" ? this.filter.page++ : this.filter.page--;
@@ -195,6 +200,8 @@ export default class Blog extends Vue {
     this.doLoading = true;
     this.filter.filter =
       type === "tag" ? `&labels=${filter}` : `&milestone=${filter}`;
+    let labels: string = type === "tag" ? filter : "";
+    let milestone: string = type === "category" ? filter : "";
     queryPosts(this.filter).then((data: any) => {
       this.articles = data;
       this.articles.forEach((i: any) => {
@@ -202,11 +209,14 @@ export default class Blog extends Vue {
       });
       this.doLoading = false;
     });
+    queryTagTotal({ label: labels, milestone: milestone }).then(
+      (data: any) => (this.total = data.search.issueCount)
+    );
   }
   // 重置筛选
   resetFilter() {
     this.doLoading = true;
-    this.filter = { page: 1, pageSize: 10, filter: "" };
+    this.filter = { page: 1, pageSize: 5, filter: "" };
     this.getAllBlog();
   }
 }

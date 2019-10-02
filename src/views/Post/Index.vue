@@ -60,6 +60,7 @@ import NavTitles from "@/components/NavTitles/Index.vue";
 import { formatJSONDate } from "@/utils/format";
 // import { queryPost } from "@/utils/services";
 import { title } from "@/utils/interface";
+import { queryAddArchive, queryArchive } from "@/utils/services";
 
 const w: any = window;
 const d: any = document;
@@ -116,6 +117,17 @@ export default class Post extends Vue {
     this.background = this.articleInfo.body.match(/http\S*png/)
       ? this.articleInfo.body.match(/http\S*png/)
       : this.articleInfo.body.match(/http\S*jpg/);
+    queryAddArchive({
+      title: this.articleInfo.title,
+      id: this.articleInfo.id,
+      date: formatJSONDate(this.articleInfo.created_at),
+      isYear: false,
+      summary: this.articleInfo.body
+        .split("summary_start")[1]
+        .split("summary_end")[0]
+    }).then(() => {
+      return null;
+    });
   }
 
   initTitle(titles: any) {
