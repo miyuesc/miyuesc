@@ -1,12 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import {
-  queryPost,
-  queryTag,
-  increaseHot,
-  queryHot,
-  queryClosed
-} from "@/utils/services";
+import { queryPost, queryTag, increaseHot, queryHot, queryClosed } from "@/utils/services";
 
 Vue.use(Vuex);
 

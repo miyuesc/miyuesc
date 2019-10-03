@@ -19,10 +19,11 @@ export default function linenumber(hljs: any) {
   function addStyles() {
     const css = d.createElement("style");
     css.type = "text/css";
-    css.innerHTML = format(
-      ".{0}{border-collapse:collapse}" + ".{1}:before{content:attr({2})}",
-      [TABLE_NAME, NUMBER_LINE_NAME, DATA_ATTR_NAME]
-    );
+    css.innerHTML = format(".{0}{border-collapse:collapse}" + ".{1}:before{content:attr({2})}", [
+      TABLE_NAME,
+      NUMBER_LINE_NAME,
+      DATA_ATTR_NAME
+    ]);
     d.getElementsByTagName("head")[0].appendChild(css);
   }
 

@@ -31,11 +31,7 @@
           </div>
         </div>
         <div class="about-item project-experience">
-          <div
-            class="project-item"
-            v-for="(i, k) in projectExperience"
-            :key="k"
-          >
+          <div class="project-item" v-for="(i, k) in projectExperience" :key="k">
             <div class="project-item-name">{{ i.projectName }}</div>
             <div>时间：{{ i.time }}</div>
             <div>角色：{{ i.role }}</div>

@@ -24,9 +24,7 @@ export const formatJSONDate = (jsonDate: string): string => {
 // 2018-11-11 15:53:15 => November 11, 2018
 export const formatCommonDate = (date: string): string => {
   const dataList = date.split(" ")[0].split("-");
-  return `${months[parseInt(dataList[1], 10) - 1]} ${dataList[2]}, ${
-    dataList[0]
-  }`;
+  return `${months[parseInt(dataList[1], 10) - 1]} ${dataList[2]}, ${dataList[0]}`;
 };
 
 export const formatAbout = (data: string) => {

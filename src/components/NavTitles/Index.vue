@@ -4,19 +4,12 @@
       <a
         class="nav-list-li-a"
         :href="nav.href"
-        :class="
-          current === nav || nav.children.includes(current) ? 'active' : ''
-        "
+        :class="current === nav || nav.children.includes(current) ? 'active' : ''"
         >{{ nav.title }}</a
       >
-      <ul
-        class="nav-children-list"
-        v-if="current === nav || nav.children.includes(current)"
-      >
+      <ul class="nav-children-list" v-if="current === nav || nav.children.includes(current)">
         <li v-for="(n, i) in nav.children" :key="i">
-          <a :href="n.href" :class="current === n ? 'reading' : ''">{{
-            n.title
-          }}</a>
+          <a :href="n.href" :class="current === n ? 'reading' : ''">{{ n.title }}</a>
         </li>
       </ul>
     </li>
@@ -41,9 +34,7 @@ export default class NavTitles extends Vue {
       if (i.children.length) titlesList.push(...i.children);
     });
     for (let i = 0; i < titlesList.length; i++) {
-      let dom: any = document.getElementById(
-        `${titlesList[i].href.replace(/#/g, "")}`
-      );
+      let dom: any = document.getElementById(`${titlesList[i].href.replace(/#/g, "")}`);
       distanceList.push({
         y: dom.getBoundingClientRect().top + 10, // 利用dom.getBoundingClientRect().top可以拿到元素相对于显示器的动态y轴坐标
         index: i,

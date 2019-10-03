@@ -22,8 +22,7 @@ export default class BlogFooter extends Vue {}
   padding: 0.04rem 10vw;
   position: relative;
   z-index: 99;
-  font-family: "PingFang SS", "Microsoft YaHei UI", "Apple Color Emoji",
-    "Ubuntu", sans-serif;
+  font-family: "PingFang SS", "Microsoft YaHei UI", "Apple Color Emoji", "Ubuntu", sans-serif;
   div {
     padding: 0;
     margin: 0 auto;

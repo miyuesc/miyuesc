@@ -6,12 +6,7 @@
     </div>
     <div class="nav">
       <ul class="menus">
-        <li
-          class="menu-item"
-          v-for="(i, k) in menus"
-          :key="k"
-          @click="toPage(i.path)"
-        >
+        <li class="menu-item" v-for="(i, k) in menus" :key="k" @click="toPage(i.path)">
           <img :src="i.icon" />
           <span>{{ i.label }}</span>
         </li>
@@ -40,8 +35,7 @@ export default class BlogHeader extends Vue {
       this.isTop = true;
     }
     window.addEventListener("scroll", () => {
-      const tops =
-        document.documentElement.scrollTop || document.body.scrollTop;
+      const tops = document.documentElement.scrollTop || document.body.scrollTop;
       this.isTop = !tops;
     });
   }

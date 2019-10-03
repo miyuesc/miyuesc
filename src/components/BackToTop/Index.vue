@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="back-to-top"
-    @click="turnToTop()"
-    :style="{ top: visible ? '-10px' : '-90vh' }"
-  >
+  <div class="back-to-top" @click="turnToTop()" :style="{ top: visible ? '-10px' : '-90vh' }">
     <img src="../../assets/icons/backtop.png" />
   </div>
 </template>
@@ -20,8 +16,7 @@ export default class BackToTop extends Vue {
       this.visible = true;
     }
     window.addEventListener("scroll", () => {
-      const tops =
-        document.documentElement.scrollTop || document.body.scrollTop;
+      const tops = document.documentElement.scrollTop || document.body.scrollTop;
       this.visible = tops > 100;
     });
   }

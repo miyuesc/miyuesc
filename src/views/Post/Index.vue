@@ -43,10 +43,7 @@
           </div>
         </div>
         <div class="post-menu" id="post-menu" v-if="!isMobile">
-          <nav-titles
-            :data="postMenus"
-            :class="menuBarFixed ? 'isFixed' : ''"
-          ></nav-titles>
+          <nav-titles :data="postMenus" :class="menuBarFixed ? 'isFixed' : ''"></nav-titles>
         </div>
       </div>
     </div>
@@ -103,8 +100,7 @@ export default class Post extends Vue {
   }
 
   async winListener() {
-    const offsetTop: number =
-      document.documentElement.scrollTop || document.body.scrollTop;
+    const offsetTop: number = document.documentElement.scrollTop || document.body.scrollTop;
     this.menuBarFixed = offsetTop > 320;
     this.currentIndex = offsetTop === 0 ? 0 : this.currentIndex;
   }
@@ -122,9 +118,7 @@ export default class Post extends Vue {
       id: this.articleInfo.id,
       date: formatJSONDate(this.articleInfo.created_at),
       isYear: false,
-      summary: this.articleInfo.body
-        .split("summary_start")[1]
-        .split("summary_end")[0]
+      summary: this.articleInfo.body.split("summary_start")[1].split("summary_end")[0]
     }).then(() => {
       return null;
     });

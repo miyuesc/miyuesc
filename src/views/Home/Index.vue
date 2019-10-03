@@ -29,16 +29,9 @@
             @mouseleave="showCode = false"
           >
             <a :href="i.link" rel="noopener noreferrer" target="_blank">
-              <img
-                :src="i.icon"
-                alt="i.label"
-                style="width: 0.2rem; height: 0.2rem"
+              <img :src="i.icon" alt="i.label" style="width: 0.2rem; height: 0.2rem"
             /></a>
-            <div
-              v-if="i.code"
-              class="code"
-              :style="{ opacity: showCode ? 1 : 0 }"
-            >
+            <div v-if="i.code" class="code" :style="{ opacity: showCode ? 1 : 0 }">
               <img :src="i.code" class="code-image" />
             </div>
           </li>
@@ -50,12 +43,7 @@
       <div class="main-content">
         <div class="news-div">NEWS</div>
         <div class="news">
-          <div
-            class="news-item"
-            @click="getPost(i.number)"
-            v-for="i in newsData"
-            :key="i.number"
-          >
+          <div class="news-item" @click="getPost(i.number)" v-for="i in newsData" :key="i.number">
             <img
               :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
               @click="gotoPost(i.number)"

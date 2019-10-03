@@ -91,8 +91,7 @@ export default {
   contact: [
     {
       icon: require("../assets/icons/mail-send-fill.svg"),
-      link:
-        "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=P0dWUQYKDw1-WVBHUl5WUxFcUFI"
+      link: "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=P0dWUQYKDw1-WVBHUl5WUxFcUFI"
     },
     {
       icon: require("../assets/icons/github-fill.svg"),

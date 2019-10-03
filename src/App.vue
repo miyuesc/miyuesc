@@ -27,9 +27,7 @@ import BackToTop from "@/components/BackToTop/Index.vue";
 // })
 
 const deviceWidth =
-  document.documentElement.clientWidth > 1920
-    ? document.documentElement.clientWidth
-    : 1920;
+  document.documentElement.clientWidth > 1920 ? document.documentElement.clientWidth : 1920;
 
 export default {
   name: "App",

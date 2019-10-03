@@ -146,9 +146,7 @@ export const increaseHot = (post: any) => {
 // 获取closed状态issues
 export const queryClosed = async (type: string) => {
   try {
-    let { data: data } = await Vue.axios.get(
-      `${blog}/issues?${closed}&labels=${type}`
-    );
+    let { data: data } = await Vue.axios.get(`${blog}/issues?${closed}&labels=${type}`);
     return data;
   } catch (e) {
     return e;

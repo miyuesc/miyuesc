@@ -16,15 +16,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   text-indent: unset;
 }
 .h-title {
+  border-bottom: .01rem dashed lightgray;
+  line-height: 1.5;
   &:hover {
     color: #ffa500;
-  }
-  &::before {
-    content: "\1F517";
-    padding-right: .2rem;
-    &:hover {
-      color: #ffa500;
-    }
   }
 }
 .hljs-ln-line {
@@ -55,7 +50,12 @@ p {
   line-height: 0.26rem;
   font-family: Lato,PingFang SC,Microsoft YaHei,sans-serif;
   code {
-    background: #151718;
+    background: rgba(103, 193, 246, 0.7);
+    border-radius: 0.04rem;
+    font-family: Consolas, Monaco, "Andale Mono", monospace;
+    color: #ffffff;
+    padding: 0.02rem 0.04rem;
+    margin: 0 0.04rem auto;
   }
 }
 li {

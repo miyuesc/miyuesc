@@ -35,7 +35,7 @@ export default class MarkDown extends Vue {
         return `<a class="hidden-anchor" ref="hiddenAnchor" id="h-${index}"></a><h${level +
           1} class="hljs-title h-title">${text}</h${level + 1}>`;
       } else {
-        return `<h${level + 1}>${text}</h${level + 1}`;
+        return `<h${level + 1} class="hljs-title h-title">${text}</h${level + 1}>`;
       }
     };
     renderer.image = function(href: string, title: string, text: string) {
@@ -54,9 +54,7 @@ export default class MarkDown extends Vue {
 
     if (this.onlyRender && this.content.split("summary_start")[1]) {
       // 显示简介
-      this.html = marked(
-        this.content.split("summary_start")[1].split("summary_end")[0]
-      );
+      this.html = marked(this.content.split("summary_start")[1].split("summary_end")[0]);
     } else {
       this.html = marked(this.content.split("summary_end")[1]); // 显示正文
       this.$emit("created", titles);
@@ -109,7 +107,7 @@ export default class MarkDown extends Vue {
     * {
       margin: 0.04rem 0;
       font-size: 0.14rem;
-      line-height: 0.2rem;
+      line-height: 0.24rem;
     }
   }
   .hljs {

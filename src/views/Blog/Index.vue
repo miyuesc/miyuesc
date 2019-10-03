@@ -67,10 +67,7 @@
           <div class="tags-list">
             <div class="tags-title">
               <img src="../../assets/icons/tag.svg" />
-              <span
-                style="vertical-align: top"
-                class="tag-box-title"
-                @click="resetFilter"
+              <span style="vertical-align: top" class="tag-box-title" @click="resetFilter"
                 >Tags</span
               >
             </div>
@@ -198,8 +195,7 @@ export default class Blog extends Vue {
   // 筛选查看
   queryFilter(filter: any, type: string) {
     this.doLoading = true;
-    this.filter.filter =
-      type === "tag" ? `&labels=${filter}` : `&milestone=${filter}`;
+    this.filter.filter = type === "tag" ? `&labels=${filter}` : `&milestone=${filter}`;
     let labels: string = type === "tag" ? filter : "";
     let milestone: string = type === "category" ? filter : "";
     queryPosts(this.filter).then((data: any) => {
