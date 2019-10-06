@@ -44,7 +44,7 @@ export default {
       projectDesc: [
         {
           label: "1",
-          text: "公司内部组件，主要功能是减少业务部门定制化内容的开发内容。"
+          text: "公司内部组件。"
         }
       ],
       responsibility: [
@@ -66,15 +66,15 @@ export default {
       projectDesc: [
         {
           label: "1",
-          text: "后台管理系统：对基础的人员、车辆、设备、场所、案件等数据的管理；"
+          text: "后台管理系统"
         },
         {
           label: "2",
-          text: "大屏可视化指挥系统：基于地图对各类数据实时显示、紧急事件提醒与指派等；"
+          text: "大屏可视化指挥系统"
         },
         {
           label: "3",
-          text: "移动端：接受事件指派、案件集中展示、处理及结果反馈等。"
+          text: "移动端"
         }
       ],
       responsibility: [
@@ -110,7 +110,7 @@ export default {
       responsibility: [
         {
           label: "1",
-          text: "负责教学云平台及信息化大屏的设计与开发工作"
+          text: "负责其中一个子模块以及信息化大屏的设计与开发工作"
         }
       ],
       technology: "jQuery, Vue, ajax, echarts"

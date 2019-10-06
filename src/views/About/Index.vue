@@ -18,13 +18,13 @@
         <div class="about-item work-experience">
           <div v-for="(i, k) in workExperience" :key="k">
             <div>{{ i.company }}</div>
-            <div>{{ i.time }}</div>
-            <div>{{ i.job }}</div>
+            <div>时间：{{ i.time }}</div>
+            <div>职位：{{ i.job }}</div>
             <div class="work-main-content">
               工作内容：
               <ul>
                 <li v-for="(j, jk) in i.mainContent" :key="j.label">
-                  {{ `${jk} : ${j.text}` }}
+                  {{ `${jk + 1} : ${j.text}` }}
                 </li>
               </ul>
             </div>
@@ -35,24 +35,23 @@
             <div class="project-item-name">{{ i.projectName }}</div>
             <div>时间：{{ i.time }}</div>
             <div>角色：{{ i.role }}</div>
-            <div class="project-desc">
+            <div class="project-desc" v-if="i.projectDesc">
               项目内容：
               <ul>
-                <li v-for="(n, nk) in i.peojectDesc" :key="n.label">
-                  {{ `${nk} : ${n.text}` }}
+                <li v-for="(n, nk) in i.projectDesc" :key="n.label">
+                  {{ `${nk + 1} : ${n.text}` }}
                 </li>
               </ul>
             </div>
-            <div class="project-responsibility">
+            <div class="project-responsibility" v-if="i.responsibility.length">
               主要工作：
               <ul>
                 <li v-for="m in i.responsibility" :key="m.label">
-                  {{ m.text }}
+                  {{ `${m.label} : ${m.text}` }}
                 </li>
               </ul>
             </div>
             <div>技术栈：{{ i.technology }}</div>
-            <hr />
           </div>
         </div>
       </div>
