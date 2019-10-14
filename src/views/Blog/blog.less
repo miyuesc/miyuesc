@@ -117,11 +117,34 @@
           margin-right: 0.12rem;
           padding: 0 0.06rem;
           border-radius: 0.02rem;
-          background: #d5d5d5;
+          //background: #d5d5d5;
           font-size: 0.14rem;
           font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
           font-weight: 800;
-          span {
+          position: relative;
+          z-index: 1;
+          transition: color 0.2s ease-in-out;
+          &:hover {
+            cursor: pointer;
+            color: #ffffff !important;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: -0.25em;
+            right: -0.25em;
+            background-color: hsla(341, 97%, 59%, 0.75);
+            transform-origin: center right;
+            transform: scaleX(0);
+            transition: transform 0.2s ease-in-out;
+          }
+          &:hover::before {
+            transform: scaleX(1);
+            transform-origin: center left;
+            color: #ffffff;
           }
         }
         .article-desc {
