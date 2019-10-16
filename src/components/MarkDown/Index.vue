@@ -78,10 +78,16 @@ export default class MarkDown extends Vue {
   word-wrap: normal !important;
   white-space: normal !important;
 
+  img, image {
+    max-width: 6rem !important;
+    margin: 0 auto;
+    text-align: center;
+  }
+
   .img-box {
     image,
     img {
-      width: 90%;
+      max-width: 6rem;
       text-align: center;
     }
   }

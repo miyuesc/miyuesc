@@ -29,11 +29,17 @@
       transition: all 1s ease-in-out;
     }
     .main-body-web {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      grid-column-gap: 0.48rem;
+      //display: grid;
+      //grid-template-columns: 3fr 1fr;
+      //grid-column-gap: 0.48rem;
       padding: 0.24rem 0.4rem;
-      width: 12.8rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 13.2rem;
+      max-width: 13.2rem;
+      box-sizing: border-box;
+      justify-content: space-between;
     }
     .main-body {
       margin: auto;
@@ -41,6 +47,8 @@
       .post-body {
         box-shadow: 0 0 .14rem #cacbcc;
         padding: .4rem;
+        max-width: 9rem;
+        box-sizing: border-box;
         .post-title {
           font-size: 0.36rem;
           padding: 0.12rem;
@@ -89,8 +97,10 @@
         font-size: 0.14rem;
         line-height: 0.22rem;
         position: relative;
+        box-sizing: border-box;
         //top: 0;
         //left: 848rem;
+        width: 3rem;
         .post-menu-ul {
           border-left: 1px solid rgba(44, 62, 80, .6);
           list-style: none;
