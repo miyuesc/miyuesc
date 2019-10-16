@@ -78,6 +78,12 @@ export default class MarkDown extends Vue {
   word-wrap: normal !important;
   white-space: normal !important;
 
+  code {
+    font-family: Consolas, Monaco, "Andale Mono", monospace !important;
+    font-style: italic !important;
+    padding: 0.02rem 0.04rem;
+  }
+
   img, image {
     max-width: 6rem !important;
     margin: 0 auto;
