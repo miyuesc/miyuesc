@@ -42,7 +42,7 @@
       </div>
       <div class="main-content">
         <div class="news-div">NEWS</div>
-        <div class="news">
+        <div class="news" :style="{ 'flex-direction': isMobile ? 'column' : 'row' }">
           <div class="news-item" @click="getPost(i.number)" v-for="i in newsData" :key="i.number">
             <img
               :src="i.body.match(/http\S*jpg/) || i.body.match(/http\S*png/)"
