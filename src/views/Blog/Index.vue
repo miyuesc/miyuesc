@@ -66,7 +66,7 @@
         <div v-if="!isMobile" class="lists">
           <div class="tags-list">
             <div class="tags-title">
-              <img src="../../assets/icons/tag.svg" />
+              <svg-icon svg-class="tag"></svg-icon>
               <span style="vertical-align: top" class="tag-box-title" @click="resetFilter"
                 >Tags</span
               >
@@ -85,7 +85,7 @@
           </div>
           <div class="category-list">
             <div class="category-title">
-              <img src="../../assets/icons/category.svg" />
+              <svg-icon svg-class="category"></svg-icon>
               <div class="category-box-title" @click="resetFilter">
                 Categories
               </div>

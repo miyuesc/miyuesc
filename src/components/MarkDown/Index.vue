@@ -84,7 +84,8 @@ export default class MarkDown extends Vue {
     padding: 0.02rem 0.04rem;
   }
 
-  img, image {
+  img,
+  image {
     max-width: 6rem !important;
     margin: 0 auto;
     text-align: center;

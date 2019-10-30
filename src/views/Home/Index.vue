@@ -13,13 +13,13 @@
       <div class="title" data-value="HI,MIYUESC!">HI,MIYUESC!</div>
       <div class="tools">
         <div class="text">
-          <img src="../../assets/icons/quotes.svg" style="float: left" />
+          <img src="../../components/SvgIcons/icons/quotes.svg" style="float: left" />
           <span>{{ subTitle }}</span>
-          <img src="../../assets/icons/quotes.svg" style="float: right" />
+          <img src="../../components/SvgIcons/icons/quotes.svg" style="float: right" />
         </div>
         <ul class="tools-box">
           <li @click="changeBg('pre')">
-            <img src="../../assets/icons/angle-left.svg" />
+            <img src="../../components/SvgIcons/icons/angle-left.svg" />
           </li>
           <li
             v-for="(i, k) in contacts"
@@ -36,7 +36,7 @@
             </div>
           </li>
           <li @click="changeBg('next')">
-            <img src="../../assets/icons/angle-right.svg" />
+            <img src="../../components/SvgIcons/icons/angle-right.svg" />
           </li>
         </ul>
       </div>

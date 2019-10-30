@@ -37,6 +37,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "svg-sprite-loader": "^4.1.6",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"
   }

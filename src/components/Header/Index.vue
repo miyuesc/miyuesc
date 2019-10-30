@@ -7,7 +7,7 @@
     <div class="nav">
       <ul class="menus">
         <li class="menu-item" v-for="(i, k) in menus" :key="k" @click="toPage(i.path)">
-          <img :src="i.icon" />
+          <svg-icon :icon-class="i.icon" />
           <span>{{ i.label }}</span>
         </li>
       </ul>

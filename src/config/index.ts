@@ -45,32 +45,32 @@ export default {
     {
       path: "/about",
       label: "About",
-      icon: require("../assets/icons/icon_warn.svg")
+      icon: require("../components/SvgIcons/icons/icon_warn.svg")
     },
     {
       path: "/link",
       label: "Friend",
-      icon: require("../assets/icons/icon_link.svg")
+      icon: require("../components/SvgIcons/icons/icon_link.svg")
     },
     {
       path: "/archive",
       label: "Archive",
-      icon: require("../assets/icons/icon_timeline.svg")
+      icon: require("../components/SvgIcons/icons/icon_timeline.svg")
     },
     {
       path: "/blog",
       label: "Blog",
-      icon: require("../assets/icons/icon_file.svg")
+      icon: require("../components/SvgIcons/icons/icon_file.svg")
     },
     {
       path: "/home",
       label: "Home",
-      icon: require("../assets/icons/icon_homepage.svg")
+      icon: require("../components/SvgIcons/icons/icon_homepage.svg")
     }
     // {
     //   path: "/tag",
     //   label: "Tag",
-    //   require("../assets/icons/icon_synergy.svg")
+    //   require("../assets/SvgIcons/icon_synergy.svg")
     // },
   ],
 
@@ -90,27 +90,27 @@ export default {
    */
   contact: [
     {
-      icon: require("../assets/icons/mail-send-fill.svg"),
+      icon: require("../components/SvgIcons/icons/mail-send-fill.svg"),
       link: "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=P0dWUQYKDw1-WVBHUl5WUxFcUFI"
     },
     {
-      icon: require("../assets/icons/github-fill.svg"),
+      icon: require("../components/SvgIcons/icons/github-fill.svg"),
       link: "https://github.com/miyuesc"
     },
     {
-      icon: require("../assets/icons/zhihu-fill.svg"),
+      icon: require("../components/SvgIcons/icons/zhihu-fill.svg"),
       link: "https://www.zhihu.com/people/miyuesc/activities"
     },
     {
-      icon: require("../assets/icons/netease-cloud-music-fill.svg"),
+      icon: require("../components/SvgIcons/icons/netease-cloud-music-fill.svg"),
       link: "https://music.163.com/m/user/home?id=256780134"
     },
     {
-      icon: require("../assets/icons/wechat-fill.svg"),
+      icon: require("../components/SvgIcons/icons/wechat-fill.svg"),
       code: "http://ww1.sinaimg.cn/large/0067sbCSly1g4gtiwmudnj30gm0gr0uk.jpg"
     },
     {
-      icon: require("../assets/icons/juejin.svg"),
+      icon: require("../components/SvgIcons/icons/juejin.svg"),
       link: "https://juejin.im/user/5cdb5ff5f265da03904c3980"
     }
   ]

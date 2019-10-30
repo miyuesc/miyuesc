@@ -28,6 +28,8 @@ import "gitalk/dist/gitalk.css";
 import Loading from "@/components/Loading/index";
 Vue.use(Loading);
 
+import "@/components/SvgIcons";
+
 Vue.config.productionTip = false;
 
 const vm = new Vue({
