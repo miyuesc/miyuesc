@@ -45,27 +45,32 @@ export default {
     {
       path: "/about",
       label: "About",
-      icon: require("../components/SvgIcons/icons/icon_warn.svg")
+      // icon: "/icon_warn.svg")
+      icon: "icon_warn"
     },
     {
       path: "/link",
       label: "Friend",
-      icon: require("../components/SvgIcons/icons/icon_link.svg")
+      // icon: "/icon_link.svg")
+      icon: "icon_link"
     },
     {
       path: "/archive",
       label: "Archive",
-      icon: require("../components/SvgIcons/icons/icon_timeline.svg")
+      // icon: "/icon_timeline.svg")
+      icon: "icon_timeline"
     },
     {
       path: "/blog",
       label: "Blog",
-      icon: require("../components/SvgIcons/icons/icon_file.svg")
+      // icon: "/icon_file.svg")
+      icon: "icon_file"
     },
     {
       path: "/home",
       label: "Home",
-      icon: require("../components/SvgIcons/icons/icon_homepage.svg")
+      // icon: "/icon_homepage.svg")
+      icon: "icon_homepage"
     }
     // {
     //   path: "/tag",
@@ -90,27 +95,27 @@ export default {
    */
   contact: [
     {
-      icon: require("../components/SvgIcons/icons/mail-send-fill.svg"),
+      icon: "mail-send-fill",
       link: "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=P0dWUQYKDw1-WVBHUl5WUxFcUFI"
     },
     {
-      icon: require("../components/SvgIcons/icons/github-fill.svg"),
+      icon: "github-fill",
       link: "https://github.com/miyuesc"
     },
     {
-      icon: require("../components/SvgIcons/icons/zhihu-fill.svg"),
+      icon: "zhihu-fill",
       link: "https://www.zhihu.com/people/miyuesc/activities"
     },
     {
-      icon: require("../components/SvgIcons/icons/netease-cloud-music-fill.svg"),
+      icon: "netease-cloud-music-fill",
       link: "https://music.163.com/m/user/home?id=256780134"
     },
     {
-      icon: require("../components/SvgIcons/icons/wechat-fill.svg"),
+      icon: "wechat-fill",
       code: "http://ww1.sinaimg.cn/large/0067sbCSly1g4gtiwmudnj30gm0gr0uk.jpg"
     },
     {
-      icon: require("../components/SvgIcons/icons/juejin.svg"),
+      icon: "juejin",
       link: "https://juejin.im/user/5cdb5ff5f265da03904c3980"
     }
   ]

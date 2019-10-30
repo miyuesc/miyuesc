@@ -66,7 +66,7 @@
         <div v-if="!isMobile" class="lists">
           <div class="tags-list">
             <div class="tags-title">
-              <svg-icon svg-class="tag"></svg-icon>
+              <svg-icon icon-class="tag" class-name="icon-tag"></svg-icon>
               <span style="vertical-align: top" class="tag-box-title" @click="resetFilter"
                 >Tags</span
               >
@@ -85,7 +85,7 @@
           </div>
           <div class="category-list">
             <div class="category-title">
-              <svg-icon svg-class="category"></svg-icon>
+              <svg-icon icon-class="category" class-name="icon-category"></svg-icon>
               <div class="category-box-title" @click="resetFilter">
                 Categories
               </div>

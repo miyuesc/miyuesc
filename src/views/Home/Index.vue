@@ -13,13 +13,13 @@
       <div class="title" data-value="HI,MIYUESC!">HI,MIYUESC!</div>
       <div class="tools">
         <div class="text">
-          <img src="../../components/SvgIcons/icons/quotes.svg" style="float: left" />
+          <svg-icon icon-class="quotes" style="float: left; width: 0.2rem; height: 0.2rem" />
           <span>{{ subTitle }}</span>
-          <img src="../../components/SvgIcons/icons/quotes.svg" style="float: right" />
+          <svg-icon icon-class="quotes" style="float: right; width: 0.2rem; height: 0.2rem" />
         </div>
         <ul class="tools-box">
           <li @click="changeBg('pre')">
-            <img src="../../components/SvgIcons/icons/angle-left.svg" />
+            <svg-icon icon-class="angle-left" style="width: 0.2rem; height: 0.2rem" />
           </li>
           <li
             v-for="(i, k) in contacts"
@@ -29,14 +29,14 @@
             @mouseleave="showCode = false"
           >
             <a :href="i.link" rel="noopener noreferrer" target="_blank">
-              <img :src="i.icon" alt="i.label" style="width: 0.2rem; height: 0.2rem"
+              <svg-icon :icon-class="i.icon" style="width: 0.2rem; height: 0.2rem"
             /></a>
             <div v-if="i.code" class="code" :style="{ opacity: showCode ? 1 : 0 }">
               <img :src="i.code" class="code-image" />
             </div>
           </li>
           <li @click="changeBg('next')">
-            <img src="../../components/SvgIcons/icons/angle-right.svg" />
+            <svg-icon icon-class="angle-right" style="width: 0.2rem; height: 0.2rem" />
           </li>
         </ul>
       </div>

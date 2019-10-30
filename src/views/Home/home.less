@@ -91,6 +91,8 @@
     background-position-y: 0;
     background-size: auto;
     transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
     .text {
       width: 5.2rem;
       height: 0.4rem;
@@ -98,11 +100,13 @@
       color: #ffffff;
       text-align: center;
       position: relative;
+      display: flex;
+      flex-direction: row;
       span {
-        font-family: 华文行楷;
+        font-family: "华文行楷",sans-serif;
         font-size: 0.2rem;
         float: left;
-        width: 4.56rem;
+        width: calc(100% - 0.4rem);
         &:hover {
           transition: all 300ms ease;
           &:after {
@@ -122,10 +126,6 @@
           transition: all 300ms ease;
         }
       }
-      img {
-        width: 0.32rem;
-        height: 0.32rem;
-      }
     }
     .tools-box {
       list-style: none;
@@ -134,18 +134,25 @@
       height: 0.4rem;
       padding: 0 0.1rem;
       transition: all ease-in-out;
-      img {
-        margin-bottom: 0.3rem;
-      }
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: space-between;
       li {
         cursor: pointer;
         width: 0.48rem;
         line-height: 0.4rem;
         height: 0.4rem;
-        float: left;
         position: relative;
-        &:hover {
-          animation: waveY 1.6s infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            animation: waveY 1.6s infinite;
+          }
         }
         .code {
           position: absolute;
@@ -174,21 +181,12 @@
       }
       li:first-child {
         float: left;
-        img {
-          width: 0.2rem;
-          height: 0.2rem;
-        }
         &:hover {
           cursor: pointer;
           animation: waveX1 1.6s infinite;
         }
       }
       li:last-child {
-        float: right;
-        img {
-          width: 0.2rem;
-          height: 0.2rem;
-        }
         &:hover {
           cursor: pointer;
           animation: waveX2 1.6s infinite;
@@ -272,13 +270,13 @@
 
 @keyframes waveY {
   12.5% {
-    transform: translateY(-20%);
+    transform: translateY(-32%);
   }
   25% {
     transform: translateY(0%);
   }
   37.5% {
-    transform: translateY(-20%);
+    transform: translateY(-32%);
   }
   50% {
     transform: translateY(0%);
