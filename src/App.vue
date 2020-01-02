@@ -6,10 +6,8 @@
       <back-to-top></back-to-top>
     </div>
     <div class="footer">
-      <p style="font-size: 0.14rem">
-        Copyright © 2019 MiyueSC. All rights reserved.
-      </p>
-      <p style="font-size: 0.12rem">Brought to you withby MiyueSC！</p>
+      <p>Copyright © 2019 MiyueSC. All rights reserved.</p>
+      <p>Brought to you withby MiyueSC！</p>
     </div>
   </div>
 </template>
@@ -103,11 +101,13 @@ body {
     height: 6vh;
     background: #ffffff;
     text-align: center;
+    font-weight: 400;
     p {
       margin: 0 auto;
       display: inline-block;
-      color: darkgrey;
       line-height: 0.2rem;
+      font-weight: lighter;
+      font-size: 0.1rem;
     }
   }
 }

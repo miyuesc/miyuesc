@@ -23,10 +23,9 @@ export default class BlogFooter extends Vue {}
   position: relative;
   z-index: 99;
   font-family: "PingFang SS", "Microsoft YaHei UI", "Apple Color Emoji", "Ubuntu", sans-serif;
-  div {
-    padding: 0;
-    margin: 0 auto;
-    height: 0.2rem;
+  font-weight: 400;
+  p {
+    font-weight: lighter;
   }
 }
 </style>
