@@ -46,7 +46,7 @@
               And I will complement as soon as possible
             </p>
           </div>
-          <div class="buttons">
+          <div class="buttons" v-show="articles.length">
             <button
               v-show="filter.page > 1"
               class="page-button pre-button"
@@ -97,9 +97,17 @@
                 :key="category.id"
                 @click="queryFilter(category.number, 'category')"
               >
-                <div class="border-left"></div>
+                <svg-icon
+                  icon-class="border-left"
+                  class-name="icon-border-left"
+                  class="border-left"
+                ></svg-icon>
                 <div class="category-name">{{ category.title }}</div>
-                <div class="border-right"></div>
+                <svg-icon
+                  icon-class="border-right"
+                  class-name="icon-border-right"
+                  class="border-right"
+                ></svg-icon>
               </div>
             </div>
           </div>
@@ -195,6 +203,7 @@ export default class Blog extends Vue {
   // 筛选查看
   queryFilter(filter: any, type: string) {
     this.doLoading = true;
+    this.filter.page = 1;
     this.filter.filter = type === "tag" ? `&labels=${filter}` : `&milestone=${filter}`;
     let labels: string = type === "tag" ? filter : "";
     let milestone: string = type === "category" ? filter : "";
