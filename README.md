@@ -17,9 +17,25 @@
 [segmentfault/MiyueFE](https://segmentfault.com/u/qijielaojiu)
 
 
+![HTML5](https://img.shields.io/badge/html%205-grey?style=for-the-badge&logo=html5&logoColor=white&labelColor=8E2DE2)
+![CSS3](https://img.shields.io/badge/css%203-grey?style=for-the-badge&logo=css3&logoColor=white&labelColor=8E2DE2)
+![Sass](https://img.shields.io/badge/sass-grey?style=for-the-badge&logo=sass&logoColor=white&labelColor=8E2DE2)
+![JavaScript](https://img.shields.io/badge/-JavaScript-grey?style=for-the-badge&logo=javascript&logoColor=white&labelColor=8E2DE2)
+<br>
+![MarkDown](https://img.shields.io/badge/-Markdown-grey?style=for-the-badge&logo=Markdown&logoColor=white&labelColor=8E2DE2)
+![git](https://img.shields.io/badge/-git-grey?style=for-the-badge&logo=git&logoColor=white&labelColor=8E2DE2)
+![github](https://img.shields.io/badge/-github-grey?style=for-the-badge&logo=github&logoColor=white&labelColor=8E2DE2)
+
+
 <p align="left">
 <img src="https://visitor-badge.laobi.icu/badge?page_id=miyuesc" alt="visitors"/>
 </p>
+
+
+![Bpmn Process Designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
+![Simple Data Visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=SimpleDataVisualization&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
+![Blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
+![Documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
 
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&theme=radical)
