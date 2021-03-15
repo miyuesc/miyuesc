@@ -32,12 +32,12 @@
 </p>
 
 
-![Bpmn Process Designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
-![Simple Data Visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=SimpleDataVisualization&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
-![Blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
-![Documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2)
+![Bpmn Process Designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true)
+![Simple Data Visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=SimpleDataVisualization&show_icons=true)
+![Blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true)
+![Documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true)
 
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&theme=radical)
-![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true&theme=radical)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&show_icons=true)
+![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true)
 
