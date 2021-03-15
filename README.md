@@ -41,6 +41,7 @@
 <a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true)</a>
 
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&show_icons=true)
 ![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&show_icons=true)
 
