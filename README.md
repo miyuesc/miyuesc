@@ -32,16 +32,15 @@
 </p>
 
 
-<a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true)</a>
-
-<a href="https://github.com/miyuesc/simple-data-visualization">![https://github.com/miyuesc/simple-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=simple-data-visualization&show_icons=true)</a>
-
-<a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true)</a>
-
-<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true)</a>
+<a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
 
 
-![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true)
+<a href="https://github.com/miyuesc/simple-data-visualization">![https://github.com/miyuesc/simple-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=simple-data-visualization&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&show_icons=true)
+
+![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true&locale=cn)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&show_icons=true&locale=cn)
 
