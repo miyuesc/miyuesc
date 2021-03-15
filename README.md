@@ -3,11 +3,19 @@
 
 <h3> 👨🏻‍💻 About Me </h3>
 
-- 🔭 &nbsp; I’m currently learning Vue next and React.
-- 💼 &nbsp; Front-end web developer.
+- I’m currently learning Vue next and React.
+- Front-end web developer.
+- Living in Chongqing, China.
 
 
 <h3>Connect with me!</h3>
+
+[掘金/MiyueFE](https://juejin.cn/user/747323639208391)
+
+[CSDN/MiyueFE](https://blog.csdn.net/weixin_43359503?spm=1010.2135.3001.5343)
+
+[segmentfault/MiyueFE](https://segmentfault.com/u/qijielaojiu)
+
 
 <p align="left">
 <img src="https://visitor-badge.laobi.icu/badge?page_id=miyuesc" alt="visitors"/>
