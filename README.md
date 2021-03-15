@@ -10,7 +10,7 @@
 
 <h3>Connect with me!</h3>
 
-[掘金/MiyueFE](https://juejin.cn/user/747323639208391)
+[掘金/MiyueFE](https://juejin.cn/user/747323639208391/posts)
 
 [CSDN/MiyueFE](https://blog.csdn.net/weixin_43359503?spm=1010.2135.3001.5343)
 
