@@ -44,12 +44,13 @@
 <h3> 🔓 开源项目</h3>
 
 > 项目预览：
-> [Bpmn Process designer](https://miyuesc.github.io/process-designer/)
+> 
+> [Bpmn Process designer：Bpmn 规则流程图绘制工具](https://miyuesc.github.io/process-designer/)
+> 
+> [Data visualization：自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
 
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
-
-
 <a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/vue-data-visualizatuion">![https://github.com/miyuesc/vue-data-visualizatuion](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualizatuion&show_icons=true&locale=cn)</a>
 
