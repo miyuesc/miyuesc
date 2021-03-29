@@ -52,7 +52,7 @@
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
-<a href="https://github.com/miyuesc/vue-data-visualizatuion">![https://github.com/miyuesc/vue-data-visualizatuion](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualizatuion&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
 
 
 ![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true&locale=cn)
