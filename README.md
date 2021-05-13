@@ -46,7 +46,7 @@
 
 项目预览：
 
-[Bpmn Process designer：Bpmn 规则流程图绘制工具](https://miyuesc.github.io/process-designer/)
+[Bpmn Process designer：Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
 
 [Data visualization：自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
 
