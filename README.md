@@ -1,4 +1,5 @@
-<h2> Hello ! I'm MiyueFE. <img src="https://github.com/souvikguria98/souvikguria98/blob/master/Hi.gif" width="25"></h2>
+<h2> Hello ! I'm MiyueFE. <img src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab23b4a80bb6ba98b7d34bbdc10.gif" width="25"></h2>
+
 <img align="right" alt="GIF" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif" width="500"/>
 
 <h3> 👨🏻‍💻 关于我 </h3>
@@ -43,11 +44,11 @@
 
 <h3> 🔓 开源项目</h3>
 
-> 项目预览：
-> 
-> [Bpmn Process designer：Bpmn 规则流程图绘制工具](https://miyuesc.github.io/process-designer/)
-> 
-> [Data visualization：自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
+项目预览：
+
+[Bpmn Process designer：Bpmn 规则流程图绘制工具](https://miyuesc.github.io/process-designer/)
+
+[Data visualization：自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
 
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
@@ -55,7 +56,6 @@
 <a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
 
 
-![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true&locale=cn)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&locale=cn)
-
+![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact)
 
