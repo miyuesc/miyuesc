@@ -15,7 +15,7 @@
     "highlight.js": "^9.15.8",
     "ismobilejs": "^0.5.2",
     "leancloud-storage": "^3.13.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "timeago.js": "^4.0.0-beta.2",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
