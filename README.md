@@ -47,8 +47,13 @@
 项目预览：
 
 [Bpmn Process designer：Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
+<a href="https://github.com/miyuesc/bpmn-process-designer" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/bpmn-process-designer?style=flat&logo=github" /></a>
+<a href='https://gitee.com/miyuesc/bpmn-process-designer' target="__blank"><img src='https://gitee.com/miyuesc/bpmn-process-designer/badge/star.svg?theme=dark' alt='star' /></a>
 
 [Data visualization：自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
+<a href="https://github.com/miyuesc/vue-data-visualization" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/vue-data-visualization?style=flat&logo=github" /></a>
+<a href='https://gitee.com/miyuesc/vue-data-visualization'><img src='https://gitee.com/miyuesc/vue-data-visualization/badge/star.svg?theme=dark' alt='star' /></a>
+
 
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
