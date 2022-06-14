@@ -5,17 +5,13 @@
 <h3> 👨🏻‍💻 关于我 </h3>
 
 - 2017 年毕业于 重庆邮电大学 网络工程专业.
-- 2018 年正式开始从事前端开发工作, 到目前已经有 3 年的前端开发经验.
+- 2018 年年底正式开始从事前端开发工作, 到目前已经有 3 年的前端开发经验.
 - 我目前居住在重庆, 也希望以后能一直在重庆工作和生活.
 
 
 <h3> 💬 联系我</h3>
 
 [掘金/MiyueFE](https://juejin.cn/user/747323639208391/posts)
-
-[CSDN/MiyueFE](https://blog.csdn.net/weixin_43359503?spm=1010.2135.3001.5343)
-
-[思否/MiyueFE](https://segmentfault.com/u/qijielaojiu)
 
 [邮箱/913784771@qq.com](mailto:913784771@qq.com)
 
