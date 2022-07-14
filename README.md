@@ -5,7 +5,7 @@
 <h3> 👨🏻‍💻 关于我 </h3>
 
 - 2017 年毕业于 重庆邮电大学 网络工程专业.
-- 2018 年年底正式开始从事前端开发工作, 到目前已经有 3 年的前端开发经验.
+- 2018 年年底正式开始从事前端开发工作.
 - 我目前居住在重庆, 也希望以后能一直在重庆工作和生活.
 
 
@@ -13,9 +13,9 @@
 
 [掘金/MiyueFE](https://juejin.cn/user/747323639208391/posts)
 
-[邮箱/913784771@qq.com](mailto:913784771@qq.com)
-
 [微信/MiyueFE](https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/article/c851d0b329d3fd7f5c454bf0fe987884e5e8fd32.jpg)
+
+[邮箱/913784771@qq.com](mailto:913784771@qq.com)
 
 <h3> 🔧 技术栈与工具</h3>
 
@@ -38,15 +38,17 @@
 </p>
 
 
-<h3> 🔓 开源项目</h3>
+<h3> 🔓 项目</h3>
 
 项目预览：
+
+[Vite Vue Process designer：Vue 3 + TS 的 Bpmn 绘制工具](https://miyuesc.github.io/vite-vue-bpmn-process/)
 
 [Bpmn Process designer：Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
 <a href="https://github.com/miyuesc/bpmn-process-designer" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/bpmn-process-designer?style=flat&logo=github" /></a>
 <a href='https://gitee.com/miyuesc/bpmn-process-designer' target="__blank"><img src='https://gitee.com/miyuesc/bpmn-process-designer/badge/star.svg?theme=dark' alt='star' /></a>
 
-[Data visualization：自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
+[Data visualization：Vue 3 自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
 <a href="https://github.com/miyuesc/vue-data-visualization" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/vue-data-visualization?style=flat&logo=github" /></a>
 <a href='https://gitee.com/miyuesc/vue-data-visualization'><img src='https://gitee.com/miyuesc/vue-data-visualization/badge/star.svg?theme=dark' alt='star' /></a>
 
@@ -57,6 +59,8 @@
 <a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
 
 
-![Miyuesc's github stats](https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact)
+<div align="left">
+<img src="https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true" alt="Miyuesc's github stats">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact" alt="Top Langs">
+</div>
 
