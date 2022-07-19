@@ -29,7 +29,7 @@ jobs:
           persist-credentials: false
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           # 该workflow需要操作repo，因此需要一个密钥，下面会讲到如何获取这个密钥
           ACCESS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
@@ -39,3 +39,5 @@ jobs:
           FOLDER: .
           CLEAN: false
           REPOSITORY_NAME: miyuesc/miyuesc.github.io
+          TARGET_FOLDER: mine-info
+
