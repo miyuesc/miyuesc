@@ -28,7 +28,7 @@ jobs:
 
       - name: Copy and Move
         run: |
-          mkdir dist && cp README.md /dist/
+          mkdir dist && cp README.md /dist/README.md
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
