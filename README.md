@@ -56,15 +56,17 @@
 
 项目列表：
 
+<a href="https://github.com/moon-studio/vite-vue-bpmn-process">![https://github.com/moon-studio/vite-vue-bpmn-process](https://github-readme-stats.vercel.app/api/pin/?username=moon-studio&repo=vite-vue-bpmn-process&show_icons=true&locale=en)</a>
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
-<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
-<a href="https://github.com/moon-studio/vite-vue-bpmn-process">![https://github.com/moon-studio/vite-vue-bpmn-process](https://github-readme-stats.vercel.app/api/pin/?username=moon-studio&repo=vite-vue-bpmn-process&show_icons=true&locale=cn)</a>
-<a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
 
+<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
+
+项目语言信息：
 
 <div align="left">
-<img src="https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true" alt="Miyuesc's github stats">
+<img src="https://github-readme-stats.vercel.app/api?username=miyuesc&show_icons=true&include_all_commits=true" alt="Miyuesc's github stats">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact" alt="Top Langs">
 </div>
 
