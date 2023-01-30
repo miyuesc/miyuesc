@@ -17,6 +17,8 @@
 
 [邮箱/913784771@qq.com](mailto:913784771@qq.com)
 
+![掘金数据](https://stats.justsong.cn/api/juejin?id=747323639208391)
+
 <h3> 🔧 技术栈与工具</h3>
 
 ![HTML5](https://img.shields.io/badge/html%205-grey?style=for-the-badge&logo=html5&logoColor=white&labelColor=8E2DE2) 
