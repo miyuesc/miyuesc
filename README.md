@@ -1,11 +1,11 @@
 <h2> Hello ! I'm MiyueFE. <img src="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab23b4a80bb6ba98b7d34bbdc10.gif" width="25"></h2>
 
-<img align="right" alt="GIF" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif" width="500"/>
+<img align="right" alt="GIF" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif" width="40%"/>
 
 <h3> 👨🏻‍💻 关于我 </h3>
 
 - 2017 年毕业于 重庆邮电大学 网络工程专业.
-- 2018 年年底正式开始从事前端开发工作.
+- 2019 年正式开始从事前端开发工作.
 - 我目前居住在重庆, 也希望以后能一直在重庆工作和生活.
 
 
