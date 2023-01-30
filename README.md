@@ -17,9 +17,15 @@
 
 [邮箱/913784771@qq.com](mailto:913784771@qq.com)
 
-
+<div align="left">
 <a href="https://juejin.cn/user/747323639208391/posts">![掘金数据](https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark)</a>
 <a href="https://juejin.cn/user/747323639208391/posts">![GitHub数据](https://stats.justsong.cn/api/github?username=miyuesc&theme=dark)</a>
+</div>
+
+<div align="left">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="Miyuesc's github stats">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs">
+</div>
 
   
 <h3> 🔧 技术栈与工具</h3>
@@ -68,10 +74,4 @@
 <a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
 
-项目语言信息：
-
-<div align="left">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="Miyuesc's github stats">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs">
-</div>
 
