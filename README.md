@@ -17,16 +17,15 @@
 
 [邮箱/913784771@qq.com](mailto:913784771@qq.com)
 
-<div align="left">
-<a href="https://juejin.cn/user/747323639208391/posts">![掘金数据](https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark)</a>
-<a href="https://juejin.cn/user/747323639208391/posts">![GitHub数据](https://stats.justsong.cn/api/github?username=miyuesc&theme=dark)</a>
-</div>
+<p align="left">
+<img src="https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark" alt="" width="48%" />
+<img src="https://stats.justsong.cn/api/github?username=miyuesc&theme=dark" alt="" width="48%" />
+</p>
 
-<div align="left">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="Miyuesc's github stats">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs">
-</div>
-
+<p align="left">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="" width="60%">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs" width="38%">
+</p>
   
 <h3> 🔧 技术栈与工具</h3>
 
