@@ -17,8 +17,11 @@
 
 [邮箱/913784771@qq.com](mailto:913784771@qq.com)
 
-![掘金数据](https://stats.justsong.cn/api/juejin?id=747323639208391)
 
+<a href="https://juejin.cn/user/747323639208391/posts">![掘金数据](https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark)</a>
+<a href="https://juejin.cn/user/747323639208391/posts">![GitHub数据](https://stats.justsong.cn/api/github?username=miyuesc&theme=dark)</a>
+
+  
 <h3> 🔧 技术栈与工具</h3>
 
 ![HTML5](https://img.shields.io/badge/html%205-grey?style=for-the-badge&logo=html5&logoColor=white&labelColor=8E2DE2) 
@@ -68,7 +71,7 @@
 项目语言信息：
 
 <div align="left">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&show_icons=true&include_all_commits=true" alt="Miyuesc's github stats">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact" alt="Top Langs">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="Miyuesc's github stats">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs">
 </div>
 
