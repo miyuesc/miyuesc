@@ -23,8 +23,8 @@
 </p>
 
 <p align="left">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="" width="60%">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs" width="38%">
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="" width="54%" />
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs" width="44%" />
 </p>
   
 <h3> 🔧 技术栈与工具</h3>
@@ -69,8 +69,7 @@
 <a href="https://github.com/moon-studio/vite-vue-bpmn-process">![https://github.com/moon-studio/vite-vue-bpmn-process](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=moon-studio&repo=vite-vue-bpmn-process&show_icons=true&locale=en)</a>
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
-
-<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
 
 
