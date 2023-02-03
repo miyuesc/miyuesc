@@ -19,12 +19,14 @@
 
 <p align="left">
 <img src="https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark" alt="" width="48%" />
+  
 <img src="https://stats.justsong.cn/api/github?username=miyuesc&theme=dark" alt="" width="48%" />
 </p>
 
 <p align="left">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=bear&show_icons=true&include_all_commits=true" alt="" width="54%" />
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=bear" alt="Top Langs" width="44%" />
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" width="54%" />
+  
+<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" width="44%" />
 </p>
   
 <h3> 🔧 技术栈与工具</h3>
