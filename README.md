@@ -54,17 +54,32 @@
 
 项目预览：
 
-[Bpmn Process Designer：Vue 3 + TS 的 Bpmn 绘制工具](https://miyuesc.github.io/vite-vue-bpmn-process/)
-<a href="https://github.com/moon-studio/vite-vue-bpmn-process" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" /></a>
-<a href="https://github.com/moon-studio/vite-vue-bpmn-process" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/forks/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" /></a>
+[⑴ Bpmn Process Designer：Vue 3 + TS 的 Bpmn 绘制工具](https://miyuesc.github.io/vite-vue-bpmn-process/)
 
-[Bpmn Process Designer：Vue 2 + JS 的 Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
-<a href="https://github.com/miyuesc/bpmn-process-designer" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/bpmn-process-designer?style=flat&logo=github" /></a>
-<a href='https://gitee.com/miyuesc/bpmn-process-designer' target="__blank"><img src='https://gitee.com/miyuesc/bpmn-process-designer/badge/star.svg?theme=dark' alt='star' /></a>
+<p align="left">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" />
+<img alt="GitHub fork" src="https://img.shields.io/github/forks/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" />
+<img alt='Gitee stars' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/star.svg?theme=dark' />
+<img alt='Gitee fork' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/fork.svg?theme=dark' />
+</p>
 
-[Data visualization：Vue 3 自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
-<a href="https://github.com/miyuesc/vue-data-visualization" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/vue-data-visualization?style=flat&logo=github" /></a>
-<a href='https://gitee.com/miyuesc/vue-data-visualization'><img src='https://gitee.com/miyuesc/vue-data-visualization/badge/star.svg?theme=dark' alt='star' /></a>
+[⑵ Bpmn Process Designer：Vue 2 + JS 的 Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
+
+<p align="left">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/bpmn-process-designer?style=flat&logo=github" />
+<img alt="GitHub stars" src="https://img.shields.io/github/forks/miyuesc/bpmn-process-designer?style=flat&logo=github" />
+<img alt='Gitee stars' src='https://gitee.com/miyuesc/bpmn-process-designer/badge/star.svg?theme=dark' />
+<img alt='Gitee fork' src='https://gitee.com/miyuesc/bpmn-process-designer/badge/fork.svg?theme=dark' />
+</p>
+  
+[⑶ Data visualization：Vue 3 自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
+
+<p align="left">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/vue-data-visualization?style=flat&logo=github" />
+<img alt="GitHub stars" src="https://img.shields.io/github/forks/miyuesc/vue-data-visualization?style=flat&logo=github" />
+<img alt='Gitee stars' src='https://gitee.com/miyuesc/vue-data-visualization/badge/star.svg?theme=dark' />
+<img alt='Gitee fork' src='https://gitee.com/miyuesc/vue-data-visualization/badge/fork.svg?theme=dark' />
+</p>
 
 项目列表：
 
@@ -72,6 +87,5 @@
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
 <a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
-<a href="https://github.com/miyuesc/documents">![https://github.com/miyuesc/documents](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=documents&show_icons=true&locale=cn)</a>
 
 
