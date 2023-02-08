@@ -8,7 +8,6 @@
 - 2019 年正式开始从事前端开发工作.
 - 我目前居住在重庆, 也希望以后能一直在重庆工作和生活.
 
-
 <h3> 💬 联系我</h3>
 
 [掘金/MiyueFE](https://juejin.cn/user/747323639208391/posts)
@@ -28,6 +27,9 @@
   
 <img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" width="44%" />
 </p>
+
+<!-- GitHub奖杯🏆 -->
+<a href="#gh-light-mode-only"><img align="center" src="https://github-profile-trophy.vercel.app/?username=miyuesc&row=1&column=6&no-bg=true" /></a>
   
 <h3> 🔧 技术栈与工具</h3>
 
