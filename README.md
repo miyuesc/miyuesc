@@ -56,22 +56,22 @@
 
 项目预览：
 
-[⑴ Bpmn Process Designer：Vue 3 + TS 的 Bpmn 绘制工具](https://miyuesc.github.io/vite-vue-bpmn-process/)
-
-<p align="left">
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" />
-<img alt="GitHub fork" src="https://img.shields.io/github/forks/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" />
-<img alt='Gitee stars' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/star.svg?theme=dark' />
-<img alt='Gitee fork' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/fork.svg?theme=dark' />
-</p>
-
-[⑵ Bpmn Process Designer：Vue 2 + JS 的 Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
+[⑴ Bpmn Process Designer：Vue 2 + JS 的 Bpmn 绘制工具](https://miyuesc.github.io/process-designer/)
 
 <p align="left">
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/miyuesc/bpmn-process-designer?style=flat&logo=github" />
 <img alt="GitHub stars" src="https://img.shields.io/github/forks/miyuesc/bpmn-process-designer?style=flat&logo=github" />
 <img alt='Gitee stars' src='https://gitee.com/miyuesc/bpmn-process-designer/badge/star.svg?theme=dark' />
 <img alt='Gitee fork' src='https://gitee.com/miyuesc/bpmn-process-designer/badge/fork.svg?theme=dark' />
+</p>
+
+[⑵ Bpmn Process Designer：Vue 3 + TS 的 Bpmn 绘制工具](https://miyuesc.github.io/vite-vue-bpmn-process/)
+
+<p align="left">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" />
+<img alt="GitHub fork" src="https://img.shields.io/github/forks/moon-studio/vite-vue-bpmn-process?style=flat&logo=github" />
+<img alt='Gitee stars' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/star.svg?theme=dark' />
+<img alt='Gitee fork' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/fork.svg?theme=dark' />
 </p>
   
 [⑶ Data visualization：Vue 3 自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
