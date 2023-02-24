@@ -18,19 +18,19 @@
 
 <p align="left">
 <img src="https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark" alt="" width="48%" />
-  
+
 <img src="https://stats.justsong.cn/api/github?username=miyuesc&theme=dark" alt="" width="48%" />
 </p>
 
 <p align="left">
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" width="54%" />
-  
-<img src="https://github-readme-stats-beige-two-97.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" width="44%" />
+<img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" width="54%" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" width="44%" />
 </p>
 
 <!-- GitHub奖杯🏆 -->
 <a href="#gh-light-mode-only"><img align="center" src="https://github-profile-trophy.vercel.app/?username=miyuesc&row=1&column=6&no-bg=true" /></a>
-  
+
 <h3> 🔧 技术栈与工具</h3>
 
 ![HTML5](https://img.shields.io/badge/html%205-grey?style=for-the-badge&logo=html5&logoColor=white&labelColor=8E2DE2) 
@@ -73,7 +73,7 @@
 <img alt='Gitee stars' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/star.svg?theme=dark' />
 <img alt='Gitee fork' src='https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/fork.svg?theme=dark' />
 </p>
-  
+
 [⑶ Data visualization：Vue 3 自定义大屏可视化项目](https://miyuesc.github.io/data-visualization/)
 
 <p align="left">
@@ -85,9 +85,8 @@
 
 项目列表：
 
-<a href="https://github.com/moon-studio/vite-vue-bpmn-process">![https://github.com/moon-studio/vite-vue-bpmn-process](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=moon-studio&repo=vite-vue-bpmn-process&show_icons=true&locale=en)</a>
-<a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
-<a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
-<a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats-beige-two-97.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
-
+<a href="https://github.com/moon-studio/vite-vue-bpmn-process">![https://github.com/moon-studio/vite-vue-bpmn-process](https://github-readme-stats.vercel.app/api/pin/?username=moon-studio&repo=vite-vue-bpmn-process&show_icons=true&locale=en)</a>
+<a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/vue-data-visualization">![https://github.com/miyuesc/vue-data-visualization](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=vue-data-visualization&show_icons=true&locale=cn)</a>
+<a href="https://github.com/miyuesc/blog">![https://github.com/miyuesc/blog](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=blog&show_icons=true&locale=cn)</a>
 
