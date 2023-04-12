@@ -23,15 +23,15 @@
 </p>
 
 <p align="left">
-  <img src="https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark" alt="" width="46%" />
+  <img src="https://stats.justsong.cn/api/juejin?id=747323639208391&theme=dark" alt="" width="48%" />
 
-  <img src="https://stats.justsong.cn/api/github?username=miyuesc&theme=dark" alt="" width="46%" />
+  <img src="https://stats.justsong.cn/api/github?username=miyuesc&theme=dark" alt="" width="48%" />
 </p>
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="200px" />
+  <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" width="55%" />
 
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="200px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" width="42%" />
 </p>
 
 <!-- GitHub奖杯🏆 -->
