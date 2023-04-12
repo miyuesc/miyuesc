@@ -29,9 +29,9 @@
 </p>
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="240px" />
+  <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="200px" />
 
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="240px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="200px" />
 </p>
 
 <!-- GitHub奖杯🏆 -->
