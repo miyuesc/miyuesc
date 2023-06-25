@@ -92,7 +92,16 @@
 <img alt='Gitee fork' src='https://gitee.com/miyuesc/vue-data-visualization/badge/fork.svg?theme=dark' />
 </p>
 
-项目列表：
+<h3>Bpmn-js 相关工具库</h3>
+
+<p align="left">
+  
+1. [diagram-js-grid-bg](https://github.com/miyuesc/diagram-js-grid-bg) : A visual grid backgroud for diagram-js, base on diagram-js-grid. 基于 diagram-js-grid 的 SVG 网格背景，可用于diagram-js的相关项目，例如 bpmn-js、dmn-js 等。
+2. [bpmn-js-external-label-modeling](https://github.com/miyuesc/bpmn-js-external-label-modeling) : A bpmn-js plugin used to render Label tags outside of nodes. 一个用来将Label标签渲染在节点外部的bpmn-js插件。
+
+</p>
+
+<h3>项目列表</h3>
 
 <a href="https://github.com/moon-studio/vite-vue-bpmn-process">![https://github.com/moon-studio/vite-vue-bpmn-process](https://github-readme-stats.vercel.app/api/pin/?username=moon-studio&repo=vite-vue-bpmn-process&show_icons=true&locale=en)</a>
 <a href="https://github.com/miyuesc/bpmn-process-designer">![https://github.com/miyuesc/bpmn-process-designer](https://github-readme-stats.vercel.app/api/pin/?username=miyuesc&repo=bpmn-process-designer&show_icons=true&locale=cn)</a>
