@@ -22,7 +22,6 @@
 
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="140px" />
-
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="140px" />
 </p>
 
@@ -109,23 +108,18 @@
 </table>
 
 
-
-
 <h3> ☂ Bpmn-js 相关工具库</h3>
 
-<p align="left">
+| 🎁 Projects                                                   | ⭐ Description                                                | ☄ Downloads                                                  | ✨ License                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [diagram-js-grid-bg](https://github.com/miyuesc/diagram-js-grid-bg) | A visual grid backgroud for diagram-js, base on diagram-js-grid. 基于 diagram-js-grid 的 SVG 网格背景，可用于diagram-js的相关项目，例如 bpmn-js、dmn-js 等。 | ![NPM Downloads](https://img.shields.io/npm/dw/diagram-js-grid-bg) | ![NPM License](https://img.shields.io/npm/l/diagram-js-grid-bg) |
+| [diagram-js-context-pad](https://github.com/miyuesc/diagram-js-context-pad) | An element context menu component for diagram-js/bpmn-js use, base on diagram-js/lib/features/context-pad.一个提供给 diagram-js/bpmn-js 使用的元素上下文菜单组件，基于 `diagram-js/lib/features/context-pad`。 | ![NPM Downloads](https://img.shields.io/npm/dw/diagram-js-context-pad) | ![NPM License](https://img.shields.io/npm/l/diagram-js-context-pad) |
+| [bpmn-js-i18n-zh](https://github.com/miyuesc/bpmn-js-i18n-zh) | Chinese internationalization resources for bpmn-js. 关于 bpmn-js-properties-panel 的中文支持。 | ![NPM Downloads](https://img.shields.io/npm/dw/bpmn-js-i18n-zh) | ![NPM License](https://img.shields.io/npm/l/bpmn-js-i18n-zh) |
+| [bpmn-js-external-label-modeling](https://github.com/miyuesc/bpmn-js-external-label-modeling) | A bpmn-js plugin used to render Label tags outside of nodes. 一个用来将Label标签渲染在节点外部的bpmn-js插件。 | ![NPM Downloads](https://img.shields.io/npm/dw/bpmn-js-external-label-modeling) | ![NPM License](https://img.shields.io/npm/l/bpmn-js-external-label-modeling) |
 
-1. [diagram-js-grid-bg](https://github.com/miyuesc/diagram-js-grid-bg) : A visual grid backgroud for diagram-js, base on diagram-js-grid. 基于 diagram-js-grid 的 SVG 网格背景，可用于diagram-js的相关项目，例如 bpmn-js、dmn-js 等。
 
-    ![NPM Downloads](https://img.shields.io/npm/dw/diagram-js-grid-bg)![NPM License](https://img.shields.io/npm/l/diagram-js-grid-bg)
-  
-2. [diagram-js-context-pad](https://github.com/miyuesc/diagram-js-context-pad) : An element context menu component for diagram-js/bpmn-js use, base on diagram-js/lib/features/context-pad.一个提供给 diagram-js/bpmn-js 使用的元素上下文菜单组件，基于 `diagram-js/lib/features/context-pad`。
 
-    ![NPM Downloads](https://img.shields.io/npm/dw/diagram-js-context-pad)![NPM License](https://img.shields.io/npm/l/diagram-js-context-pad)
-   
-3. [bpmn-js-external-label-modeling](https://github.com/miyuesc/bpmn-js-external-label-modeling) : A bpmn-js plugin used to render Label tags outside of nodes. 一个用来将Label标签渲染在节点外部的bpmn-js插件。
 
-    ![NPM Downloads](https://img.shields.io/npm/dw/bpmn-js-external-label-modeling)![NPM License](https://img.shields.io/npm/l/bpmn-js-external-label-modeling)
 
 </p>
 
