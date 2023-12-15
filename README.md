@@ -9,12 +9,12 @@
 <h3> 💬 联系我</h3>
 
 <a href="https://juejin.cn/user/747323639208391/posts">
-<img alt="Twitter" src="https://img.shields.io/badge/wechat-%231DA1F2.svg?&style=for-the-badge&logo=wechat&logoColor=white" />
+<img alt="Juejin" src="https://img.shields.io/badge/Juejin-%231DA1F2.svg?&style=for-the-badge&logo=Juejin&logoColor=white" />
 </a>
 <a href="https://www.zhihu.com/people/miyuesc/posts">
 <img alt="Zhihu" src="https://img.shields.io/badge/Zhihu-%231DA1F2.svg?&style=for-the-badge&logo=Zhihu&logoColor=white" /></a>
 <a href="https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/article/c851d0b329d3fd7f5c454bf0fe987884e5e8fd32.jpg">
-<img alt="Juejin" src="https://img.shields.io/badge/Juejin-%231DA1F2.svg?&style=for-the-badge&logo=Juejin&logoColor=white" /></a>
+<img alt="Twitter" src="https://img.shields.io/badge/wechat-%231DA1F2.svg?&style=for-the-badge&logo=wechat&logoColor=white" /></a>
 <a href="mailto:913784771@qq.com">
 <img alt="QQmail" src="https://img.shields.io/badge/QQmail-%231DA1F2.svg?&style=for-the-badge&logo=mail.ru&logoColor=white" /></a>
 
@@ -24,8 +24,8 @@
   <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="140px" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="140px" />
 </p>
-
 <!-- GitHub奖杯🏆 -->
+
 <p>
   <a href="#gh-light-mode-only"><img align="center" src="https://github-profile-trophy.vercel.app/?username=miyuesc&row=1&column=6&no-bg=true" /></a>
 </p>
