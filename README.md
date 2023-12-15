@@ -6,6 +6,7 @@
 - 2019 年正式开始从事前端开发工作.
 - 我目前居住在重庆, 也希望以后能一直在重庆工作和生活.
 
+
 <h3> 💬 联系我</h3>
 
 <a href="https://juejin.cn/user/747323639208391/posts">
@@ -19,16 +20,16 @@
 <img alt="QQmail" src="https://img.shields.io/badge/QQmail-%231DA1F2.svg?&style=for-the-badge&logo=mail.ru&logoColor=white" /></a>
 
 
+<h3> 🧠 编码状态</h3>
 
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="140px" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="140px" />
 </p>
-<!-- GitHub奖杯🏆 -->
-
 <p>
   <a href="#gh-light-mode-only"><img align="center" src="https://github-profile-trophy.vercel.app/?username=miyuesc&row=1&column=6&no-bg=true" /></a>
 </p>
+
 
 <h3> 🔧 技术栈与工具</h3>
 
