@@ -1,4 +1,4 @@
-Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab23b4a80bb6ba98b7d34bbdc10.gif" width="25">
+Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab23b4a80bb6ba98b7d34bbdc10.gif" width="20">
 -------------------------------------------------------------------------------------------------------
 
 ### 👨🏻‍💻 关于我
@@ -38,7 +38,13 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 |[**Data visualization：Vue 3 自定义大屏可视化项目**](https://miyuesc.github.io/data-visualization/)|![GitHub stars](https://img.shields.io/github/stars/miyuesc/vue-data-visualization?style=flat&logo=github) ![Gitee stars](https://gitee.com/miyuesc/vue-data-visualization/badge/star.svg?theme=dark)|![GitHub stars](https://img.shields.io/github/forks/miyuesc/vue-data-visualization?style=flat&logo=github) ![Gitee fork](https://gitee.com/miyuesc/vue-data-visualization/badge/fork.svg?theme=dark)|![Issues](https://img.shields.io/github/issues/miyuesc/vue-data-visualization?style=flat-square&labelColor=343b41)|
 |[**Useful Code：Vue 组件、函数、CSS 动画、开发资源等内容收集**](https://miyuesc.github.io/useful-code/)|![GitHub stars](https://img.shields.io/github/stars/miyuesc/useful-code?style=flat&logo=github)|![GitHub stars](https://img.shields.io/github/forks/miyuesc/useful-code?style=flat&logo=github)|![Issues](https://img.shields.io/github/issues/miyuesc/useful-code?style=flat-square&labelColor=343b41)|
 
-### ☂ Bpmn-js 相关工具库
+### <img src="./docs-images/README/image-20240117163833000.png" alt="image-20240117163833000" width=18 /> 闭源项目
+
+| 🎁 Projects                |                                                              |
+| ------------------------- | ------------------------------------------------------------ |
+| vue-bpmn-process-designer | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 |
+
+### <img src="./docs-images/README/image-20240117164127927.png" alt="image-20240117164127927" width=18 /> Bpmn-js 相关工具库
 
 | 🎁 Projects <div style="width:100px">   | ⭐ Description                                                | ☄ Downloads                                                  | ✨ License                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
