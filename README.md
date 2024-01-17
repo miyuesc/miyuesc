@@ -1,4 +1,4 @@
-Hello ! I'm MiyueFE. ![](https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab23b4a80bb6ba98b7d34bbdc10.gif)
+Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab23b4a80bb6ba98b7d34bbdc10.gif" width="25">
 -------------------------------------------------------------------------------------------------------
 
 ### 👨🏻‍💻 关于我
