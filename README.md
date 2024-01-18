@@ -40,9 +40,9 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 
 ### <img src="./docs-images/README/image-20240117163833000.png" alt="image-20240117163833000" width=18 /> 闭源项目
 
-| 🎁 Projects                |                                                              |
-| ------------------------- | ------------------------------------------------------------ |
-| vue-bpmn-process-designer | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 |
+| 🎁 Projects <div style="width:150px"> | ⭐ Description                                                | 💻 Website <div style="width:80px">                          |
+| ------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| vue-bpmn-process-designer            | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 | [Vercel App](https://vue-bpmn-process-designer.vercel.app/) |
 
 ### <img src="./docs-images/README/image-20240117164127927.png" alt="image-20240117164127927" width=18 /> Bpmn-js 相关工具库
 
