@@ -36,13 +36,14 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 |    [**Bpmn Process Designer：Vue 2 + JS 的 Bpmn 绘制工具**](https://miyuesc.github.io/process-designer/)  |![GitHub stars](https://img.shields.io/github/stars/miyuesc/bpmn-process-designer?style=flat&logo=github) ![Gitee stars](https://gitee.com/miyuesc/bpmn-process-designer/badge/star.svg?theme=dark)  |  ![GitHub fork](https://img.shields.io/github/forks/miyuesc/bpmn-process-designer?style=flat&logo=github) ![Gitee fork](https://gitee.com/miyuesc/bpmn-process-designer/badge/fork.svg?theme=dark)    |  ![Issues](https://img.shields.io/github/issues/miyuesc/bpmn-process-designer?style=flat-square&labelColor=343b41)    |
 |[**Bpmn Process Designer：Vue 3 + TS 的 Bpmn 绘制工具**](https://miyuesc.github.io/vite-vue-bpmn-process/)|![GitHub stars](https://img.shields.io/github/stars/moon-studio/vite-vue-bpmn-process?style=flat&logo=github) ![Gitee stars](https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/star.svg?theme=dark)|![GitHub fork](https://img.shields.io/github/forks/moon-studio/vite-vue-bpmn-process?style=flat&logo=github) ![Gitee fork](https://gitee.com/miyuesc/vite-vue-bpmn-process/badge/fork.svg?theme=dark)|![Issues](https://img.shields.io/github/issues/moon-studio/vite-vue-bpmn-process?style=flat-square&labelColor=343b41)|
 |[**Data visualization：Vue 3 自定义大屏可视化项目**](https://miyuesc.github.io/data-visualization/)|![GitHub stars](https://img.shields.io/github/stars/miyuesc/vue-data-visualization?style=flat&logo=github) ![Gitee stars](https://gitee.com/miyuesc/vue-data-visualization/badge/star.svg?theme=dark)|![GitHub stars](https://img.shields.io/github/forks/miyuesc/vue-data-visualization?style=flat&logo=github) ![Gitee fork](https://gitee.com/miyuesc/vue-data-visualization/badge/fork.svg?theme=dark)|![Issues](https://img.shields.io/github/issues/miyuesc/vue-data-visualization?style=flat-square&labelColor=343b41)|
-|[**Useful Code：Vue 组件、函数、CSS 动画、开发资源等内容收集**](https://miyuesc.github.io/useful-code/)|![GitHub stars](https://img.shields.io/github/stars/miyuesc/useful-code?style=flat&logo=github)|![GitHub stars](https://img.shields.io/github/forks/miyuesc/useful-code?style=flat&logo=github)|![Issues](https://img.shields.io/github/issues/miyuesc/useful-code?style=flat-square&labelColor=343b41)|
 
-### <img src="./docs-images/README/image-20240117163833000.png" alt="image-20240117163833000" width=18 /> 闭源项目
+### 🔓 其他开源项目
 
-| 🎁 Projects <div style="width:150px"> | ⭐ Description                                                | 💻 Website <div style="width:80px">                          |
-| ------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| vue-bpmn-process-designer            | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 | [Vercel App](https://vue-bpmn-process-designer.vercel.app/) |
+| **🎁 Projects**                                               | ⭐ Description                                                | 💻 Website <div style="width:80px">                           |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [**Useful Code：Vue 组件、函数、CSS 动画、开发资源收集**](https://miyuesc.github.io/useful-code/) | 包含简易钉钉流程组件、任务看板、Vue 大屏数据组件、echarts 图表集、常用数据处理函数等内容 | [https://miyuesc.github.io/useful-code/](https://miyuesc.github.io/useful-code/) |
+| [**Native Juejin App: 掘金非官方小程序**](https://github.com/miyuesc/native-juejin-app) | 原生微信小程序，主要包含个人数据中心，沸点，文章，已购买小册等 | -                                                            |
+| [**Daily Juejin Tea Extension: 每日掘金下午茶辅助扩展程序**](https://github.com/miyuesc/daily-juejin-tea-extension) | 读取已打开的掘金文章页面，快速生成下午茶消息和表格信息       | -                                                            |
 
 ### <img src="./docs-images/README/image-20240117164127927.png" alt="image-20240117164127927" width=18 /> Bpmn-js 相关工具库
 
@@ -53,6 +54,12 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 | [diagram-js-accordion-palette](https://github.com/miyuesc/diagram-js-accordion-palette) | A palette that supports folding and unfolding, provided for diagram-js use。Base on diagram-js/palette <br/> 一个支持折叠展开的调色板，提供给 diagram-js 使用。基于 diagram-js 本身的 Palette。 | ![NPM Downloads](https://img.shields.io/npm/dw/diagram-js-accordion-palette) | ![NPM License](https://img.shields.io/npm/l/diagram-js-accordion-palette) |
 | [bpmn-js-i18n-zh](https://github.com/miyuesc/bpmn-js-i18n-zh) | Chinese internationalization resources for bpmn-js. <br/> 关于 bpmn-js-properties-panel 的中文支持。 | ![NPM Downloads](https://img.shields.io/npm/dw/bpmn-js-i18n-zh) | ![NPM License](https://img.shields.io/npm/l/bpmn-js-i18n-zh) |
 | [bpmn-js-external-label-modeling](https://github.com/miyuesc/bpmn-js-external-label-modeling) | A bpmn-js plugin used to render Label tags outside of nodes. <br/> 一个用来将Label标签渲染在节点外部的bpmn-js插件。 | ![NPM Downloads](https://img.shields.io/npm/dw/bpmn-js-external-label-modeling) | ![NPM License](https://img.shields.io/npm/l/bpmn-js-external-label-modeling) |
+
+### <img src="./docs-images/README/image-20240117163833000.png" alt="image-20240117163833000" width=18 /> 闭源项目
+
+| 🎁 Projects <div style="width:150px"> | ⭐ Description                                                | 💻 Website <div style="width:80px">                          |
+| ------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| vue-bpmn-process-designer            | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 | [Vercel App](https://vue-bpmn-process-designer.vercel.app/) |
 
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=miyuesc)
