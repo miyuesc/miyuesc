@@ -21,25 +21,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout
-        # 使用的actions脚本，这里是官方提供的获取源码脚本
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v3
         with:
-          persist-credentials: false
+          fetch-depth: 0
 
-      - name: Copy and Move
-        run: |
-          mkdir dist && cp README.md /dist/README.md
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Deploy 🚀
+        uses: cross-the-world/scp-pipeline@master
         with:
-          # 该workflow需要操作repo，因此需要一个密钥，下面会讲到如何获取这个密钥
-          ACCESS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
-          # 发布到的分支
-          BRANCH: master
-          # 要发布的文件夹
-          FOLDER: dist
-          CLEAN: false
-          REPOSITORY_NAME: miyuesc/miyuesc.github.io
-          TARGET-FOLDER: mine-info
-
+          host: ${{ secrets.DR_HOST }}
+          user: ${{ secrets.DR_USER }}
+          pass: ${{ secrets.DR_PASS }}
+          port: ${{ secrets.DR_PORT }}
+          connect_timeout: 10s
+          local: './home/*'
+          remote: /web-site/main

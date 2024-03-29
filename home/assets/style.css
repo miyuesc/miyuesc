@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+html, body {
+  scroll-behavior: smooth;
+  font-family: "Poppins", serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.section {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.project,
+.about {
+  background-color: #0a5d61;;
+}
+.posts,
+.history {
+  background-color: #efedce;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 0 64px;
+}
+.logo-link{
+  height: 100%;
+  width: 100%;
+  display:flex;
+  align-items: center;
+}
+.logo-icon{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 6px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.logo-icon:hover{
+  border: solid 1px #1daec8;
+  transform: scale(1.3);
+}
+.logo::before{
+  content:"";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background-color: #1daec8;
+  border-radius: 50%;
+  opacity: 100%;
+  animation: logoAnimation 5s ease infinite;
+}
+@keyframes logoAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+/* Home */
+.home{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  color: #e5caaa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.home .max-width{
+  margin: auto 0 auto 0;
+}
+.home .max-width .home-content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
+}
+.home .max-width .home-content .text-2 {
+  position: relative;
+  font-size: 8rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.6s ease;
+  background-image: linear-gradient(to right, #e5caaa, #1daec8,#e5caaa, #1daec8, #e5caaa);
+  animation: animate 10s linear infinite;
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.home .max-width .home-content .text-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 4rem;
+  overflow: hidden;
+  padding-left: 0;
+  font-weight: 500;
+  padding-bottom: 10px;
+  transition: transform 0.6s ease, color 0.6s ease;
+  background-image: linear-gradient(to right, #e5caaa, #1daec8,#e5caaa, #1daec8, #e5caaa);
+  animation: animate 10s linear infinite;
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.nav-menu {
+  list-style-type: none;
+  font-size: 40px;
+  font-weight: 600;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 999;
+  margin-bottom: -69px;
+}
+.nav-menu li {
+  text-align: center;
+  margin-bottom: 0;
+  display: inline;
+}
+.nav-menu li a {
+  color: #1daec8;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.nav-menu li a:hover{
+  color: #F0F8FF;
+  background-color: #1daec8;
+}
+.click-me-line{
+  position: relative;
+  text-align: center;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease;
+  animation: clickmepulse 2s ease infinite;
+  opacity: 1;
+  margin-bottom: 0;
+  border-radius: 20px;
+  text-shadow: #1daec8;
+}
+.click-me-line::before,
+.click-me-line::after {
+  content:"";
+  border-bottom: solid #e5caaa 2px;
+  width: 100px;
+  transform: translateY(-50%);
+  margin-right: 5px;
+}
+
+.click-me-line::after{
+  content:"";
+  border-bottom: solid #e5caaa 2px;
+  width: 100px;
+  transform: translateY(-50%);
+  margin-left: 5px;
+}
+.home .max-width .home-content:hover .text-3{
+  transform: translateY(60px);
+}
+.home .max-width .home-content:hover .text-2 {
+  transform: translateY(-60px);
+}
+.home .max-width .home-content:hover .click-me-line {
+  opacity: 0;
+}
+.home .max-width .home-content:hover .nav-menu {
+  opacity: 1;
+}
+@keyframes animate{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 400% 100%;
+  }
+}
