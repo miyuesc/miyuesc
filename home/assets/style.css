@@ -147,8 +147,6 @@ html, body {
   text-align: center;
   margin-bottom: 0;
   display: inline;
-}
-.nav-menu li a {
   color: #1daec8;
   font-weight: 500;
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -156,7 +154,7 @@ html, body {
   padding-left: 15px;
   padding-right: 15px;
 }
-.nav-menu li a:hover{
+.nav-menu li:hover{
   color: #F0F8FF;
   background-color: #1daec8;
 }

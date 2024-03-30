@@ -34,3 +34,7 @@ function pageScroll(behavior='forward') {
 
 window.addEventListener("wheel", wheelListener)
 
+document.querySelector('#nav-menu').addEventListener('click', evt => {
+  index = evt.target.getAttribute('data-idx') * 1
+  document.body.scrollTo(0, index * window.document.body.clientHeight)
+})
