@@ -19,9 +19,9 @@ let index = 0
 const totalPage = document.querySelectorAll('body > section').length || 0
 const wheelListener = throttle((ev) => {
   if (!ev) return
-  pageScroll(ev.deltaY > 0 ? 'forward' : 'back')
+  pageScrollTo(ev.deltaY > 0 ? 'forward' : 'back')
 })
-function pageScroll(behavior='forward') {
+function pageScrollTo(behavior='forward') {
   if (behavior ==='forward') {
     if (index === totalPage - 1) return
     index += 1
@@ -33,6 +33,7 @@ function pageScroll(behavior='forward') {
 }
 
 window.addEventListener("wheel", wheelListener)
+// window.addEventListener("mousewheel", wheelListener)
 
 document.querySelector('#nav-menu').addEventListener('click', evt => {
   index = evt.target.getAttribute('data-idx') * 1
