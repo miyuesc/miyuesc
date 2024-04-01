@@ -1,31 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400');
+
 .project {
   padding: 120px;
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   width: 360px;
-  height: 480px;
-  background-color: #17141d;
+  /*background-color: #17141d;*/
   border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
   transition: 0.4s ease-out;
   position: relative;
   left: 0;
+  color: #2e3033;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px rgba(25, 25, 25, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
 }
-
-.card:not(:first-child) {
-  margin-left: -64px;
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -20px;
+  filter: blur(6px);
+  transition: all 0.2s ease-in-out, filter 0.8s 0.22s ease-in-out;
 }
 
 .card:hover {
   transform: translateY(-20px);
   transition: 0.4s ease-out;
+  color: #f3f3f3;
 }
 
 .card:hover ~ .card {
@@ -44,7 +58,8 @@
   background-image: linear-gradient(92deg, #f35626, #feab3a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: hue 10s infinite linear;
+  animation: hue 4s infinite linear;
+  font-family: Inconsolata, sans-serif;
 }
 
 @-webkit-keyframes hue {
@@ -95,7 +110,6 @@
 .description {
   font-size: 1.2rem;
   padding: 20px;
-  font-weight: lighter;
-  color: #f3f3f3;
+  font-weight: 400;
   flex: 1;
 }

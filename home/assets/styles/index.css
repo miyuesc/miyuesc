@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700');
 
 :root {
   --main-color-1: #0a5d61;
   --main-color-2: #efedce;
   --main-color-3: #1daec8;
   --main-color-4: #e5caaa;
-  --main-bg-color-1: #100e17;
+  --main-color-5: #100e17;
 }
 *{
   margin: 0;
@@ -26,14 +27,20 @@ html, body {
   height: 100vh;
   overflow: hidden;
 }
-.project,
-.about {
-  /*background-color: var(--main-color-3);*/
-  background-color: var(--main-bg-color-1);
+.home {
+  background: url("https://cdn-images-1.medium.com/max/1600/1*5XH40dQSsBVFtvx3MO5VwQ.png") 0/cover fixed;
 }
-.posts,
-.history {
-  /*background-color: var(--main-color-4);*/
+.project {
+  background: url("../images/eberhard-grossgasteiger.jpg") 0/cover fixed;
+}
+.posts {
+  background: url("../images/mohamed-almari.jpg") 0/cover fixed;
+}
+.about {
+  background: url("../images/matheus-bertelli.jpg") 0/cover fixed;
+}
+.resume {
+  background: url("../images/stephan-seeber.jpg") 0/cover fixed;
 }
 
 /* Navbar */
@@ -93,7 +100,7 @@ html, body {
 
 
 /* Home */
-.home{
+.home {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -155,7 +162,7 @@ html, body {
   text-align: center;
   margin-bottom: 0;
   display: inline;
-  color: var(--main-color-3);
+  color: var(--main-color-2);
   font-weight: 500;
   transition: color 0.3s ease, background-color 0.3s ease;
   border-radius: 10px;
