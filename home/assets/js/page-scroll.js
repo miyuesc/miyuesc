@@ -18,7 +18,7 @@ const throttle = function(func, delay = 200) {
 let index = 0
 const totalPage = document.querySelectorAll('body > section').length || 0
 const wheelListener = throttle((ev) => {
-  if (!ev) return
+  if (!ev || ev.shiftKey) return
   setScrollIdx(ev.deltaY > 0 ? 'forward' : 'back')
 })
 function setScrollIdx(behavior='forward') {

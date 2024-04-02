@@ -6,12 +6,17 @@
   gap: 40px;
   flex-wrap: nowrap;
   align-items: stretch;
+  overflow-x: auto;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 360px;
+  width: 300px;
+  flex-shrink: 0;
   /*background-color: #17141d;*/
   border-radius: 10px;
   transition: 0.4s ease-out;
