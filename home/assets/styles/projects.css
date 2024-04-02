@@ -37,14 +37,13 @@
 }
 
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   transition: 0.4s ease-out;
-  color: #f3f3f3;
 }
 
 .card:hover ~ .card {
   position: relative;
-  left: 50px;
+  left: 20px;
   transition: 0.4s ease-out;
 }
 
@@ -112,4 +111,30 @@
   padding: 20px;
   font-weight: 400;
   flex: 1;
+  transition: all ease 0.4s;
+}
+.card:hover .description {
+  color: #f3f3f3;
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.link-btn {
+  border-radius: 50px;
+  padding: 12px 24px;
+  border: 1px solid rgba(240, 248, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all ease 0.4s;
+  color: #2e3033;
+  &:hover {
+    color: #f3f3f3;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(255, 255, 255, 0.3);
+  }
 }
