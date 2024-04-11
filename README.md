@@ -44,7 +44,8 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 | [**Useful Code**](https://miyuesc.github.io/useful-code/)：Vue 组件、函数、CSS 动画、开发资源收集 | 包含简易钉钉流程组件、任务看板、Vue 大屏数据组件、echarts 图表集、常用数据处理函数等内容 | [https://miyuesc.github.io/useful-code/](https://miyuesc.github.io/useful-code/) |
 | [**Native Juejin App**](https://github.com/miyuesc/native-juejin-app): 掘金非官方小程序 | 原生微信小程序，主要包含个人数据中心，沸点，文章，已购买小册等 | -                                                            |
 | [**Daily Juejin Tea Extension**](https://github.com/miyuesc/daily-juejin-tea-extension): 每日掘金下午茶辅助扩展程序 | 读取已打开的掘金文章页面，快速生成下午茶消息和表格信息       | -                                                            |
-| [**chibivue-zh**](https://github.com/miyuesc/chibivue-zh): chibivue 中文翻译 | 日文仓库 chibivue：一步一步开始编写一个 vue.js 的中文翻译仓库       | [https://miyuesc.github.io/chibivue-zh/](https://miyuesc.github.io/chibivue-zh/)                                                            |
+| [**chibivue-zh**](https://github.com/miyuesc/chibivue-zh): chibivue 中文翻译 | 日文仓库 chibivue：一步一步开始编写一个 vue.js 的中文翻译仓库 | [https://miyuesc.github.io/chibivue-zh/](https://miyuesc.github.io/chibivue-zh/) |
+| [**auto-sync-blog**](https://github.com/TeaTools/auto-sync-blog): 个人掘金文章统计助手 | 自动抓取用户所有掘金文章与专栏，按照发布年月、分类、标签生成 vitepress 统计博客 | https://miyuesc.github.io/auto-sync-blog/                    |
 
 ### <img src="./docs-images/README/image-20240117164127927.png" alt="image-20240117164127927" width=18 /> Bpmn-js 相关工具库
 
@@ -58,9 +59,9 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 
 ### <img src="./docs-images/README/image-20240117163833000.png" alt="image-20240117163833000" width=18 /> 闭源项目
 
-| 🎁 Projects <div style="width:150px"> | ⭐ Description                                                | 💻 Website <div style="width:80px">                          |
-| ------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| vue-bpmn-process-designer            | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 | [Vercel App](https://vue-bpmn-process-designer.vercel.app/) |
+| 🎁 Projects <div style="width:150px"> | ⭐ Description                                                | 💻 Website <div style="width:80px">                 |
+| ------------------------------------ | ------------------------------------------------------------ | -------------------------------------------------- |
+| vue-bpmn-process-designer            | 基于 Vue 3 和 Typescript 的 BPMN 流程图编辑器，支持配置条件渲染、Popover 弹窗、自定义面板、多 Modeler 共存、函数式多元素插入等。 | [https://bpmn.miyuefe.cn](https://bpmn.miyuefe.cn) |
 
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=miyuesc)
