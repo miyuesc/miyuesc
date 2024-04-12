@@ -47,6 +47,14 @@ const projects = [
       { label: 'Github', link: 'https://github.com/miyuesc/daily-juejin-tea-extension' },
     ]
   },
+  {
+    title: 'Auto Sync Juejin Article',
+    description: '自动同步掘金已发布文章和专栏，按照时间、分类等维度进行统计分析，生成 vitepress 博客并自动发布 Github Page',
+    links: [
+      { label: 'Preview', link: 'https://miyuesc.github.io/auto-sync-blog/' },
+      { label: 'Github', link: 'https://github.com/TeaTools/auto-sync-blog' },
+    ]
+  },
 ]
 
 const initProjects = () => {

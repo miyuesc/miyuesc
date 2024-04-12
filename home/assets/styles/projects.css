@@ -24,7 +24,6 @@
   left: 0;
   color: #2e3033;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
-  text-shadow: 0 1px 1px rgba(25, 25, 25, 0.5);
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
 }
@@ -44,6 +43,7 @@
 .card:hover {
   transform: translateY(-10px);
   transition: 0.4s ease-out;
+  backdrop-filter: blur(20px);
 }
 
 .card:hover ~ .card {
@@ -53,17 +53,18 @@
 }
 
 .title {
+  font-family: Inconsolata, sans-serif;
   height: 106px;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 1.6rem;
   text-align: left;
-  color: #f35626;
   padding: 20px;
-  background-image: linear-gradient(92deg, #f35626, #feab3a);
+  background-image: linear-gradient(to right, var(--main-color-3) 48%,var(--main-color-4) 52%, var(--main-color-3));
+  background-size: 400% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: hue 4s infinite linear;
-  font-family: Inconsolata, sans-serif;
+  animation: animate 10s infinite linear;
+  transition: transform 0.6s ease;
 }
 
 @-webkit-keyframes hue {
@@ -94,13 +95,13 @@
 .progress-bar::before {
   right: 0;
   left: 0;
-  background-color: #2e3033;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .progress-bar::after {
   left: 100%;
   right: 0;
   background: var(--main-color-1);
-  background: linear-gradient(90deg, var(--main-color-3) 0%, var(--main-color-4) 100%);
+  background: linear-gradient(to right, var(--main-color-3) 0%, var(--main-color-4) 100%);
   transition: 0.6s ease-out;
   z-index: 3;
 }
@@ -116,6 +117,7 @@
   padding: 20px;
   font-weight: 400;
   flex: 1;
+  color: rgba(243, 243, 243, 0.4);
   transition: all ease 0.4s;
 }
 .card:hover .description {
