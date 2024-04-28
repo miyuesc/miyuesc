@@ -20,7 +20,7 @@ const projects = [
     title: 'Data Visualization',
     description: '主要使用 Vue 3, Echarts 5, Element Plus 进行开发. 使用原生 JavaScript 实现元素的拖拽与缩放。 该项目主要为实现通用的可视化大屏的简单配置, 对于特殊图表仍然需要二次开发。',
     links: [
-      { label: 'Preview', link: 'https://miyuesc.gitee.io/data-visualization/' },
+      { label: 'Preview', link: 'https://miyuesc.github.io/data-visualization/' },
       { label: 'Github', link: 'https://github.com/miyuesc/vue-data-visualization' },
       { label: 'Gitee', link: 'https://gitee.com/miyuesc/vue-data-visualization' },
     ]
