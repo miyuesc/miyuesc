@@ -28,20 +28,20 @@ html, body {
   overflow: hidden;
 }
 .home {
-  background: url("https://cdn-images-1.medium.com/max/1600/1*5XH40dQSsBVFtvx3MO5VwQ.png") 0/cover fixed;
+  /*background: url("https://cdn-images-1.medium.com/max/1600/1*5XH40dQSsBVFtvx3MO5VwQ.png") 0/cover fixed;*/
 }
-.project {
-  background: url("../images/eberhard-grossgasteiger.jpg") 0/cover fixed;
-}
-.posts {
-  background: url("../images/mohamed-almari.jpg") 0/cover fixed;
-}
-.about {
-  background: url("../images/matheus-bertelli.jpg") 0/cover fixed;
-}
-.resume {
-  background: url("../images/stephan-seeber.jpg") 0/cover fixed;
-}
+/*.project {*/
+/*  background: url("../images/eberhard-grossgasteiger.jpg") 0/cover fixed;*/
+/*}*/
+/*.posts {*/
+/*  background: url("../images/mohamed-almari.jpg") 0/cover fixed;*/
+/*}*/
+/*.about {*/
+/*  background: url("../images/matheus-bertelli.jpg") 0/cover fixed;*/
+/*}*/
+/*.resume {*/
+/*  background: url("../images/stephan-seeber.jpg") 0/cover fixed;*/
+/*}*/
 
 /* Navbar */
 .navbar {

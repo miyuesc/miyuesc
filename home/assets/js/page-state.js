@@ -37,14 +37,14 @@ const projects = [
     title: 'Daily Juejin Extension',
     description: '每日掘金下午茶辅助扩展程序。读取已打开的掘金文章页面，快速生成下午茶消息和表格信息',
     links: [
-      { label: 'Github', link: 'https://github.com/miyuesc/native-juejin-app' },
+      { label: 'Github', link: 'https://github.com/miyuesc/daily-juejin-tea-extension' },
     ]
   },
   {
     title: 'Micro Juejin',
     description: '掘金创作者中心-微信小程序，实现掘金沸点、文章、已购小册等内容的显示和查看，以及创作者个人数据展示分析。',
     links: [
-      { label: 'Github', link: 'https://github.com/miyuesc/daily-juejin-tea-extension' },
+      { label: 'Github', link: 'https://github.com/miyuesc/native-juejin-app' },
     ]
   },
   {
