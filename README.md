@@ -14,7 +14,8 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 [![Twitter](https://img.shields.io/badge/wechat-%231DA1F2.svg?&style=for-the-badge&logo=wechat&logoColor=white)](https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/article/c851d0b329d3fd7f5c454bf0fe987884e5e8fd32.jpg)
 [![QQmail](https://img.shields.io/badge/QQmail-%231DA1F2.svg?&style=for-the-badge&logo=mail.ru&logoColor=white)](mailto:913784771@qq.com)
 
-### 🧠 编码状态
+<details>
+<summary><h3>🧠 编码状态</h3></summary>
 
 <p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="140px" />
@@ -24,10 +25,9 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
   <a href="#gh-light-mode-only"><img align="center" src="https://github-profile-trophy.vercel.app/?username=miyuesc&row=1&column=6&no-bg=true" /></a>
 </p>
 
-### 🔧 技术栈与工具
-
 ![Webpack](https://img.shields.io/badge/-Webpack-8DD6F9?style=flat-square&logo=webpack&logoColor=white) ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) ![Sass](https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white) ![Less](https://img.shields.io/badge/-Less-311C87?style=flat-square&logo=less&logoColor=white) ![npm](https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white) ![html5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![Nodejs](https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white) ![Vue](https://img.shields.io/badge/-Vue-db7092?style=flat-square&logo=vue.js&logoColor=white)  
 ![Docker](https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white) ![github actions](https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-) ![git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) ![WebStorm](https://img.shields.io/badge/-WebStorm-DD0031?style=flat-square&logo=WebStorm&logoColor=white) ![MarkDown](https://img.shields.io/badge/-MarkDown-13aa52?style=flat-square&logo=Markdown&logoColor=white)
+</details>
 
 ### 🔓 主要开源项目
 
