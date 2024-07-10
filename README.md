@@ -18,7 +18,7 @@ Hello ! I'm MiyueFE. <img src="https://i0.hdslb.com/bfs/article/ff0c0bdc7abf6ab2
 <summary><h3>🧠 编码状态</h3></summary>
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=miyuesc&theme=radical&show_icons=true&include_all_commits=true" alt="Stats" height="140px" />
+  <img src="https://pixel-profile.vercel.app/api/github-stats?username=miyuesc&theme=monica" alt="Stats" height="140px" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=miyuesc&layout=compact&theme=radical" alt="Top Langs" height="140px" />
 </p>
 <p>
