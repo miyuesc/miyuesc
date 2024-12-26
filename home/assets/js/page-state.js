@@ -1,15 +1,7 @@
 const projects = [
   {
-    title: 'Chibivue Zh',
-    description: 'Chibivue 中文翻译仓库，一步一步从 0 开始实现一个 Vue.js。',
-    links: [
-      { label: 'Preview', link: 'https://chibivue.miyuefe.cn' },
-      { label: 'Github', link: 'https://github.com/miyuesc/chibivue-zh' },
-    ]
-  },
-  {
-    title: 'Vue Bpmn Designer',
-    description: 'Vue.js 与 bpmn.js 结合，实现的 BPMN 2.0 流程图编辑器。支持 Vue 2 与 Vue 3。 Github star: 1.5 k+ 、Gitee star: 1.5 k+。',
+    title: 'Vue Bpmn Process Designer',
+    description: 'Vue.js 与 bpmn.js 结合，实现的 BPMN 2.0 流程图编辑器。支持 Vue 2 与 Vue 3。',
     links: [
       { label: 'Preview', link: 'https://bpmn.miyuefe.cn' },
       { label: 'Github', link: 'https://github.com/miyuesc/bpmn-process-designer' },
@@ -17,12 +9,19 @@ const projects = [
     ]
   },
   {
-    title: 'Data Visualization',
-    description: '主要使用 Vue 3, Echarts 5, Element Plus 进行开发. 使用原生 JavaScript 实现元素的拖拽与缩放。 该项目主要为实现通用的可视化大屏的简单配置, 对于特殊图表仍然需要二次开发。',
+    title: 'Bpmn Questions',
+    description: 'Bpmn-js 答疑，包含常见问题、使用技巧、常见问题的解决方法、常用工具库等内容，以及 bpmn-js 相关的源码解析和扩展实践教程。',
     links: [
-      { label: 'Preview', link: 'https://miyuesc.github.io/data-visualization/' },
-      { label: 'Github', link: 'https://github.com/miyuesc/vue-data-visualization' },
-      { label: 'Gitee', link: 'https://gitee.com/miyuesc/vue-data-visualization' },
+      { label: 'Github', link: 'https://github.com/miyuesc/bpmn-js-questions' },
+    ]
+  },
+  {
+    title: 'Chibivue Zh',
+    description: 'Chibivue 中文翻译仓库，一步一步从 0 开始、渐进式地实现一个 Vue.js。',
+    links: [
+      { label: 'Preview', link: 'https://chibivue.miyuefe.cn' },
+      { label: 'Github', link: 'https://github.com/miyuesc/chibivue-zh' },
+      { label: 'Source', link: 'https://github.com/chibivue-land/chibivue' },
     ]
   },
   {
@@ -31,6 +30,14 @@ const projects = [
     links: [
       { label: 'Preview', link: 'https://miyuesc.github.io/useful-code/#/' },
       { label: 'Github', link: 'https://github.com/miyuesc/useful-code' },
+    ]
+  },
+  {
+    title: 'Auto Sync Juejin Article',
+    description: '自动同步掘金已发布文章和专栏，按照时间、分类等维度进行统计分析，生成 vitepress 博客并自动发布 Github Page',
+    links: [
+      { label: 'Preview', link: 'https://miyuesc.github.io/auto-sync-blog/' },
+      { label: 'Github', link: 'https://github.com/TeaTools/auto-sync-blog' },
     ]
   },
   {
@@ -48,11 +55,12 @@ const projects = [
     ]
   },
   {
-    title: 'Auto Sync Juejin Article',
-    description: '自动同步掘金已发布文章和专栏，按照时间、分类等维度进行统计分析，生成 vitepress 博客并自动发布 Github Page',
+    title: 'Data Visualization',
+    description: '主要使用 Vue 3, Echarts 5, Element Plus 进行开发. 使用原生 JavaScript 实现元素的拖拽与缩放。 该项目主要为实现通用的可视化大屏的简单配置, 对于特殊图表仍然需要二次开发。',
     links: [
-      { label: 'Preview', link: 'https://miyuesc.github.io/auto-sync-blog/' },
-      { label: 'Github', link: 'https://github.com/TeaTools/auto-sync-blog' },
+      { label: 'Preview', link: 'https://miyuesc.github.io/data-visualization/' },
+      { label: 'Github', link: 'https://github.com/miyuesc/vue-data-visualization' },
+      { label: 'Gitee', link: 'https://gitee.com/miyuesc/vue-data-visualization' },
     ]
   },
 ]
