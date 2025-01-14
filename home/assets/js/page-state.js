@@ -56,7 +56,7 @@ const projects = [
   },
   {
     title: 'Data Visualization',
-    description: '主要使用 Vue 3, Echarts 5, Element Plus 进行开发. 使用原生 JavaScript 实现元素的拖拽与缩放。 该项目主要为实现通用的可视化大屏的简单配置, 对于特殊图表仍然需要二次开发。',
+    description: '使用 Vue 3, Echarts 5 进行开发, 使用原生 JS 实现元素拖拽与缩放。该项目主要为实现通用的可视化大屏的简单配置的结构演示。',
     links: [
       { label: 'Preview', link: 'https://miyuesc.github.io/data-visualization/' },
       { label: 'Github', link: 'https://github.com/miyuesc/vue-data-visualization' },
@@ -67,7 +67,11 @@ const projects = [
 
 const initProjects = () => {
   const htmlText = projects.reduce((innerText, cur) => {
-    innerText += `<div class="card">
+    const borderColor = utils.randomHexColor()
+    const color1 = utils.randomHexColor()
+    const color2 = utils.randomHexColor()
+    innerText += `<div class="card" style="--active-color: ${borderColor}">
+    <pixel-canvas class="card-pixel" data-gap="10" data-speed="25" data-colors="${borderColor}, ${color1}, ${color2}"></pixel-canvas>
     <h3 class="title">${cur.title}</h3>
     <div class="progress-bar"></div>
     <div class="description">${cur.description}</div>

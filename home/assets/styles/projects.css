@@ -1,64 +1,98 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400');
 
+:root {
+  --space: 1rem;
+  --bg: #09090b;
+  --fg: #e3e3e3;
+  --surface-1: #101012;
+  --surface-2: #27272a;
+  --surface-3: #52525b;
+  --ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
 .project {
-  padding: 120px;
-  display: flex;
-  gap: 40px;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+  grid-template-rows: repeat(auto-fit, 1fr);
+  gap: 2vw;
+  justify-content: space-between;
   flex-wrap: nowrap;
   align-items: stretch;
   overflow-x: auto;
+  color: var(--fg);
+  background: var(--bg);
+  min-height: 100vh;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  flex-shrink: 0;
-  /*background-color: #17141d;*/
-  border-radius: 10px;
-  transition: 0.4s ease-out;
-  position: relative;
-  left: 0;
-  color: #2e3033;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
+  place-items: center;
+  border: 2px solid var(--surface-2);
+  isolation: isolate;
+  transition: border-color 200ms var(--ease-out);
+  user-select: none;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .card::before {
   content: "";
   position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at bottom left,
+      transparent 55%,
+      var(--surface-1)
+  );
+  pointer-events: none;
+  box-shadow: var(--bg) -0.5cqi 0.5cqi 2.5cqi inset;
+  transition: opacity 900ms var(--ease-out);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, var(--bg), transparent 65%);
+  opacity: 0;
+  transition: opacity 800ms var(--ease-out);
+}
+.card:focus-within {
+  outline: 5px auto Highlight;
+}
+.card:where(:hover, :focus-within) {
+  border-color: var(--active-color, var(--fg));
+  transition: border-color 800ms var(--ease-in-out);
+}
+.card:where(:hover, :focus-within)::before {
+  opacity: 0;
+}
+.card:where(:hover, :focus-within)::after {
+  opacity: 1;
+}
+.card .card-pixel {
+  position: absolute;
+  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  z-index: -1;
-  margin: -20px;
-  filter: blur(6px);
-  transition: all 0.2s ease-in-out, filter 0.8s 0.22s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  transition: 0.4s ease-out;
-  backdrop-filter: blur(20px);
-}
-
-.card:hover ~ .card {
-  position: relative;
-  left: 20px;
-  transition: 0.4s ease-out;
+  z-index: 0;
 }
 
 .title {
   font-family: Inconsolata, sans-serif;
-  height: 106px;
   font-weight: 800;
   font-size: 1.6rem;
   text-align: left;
-  padding: 20px;
+  padding: 12px 20px;
   background-image: linear-gradient(to right, var(--main-color-3) 48%,var(--main-color-4) 52%, var(--main-color-3));
   background-size: 400% 100%;
   -webkit-background-clip: text;
@@ -77,10 +111,8 @@
 }
 
 .progress-bar {
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  right: 20px;
+  position: relative;
+  width: 100%;
   height: 5px;
 }
 .progress-bar::before,
@@ -95,7 +127,7 @@
 .progress-bar::before {
   right: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .progress-bar::after {
   left: 100%;
@@ -113,32 +145,38 @@
 }
 
 .description {
-  font-size: 1.2rem;
-  padding: 20px;
-  font-weight: 400;
   flex: 1;
-  color: rgba(243, 243, 243, 0.4);
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
   transition: all ease 0.4s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
 }
 .card:hover .description {
-  color: #f3f3f3;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .more {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   padding: 20px;
+  z-index: 200;
 }
-.link-btn {
+
+a.link-btn {
+  display: inline-block;
   border-radius: 50px;
-  padding: 12px 24px;
+  padding: 6px 12px;
   border: 1px solid rgba(240, 248, 255, 0.2);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   cursor: pointer;
   transition: all ease 0.4s;
   color: #2e3033;
+  font-size: 0.8em;
   &:hover {
     color: #f3f3f3;
     background: rgba(255, 255, 255, 0.2);

@@ -27,21 +27,21 @@ html, body {
   height: 100vh;
   overflow: hidden;
 }
-.home {
-  background: url("../images/home.png") 0/cover fixed;
-}
-.project {
-  background: url("../images/projects.jpg") 0/cover fixed;
-}
-.posts {
-  background: url("../images/mohamed-almari.jpg") 0/cover fixed;
-}
-.about {
-  background: url("../images/matheus-bertelli.jpg") 0/cover fixed;
-}
-.resume {
-  background: url("../images/stephan-seeber.jpg") 0/cover fixed;
-}
+/*.home {*/
+/*  background: url("../images/home.png") 0/cover fixed;*/
+/*}*/
+/*.project {*/
+/*  background: url("../images/projects.jpg") 0/cover fixed;*/
+/*}*/
+/*.posts {*/
+/*  background: url("../images/mohamed-almari.jpg") 0/cover fixed;*/
+/*}*/
+/*.about {*/
+/*  background: url("../images/matheus-bertelli.jpg") 0/cover fixed;*/
+/*}*/
+/*.resume {*/
+/*  background: url("../images/stephan-seeber.jpg") 0/cover fixed;*/
+/*}*/
 
 /* Navbar */
 .navbar {
