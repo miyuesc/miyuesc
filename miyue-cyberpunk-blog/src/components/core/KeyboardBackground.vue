@@ -105,7 +105,6 @@ const getRowPadding = (rIndex: number): number => {
   // Tab row: +1.5u (handled by key width) -> No, stagger is physical.
   // Actually, standard layout has keys aligned. The "Stagger" is internal.
   // But for visual simplifiction, let's just push rows a bit.
-  const baseOffset = 20;
   return [0, 0, 20, 30, 40, 10][rIndex] || 0;
 };
 

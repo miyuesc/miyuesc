@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import HeroSection from '@/components/core/HeroSection.vue';
-import { githubService, type PostMeta, type GitHubRepo } from '@/services/github';
+import { githubService, type PostMeta } from '@/services/github';
 import { CodeBracketIcon, BoltIcon, StarIcon } from '@heroicons/vue/24/outline';
 
 const recentPosts = ref<PostMeta[]>([]);
