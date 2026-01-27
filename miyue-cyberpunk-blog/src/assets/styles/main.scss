@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply bg-cyber-black text-white antialiased;
+}
+
+::selection {
+  @apply bg-neon-cyan text-cyber-black;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded hover:bg-neon-cyan transition-colors;
+}

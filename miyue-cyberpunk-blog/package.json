@@ -1,0 +1,37 @@
+{
+  "name": "miyue-cyberpunk-blog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.2.0",
+    "@mdx-js/vue": "^3.0.1",
+    "@types/markdown-it": "^14.1.2",
+    "gsap": "^3.12.5",
+    "highlight.js": "^11.11.1",
+    "lenis": "^1.0.42",
+    "markdown-it": "^14.1.0",
+    "three": "^0.161.0",
+    "typed.js": "^2.1.0",
+    "vue": "^3.4.15",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@mdx-js/rollup": "^3.0.1",
+    "@types/node": "^20.11.19",
+    "@types/three": "^0.161.0",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "sass": "^1.70.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vue-tsc": "^2.0.0"
+  }
+}
