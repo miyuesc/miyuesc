@@ -114,7 +114,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="keyboard-container absolute inset-0 overflow-hidden flex items-center justify-center bg-cyber-black">
+  <div class="keyboard-container absolute inset-0 overflow-hidden flex items-center justify-center">
     <div class="keyboard-grid">
       <div 
         v-for="(row, rIndex) in rows" 
@@ -154,7 +154,6 @@ onUnmounted(() => {
 <style scoped lang="scss">
 .keyboard-container {
   perspective: 1200px; /* Enhanced perspective */
-  background-color: #050505;
 }
 
 .bg-radial-gradient {
@@ -165,7 +164,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   gap: 10px; /* Row gap */
-  transform: rotateX(55deg) rotateZ(-12deg) scale(1.4) translateY(-30px);
+  transform: rotateX(55deg) rotateZ(-12deg) scale(2.0) translateY(-50px);
   transform-style: preserve-3d;
   width: auto;
   align-items: center;
@@ -218,7 +217,7 @@ onUnmounted(() => {
 .key-top {
   width: 100%;
   height: 100%;
-  background: rgba(25, 25, 25, 0.95);
+  background: rgba(25, 25, 25, 0.2);
   transform: rotateX(0deg) translateZ(10px);
   border: 1px solid rgba(0, 243, 255, 0.15);
   border-radius: 4px; /* Slight rounding */
@@ -230,7 +229,7 @@ onUnmounted(() => {
 .key-front {
   width: 100%;
   height: 10px;
-  background: rgba(15, 15, 15, 0.9);
+  background: rgba(15, 15, 15, 0.2);
   transform: rotateX(-90deg) translateZ(10px);
   top: 10px; /* Push down to form side */
   border-radius: 0 0 2px 2px;
@@ -239,7 +238,7 @@ onUnmounted(() => {
 .key-right {
   width: 10px;
   height: 100%;
-  background: rgba(15, 15, 15, 0.9);
+  background: rgba(15, 15, 15, 0.2);
   transform: rotateY(90deg) translateZ(calc(100% - 10px)); /* Tricky positioning relative to width? No, simpler to anchor */
   /* Side faces are tricky with variable width. 
      Using a simpler box model approach:
@@ -252,7 +251,7 @@ onUnmounted(() => {
 .key-left {
   width: 10px;
   height: 100%;
-  background: rgba(15, 15, 15, 0.9);
+  background: rgba(15, 15, 15, 0.2);
   left: 0;
   transform-origin: left;
   transform: rotateY(-90deg);
@@ -295,7 +294,7 @@ onUnmounted(() => {
   height: 100%;
   right: 0;
   top: 0;
-  background: #111;
+  background: rgba(17, 17, 17, 0.2);
   transform-origin: right;
   transform: rotateY(90deg);
 }
@@ -305,7 +304,7 @@ onUnmounted(() => {
   height: 100%;
   left: 0;
   top: 0;
-  background: #111;
+  background: rgba(17, 17, 17, 0.2);
   transform-origin: left;
   transform: rotateY(-90deg);
 }
@@ -315,7 +314,7 @@ onUnmounted(() => {
   height: 10px; /* Thickness */
   bottom: 0;
   top: auto;
-  background: #0a0a0a;
+  background: rgba(10, 10, 10, 0.2);
   transform-origin: bottom;
   transform: rotateX(90deg);
 }
