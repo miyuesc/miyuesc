@@ -2,15 +2,15 @@
 import { ref, onMounted } from 'vue';
 import { githubService, type GitHubUser, type GitHubRepo, type ContributionData } from '@/services/github';
 import ContributionGraph from '@/components/core/ContributionGraph.vue';
-import { ArrowTopRightOnSquareIcon, CodeBracketIcon } from '@heroicons/vue/24/outline';
+import { ArrowTopRightOnSquareIcon, CodeBracketIcon, ShareIcon } from '@heroicons/vue/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/vue/20/solid';
+import { techStack } from '@/data/techStack';
 
 const user = ref<GitHubUser | null>(null);
 const repos = ref<GitHubRepo[]>([]);
 const contributions = ref<ContributionData | null>(null);
 const loading = ref(true);
 
-// Gitee Mapping based on README
 const giteeMap: Record<string, string> = {
   'bpmn-process-designer': 'miyuesc/bpmn-process-designer',
   'vite-vue-bpmn-process': 'miyuesc/vite-vue-bpmn-process',
@@ -20,22 +20,6 @@ const giteeMap: Record<string, string> = {
 const getGiteeUrl = (repoName: string) => {
   return giteeMap[repoName] ? `https://gitee.com/${giteeMap[repoName]}` : null;
 };
-
-const techStack = [
-  { name: 'Webpack', icon: 'https://cdn.worldvectorlogo.com/logos/webpack-icon.svg' },
-  { name: 'TypeScript', icon: 'https://cdn.worldvectorlogo.com/logos/typescript.svg' },
-  { name: 'Sass', icon: 'https://cdn.worldvectorlogo.com/logos/sass-1.svg' },
-  { name: 'Less', icon: 'https://cdn.worldvectorlogo.com/logos/less.svg' },
-  { name: 'NPM', icon: 'https://cdn.worldvectorlogo.com/logos/npm.svg' },
-  { name: 'HTML5', icon: 'https://cdn.worldvectorlogo.com/logos/html-5.svg' },
-  { name: 'Node.js', icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg' },
-  { name: 'Vue.js', icon: 'https://cdn.worldvectorlogo.com/logos/vue-9.svg' },
-  { name: 'Docker', icon: 'https://cdn.worldvectorlogo.com/logos/docker.svg' },
-  { name: 'GitHub Actions', icon: 'https://cdn.worldvectorlogo.com/logos/github-actions.svg' },
-  { name: 'Git', icon: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg' },
-  { name: 'WebStorm', icon: 'https://cdn.worldvectorlogo.com/logos/webstorm-icon.svg' },
-  { name: 'Markdown', icon: 'https://cdn.worldvectorlogo.com/logos/markdown.svg' },
-];
 
 onMounted(async () => {
   try {
@@ -118,9 +102,33 @@ onMounted(async () => {
         Tech Stack
       </h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        <div v-for="tech in techStack" :key="tech.name" class="p-4 bg-gray-800/40 rounded border border-gray-700/50 flex flex-col items-center gap-3 hover:border-neon-cyan/50 hover:bg-gray-800/80 transition-all cursor-default">
-          <img :src="tech.icon" :alt="tech.name" class="w-10 h-10 opacity-80" />
-          <span class="font-mono text-sm text-gray-400">{{ tech.name }}</span>
+        <div 
+          v-for="tech in techStack" 
+          :key="tech.name" 
+          class="p-4 bg-gray-800/40 rounded border border-gray-700/50 flex flex-col items-center gap-3 hover:bg-gray-800/80 transition-all cursor-default group"
+          :style="{ borderColor: `${tech.color}40` }"
+        >
+          <!-- Masked Icon for Color Control -->
+          <div 
+            class="w-10 h-10 transition-all duration-300 group-hover:scale-110"
+            :style="{ 
+              backgroundColor: tech.color,
+              maskImage: `url(${tech.icon})`,
+              maskSize: 'contain',
+              maskRepeat: 'no-repeat',
+              maskPosition: 'center',
+              WebkitMaskImage: `url(${tech.icon})`,
+              WebkitMaskSize: 'contain',
+              WebkitMaskRepeat: 'no-repeat',
+              WebkitMaskPosition: 'center'
+            }"
+          ></div>
+          <span 
+            class="font-mono text-sm transition-colors"
+            :style="{ color: tech.color }"
+          >
+            {{ tech.name }}
+          </span>
         </div>
       </div>
     </section>
@@ -171,22 +179,40 @@ onMounted(async () => {
           
           <div class="relative z-10 flex flex-col h-full text-left">
             <div class="flex justify-between items-start mb-4">
-              <div class="p-2 bg-gray-900/50 rounded-lg group-hover:bg-neon-cyan/20 transition-colors border border-white/10">
-                <CodeBracketIcon class="w-6 h-6 text-neon-cyan" />
+              <div 
+                class="p-2 bg-gray-900/50 rounded-lg transition-colors border border-white/10 shrink-0"
+                :class="repo.fork ? 'group-hover:bg-neon-purple/20' : 'group-hover:bg-neon-cyan/20'"
+              >
+                <ShareIcon v-if="repo.fork" class="w-6 h-6" :class="repo.fork ? 'text-neon-purple' : 'text-neon-cyan'" />
+                <CodeBracketIcon v-else class="w-6 h-6 text-neon-cyan" />
               </div>
               
-              <div class="flex flex-col items-end gap-1">
-                 <span class="text-xs font-mono text-gray-400 bg-black/40 px-2 py-1 rounded border border-white/5">
-                  {{ repo.language || 'Code' }}
-                </span>
+              <div class="flex flex-col items-end gap-1 flex-1 min-w-0 ml-2">
+                 <div class="flex items-center gap-2 mb-1">
+                    <!-- Fork Label -->
+                   <span v-if="repo.fork" class="text-[10px] font-mono text-neon-purple bg-neon-purple/10 border border-neon-purple/20 px-1.5 py-0.5 rounded tracking-wider">
+                      FORKED
+                   </span>
+                 </div>
+
+                 <div class="flex gap-1 flex-wrap justify-end">
+                    <span class="text-xs font-mono text-gray-400 bg-black/40 px-2 py-1 rounded border border-white/5 whitespace-nowrap">
+                      {{ repo.language || 'Code' }}
+                    </span>
+                 </div>
+
                 <!-- Gitee Badges -->
                 <div v-if="getGiteeUrl(repo.name)" class="flex gap-1 mt-1 scale-90 origin-right">
                    <img :src="`https://gitee.com/${giteeMap[repo.name]}/badge/star.svg?theme=dark`" alt="Gitee Star" />
+                   <img :src="`https://gitee.com/${giteeMap[repo.name]}/badge/fork.svg?theme=dark`" alt="Gitee Fork" />
                 </div>
               </div>
             </div>
             
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors">
+            <h3 
+              class="text-xl font-bold text-white mb-2 transition-colors break-words"
+              :class="repo.fork ? 'group-hover:text-neon-purple' : 'group-hover:text-neon-cyan'"
+            >
               {{ repo.name }}
             </h3>
             
@@ -194,27 +220,46 @@ onMounted(async () => {
               {{ repo.description || 'No description provided.' }}
             </p>
             
-            <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between font-mono text-gray-500">
-               <div class="flex gap-6">
-                  <div class="flex flex-col">
-                     <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Stars</span>
-                     <span class="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors flex items-center gap-1">
-                        <StarIconSolid class="w-4 h-4 text-yellow-500" />
-                        {{ repo.stargazers_count }}
-                     </span>
+            <div class="mt-auto pt-4 border-t border-white/5 flex flex-col gap-4 font-mono text-gray-500">
+               <!-- Footer Top: Stats & Action -->
+               <div class="flex items-center justify-between">
+                  <div class="flex gap-4">
+                      <!-- Live Demo (Moved here) -->
+                      <a 
+                         v-if="repo.homepage" 
+                         :href="repo.homepage" 
+                         target="_blank" 
+                         @click.stop
+                         class="flex items-center gap-1 text-[10px] font-bold text-neon-cyan bg-neon-cyan/5 border border-neon-cyan/20 px-2 py-1 rounded hover:bg-neon-cyan hover:text-black transition-colors"
+                       >
+                          LIVE_DEMO <ArrowTopRightOnSquareIcon class="w-3 h-3" />
+                       </a>
                   </div>
-                  <div class="flex flex-col">
-                     <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Forks</span>
-                     <span class="text-lg font-bold text-white group-hover:text-neon-purple transition-colors flex items-center gap-1">
-                        <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 24 24"><path d="M15 5H18V8H15V5M15 15H18V18H15V15M5 5H8V8H5V5M11 5H13V19H11V5M5 15H8V18H5V15Z"/></svg>
-                        {{ repo.forks_count }}
-                     </span>
-                  </div>
+
+                  <div class="flex flex-col items-end">
+                      <span class="text-[10px] uppercase tracking-wider opacity-60 text-right">Updated</span>
+                      <span class="text-xs text-gray-400">{{ new Date(repo.updated_at).toLocaleDateString() }}</span>
+                   </div>
                </div>
-               
-               <div class="flex flex-col items-end">
-                  <span class="text-[10px] uppercase tracking-wider opacity-60 text-right">Updated</span>
-                  <span class="text-xs text-gray-400">{{ new Date(repo.updated_at).toLocaleDateString() }}</span>
+
+               <!-- Footer Bottom: Metrics -->
+               <div class="flex items-center justify-between">
+                 <div class="flex gap-6">
+                    <div class="flex flex-col">
+                       <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Stars</span>
+                       <span class="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors flex items-center gap-1">
+                          <StarIconSolid class="w-4 h-4 text-yellow-500" />
+                          {{ repo.stargazers_count }}
+                       </span>
+                    </div>
+                    <div class="flex flex-col">
+                       <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Forks</span>
+                       <span class="text-lg font-bold text-white group-hover:text-neon-purple transition-colors flex items-center gap-1">
+                          <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 24 24"><path d="M15 5H18V8H15V5M15 15H18V18H15V15M5 5H8V8H5V5M11 5H13V19H11V5M5 15H8V18H5V15Z"/></svg>
+                          {{ repo.forks_count }}
+                       </span>
+                    </div>
+                 </div>
                </div>
             </div>
           </div>

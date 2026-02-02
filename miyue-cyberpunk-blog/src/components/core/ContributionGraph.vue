@@ -47,12 +47,12 @@ const weeks = computed(() => {
 
 const getColor = (level: number) => {
   switch (level) {
-    case 0: return 'bg-gray-800/30';
+    case 0: return 'bg-gray-800/50';
     case 1: return 'bg-cyan-900/40';
     case 2: return 'bg-cyan-700/60';
     case 3: return 'bg-neon-cyan/80';
     case 4: return 'bg-neon-cyan shadow-[0_0_10px_theme("colors.neon-cyan")]';
-    default: return 'bg-gray-800/30';
+    default: return 'bg-gray-800/50';
   }
 };
 </script>
@@ -60,7 +60,7 @@ const getColor = (level: number) => {
 <template>
   <div class="relative w-full overflow-hidden bg-cyber-black/20 rounded-lg p-4 border border-gray-800/50">
     <!-- Scanline Background Effect -->
-    <div class="absolute inset-0 bg-scanline opacity-10 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-scanline opacity-5 pointer-events-none"></div>
     
     <div class="w-full overflow-x-auto pb-2 custom-scrollbar flex justify-center">
       <div v-if="loading" class="flex gap-1 animate-pulse">
