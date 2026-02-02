@@ -3,7 +3,7 @@ import { ref, onMounted, computed, watch, nextTick } from 'vue';
 import { githubService, type PostMeta } from '@/services/github';
 import LoadingScanner from '@/components/core/LoadingScanner.vue';
 import BackToTop from '@/components/core/BackToTop.vue';
-import { CalendarIcon, ChevronRightIcon, MagnifyingGlassIcon, DocumentTextIcon, FolderIcon, HomeIcon, ArrowUturnLeftIcon, ViewColumnsIcon, ListBulletIcon } from '@heroicons/vue/24/outline';
+import { ChevronRightIcon, MagnifyingGlassIcon, DocumentTextIcon, FolderIcon, HomeIcon, ArrowUturnLeftIcon, ViewColumnsIcon, ListBulletIcon } from '@heroicons/vue/24/outline';
 import gsap from 'gsap';
 
 const posts = ref<PostMeta[]>([]);
@@ -122,7 +122,7 @@ const columnsData = computed(() => {
    return cols;
 });
 
-const totalItems = computed(() => searchQuery.value ? filteredPosts.value.length : posts.value.length);
+
 
 // Navigation
 const navigateToFolder = (folderName: string, levelIndex?: number) => {
@@ -144,11 +144,6 @@ const navigateUp = () => {
 
 const navigateHome = () => {
   currentPath.value = [];
-};
-
-const toggleViewMode = () => {
-  viewMode.value = viewMode.value === 'list' ? 'columns' : 'list';
-  nextTick(animateItems);
 };
 
 const fetchData = async () => {
