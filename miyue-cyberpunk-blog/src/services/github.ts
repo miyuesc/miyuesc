@@ -25,6 +25,7 @@ export interface GitHubRepo {
   language: string | null;
   updated_at: string;
   fork: boolean;
+  homepage: string | null;
 }
 
 export interface ContributionDay {

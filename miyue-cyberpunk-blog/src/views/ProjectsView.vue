@@ -1,23 +1,19 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { ref, onMounted, computed, watch, nextTick } from 'vue';
 import { githubService, type GitHubRepo } from '@/services/github';
-import { CodeBracketIcon, ArrowPathIcon } from '@heroicons/vue/24/outline';
+import { CodeBracketIcon, ArrowPathIcon, ShareIcon, ArrowTopRightOnSquareIcon } from '@heroicons/vue/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/vue/20/solid';
 import LoadingScanner from '@/components/core/LoadingScanner.vue';
 import BackToTop from '@/components/core/BackToTop.vue';
+import Pagination from '@/components/common/Pagination.vue';
 import gsap from 'gsap';
 
 const allRepos = ref<GitHubRepo[]>([]);
-const displayedRepos = ref<GitHubRepo[]>([]);
 const loading = ref(true);
 const isInitialLoading = ref(true);
 const sortBy = ref<'stars' | 'date'>('stars');
 const page = ref(1);
 const itemsPerPage = 12;
-const hasMore = ref(true);
-const isAppending = ref(false);
-const sentinelRef = ref<HTMLElement | null>(null);
-let checkInterval: number | null = null;
 
 // Gitee Mapping based on README
 const giteeMap: Record<string, string> = {
@@ -30,6 +26,26 @@ const getGiteeUrl = (repoName: string) => {
   return giteeMap[repoName] ? `https://gitee.com/${giteeMap[repoName]}` : null;
 };
 
+// Computed Sorted Repos
+const sortedRepos = computed(() => {
+  return [...allRepos.value].sort((a, b) => {
+    if (sortBy.value === 'stars') {
+      return b.stargazers_count - a.stargazers_count;
+    } else {
+      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+    }
+  });
+});
+
+// Computed Paginated Repos
+const displayedRepos = computed(() => {
+  const start = (page.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return sortedRepos.value.slice(start, end);
+});
+
+const totalItems = computed(() => allRepos.value.length);
+
 // Fetch Data
 const fetchData = async () => {
   loading.value = true;
@@ -37,134 +53,60 @@ const fetchData = async () => {
     const cached = sessionStorage.getItem('miyue_blog_repos');
     if (cached) {
       allRepos.value = JSON.parse(cached);
-      console.log('Loaded repos from cache');
     } else {
       const repos = await githubService.getUserRepos();
       allRepos.value = repos;
       sessionStorage.setItem('miyue_blog_repos', JSON.stringify(repos));
     }
-    sortAndPaginate(true);
   } catch (err) {
     console.error(err);
   } finally {
     loading.value = false;
     isInitialLoading.value = false;
+    nextTick(animateItems);
   }
 };
 
-// Sort & Pagination Logic
-const sortAndPaginate = (reset = false) => {
-  if (reset) {
-    page.value = 1;
-    displayedRepos.value = [];
-    hasMore.value = true;
-    isAppending.value = false;
-  }
-
-  // Sort
-  const sorted = [...allRepos.value].sort((a, b) => {
-    if (sortBy.value === 'stars') {
-      return b.stargazers_count - a.stargazers_count;
-    } else {
-      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-    }
-  });
-
-  // Paginate
-  const start = (page.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const newItems = sorted.slice(start, end);
-  
-  if (newItems.length < itemsPerPage || end >= sorted.length) {
-    hasMore.value = false;
-  }
-  
-  // Append new items
-  displayedRepos.value = [...displayedRepos.value, ...newItems];
-  
-  // Trigger animation next tick to ensure DOM is updated
-  isAppending.value = true;
-  nextTick(() => {
-    animateNewItems();
-    
-    // Check if we need to load more immediately (if screen not full)
-    // Doing this here ensures we check as soon as DOM is ready, parallel to animation
-     if (sentinelRef.value && hasMore.value && !loading.value) {
-        const rect = sentinelRef.value.getBoundingClientRect();
-        if (rect.top <= window.innerHeight + 100) {
-            loadMore();
-        }
-    }
-  });
+const handlePageChange = (newPage: number) => {
+  page.value = newPage;
 };
 
-const loadMore = () => {
-  // Strict check to prevent multiple triggers
-  if (!hasMore.value || loading.value) return;
-  page.value++;
-  sortAndPaginate();
-};
+// Watch sort change to reset page
+watch(sortBy, () => {
+  page.value = 1;
+});
 
-const animateNewItems = () => {
-  const items = document.querySelectorAll('.project-card.opacity-0');
-  if (items.length === 0) {
-    isAppending.value = false;
-    return;
-  }
+// Watch displayed items for animation
+watch(displayedRepos, () => {
+  nextTick(animateItems);
+});
+
+const animateItems = () => {
+  const items = document.querySelectorAll('.project-card');
+  if (items.length === 0) return;
   
-  gsap.to(items, {
-    opacity: 1,
-    y: 0,
-    duration: 0.5,
-    stagger: 0.1,
-    ease: 'power2.out',
-    onComplete: () => {
-      // Release lock only after animation finishes
-      isAppending.value = false;
+  // Reset for animation
+  // Explicitly animate from invisible to visible
+  gsap.fromTo(items, 
+    { opacity: 0, y: 20 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power2.out',
+      clearProps: 'transform' // Clear transform props to avoid interfering with CSS hover effects
     }
-  });
+  );
 };
 
 // Toggle Sort
 const toggleSort = () => {
   sortBy.value = sortBy.value === 'stars' ? 'date' : 'stars';
-  // Reset scroll
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  sortAndPaginate(true);
 };
 
-// Infinite Scroll Observer
 onMounted(async () => {
   await fetchData();
-
-  const observer = new IntersectionObserver((entries) => {
-    // Only trigger if intersecting AND not currently doing anything
-    if (entries[0].isIntersecting && !isInitialLoading.value && !loading.value && hasMore.value) {
-      loadMore();
-    }
-  }, { 
-    rootMargin: '100px',
-    threshold: 0.1
-  });
-  
-  // Watch for isAppending state changes to re-check intersection if user is still at bottom
-  // This fixes the "stuck at bottom" issue
-  checkInterval = setInterval(() => {
-    if (sentinelRef.value && !loading.value && hasMore.value) {
-       const rect = sentinelRef.value.getBoundingClientRect();
-       if (rect.top <= window.innerHeight + 100) { // +100 margin
-         loadMore();
-       }
-    }
-  }, 500) as unknown as number;
-
-  if (sentinelRef.value) observer.observe(sentinelRef.value);
-});
-
-onUnmounted(() => {
-  if (checkInterval) {
-    clearInterval(checkInterval);
-  }
 });
 </script>
 
@@ -197,86 +139,118 @@ onUnmounted(() => {
     </div>
 
     <!-- Grid -->
-    <div v-else class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      <a 
-        v-for="repo in displayedRepos" 
-        :key="repo.id" 
-        :href="repo.html_url" 
-        target="_blank"
-        class="project-card opacity-0 translate-y-4 group p-6 bg-white/5 border border-white/10 hover:border-neon-cyan/50 rounded-xl backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full shadow-lg"
-      >
-        <!-- Hover Gradient -->
-        <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div v-else class="flex flex-col gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a 
+          v-for="repo in displayedRepos" 
+          :key="repo.id" 
+          :href="repo.html_url" 
+          target="_blank"
+          class="project-card group p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full shadow-lg"
+          :class="repo.fork ? 'hover:border-neon-purple/50' : 'hover:border-neon-cyan/50'"
+        >
+          <!-- Hover Gradient -->
+          <div 
+            class="absolute inset-0 bg-gradient-to-br to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            :class="repo.fork ? 'from-neon-purple/10' : 'from-neon-cyan/10'"
+          ></div>
 
-        <div class="relative z-10 flex flex-col h-full">
-          <div class="flex justify-between items-start mb-4">
-            <div class="p-2 bg-gray-900/50 rounded-lg group-hover:bg-neon-cyan/20 transition-colors border border-white/10">
-              <CodeBracketIcon class="w-6 h-6 text-neon-cyan" />
-            </div>
-            
-            <div class="flex flex-col items-end gap-1">
-               <span class="text-xs font-mono text-gray-400 bg-black/40 px-2 py-1 rounded border border-white/5">
-                {{ repo.language || 'Code' }}
-              </span>
-              <!-- Gitee Badges -->
-              <div v-if="getGiteeUrl(repo.name)" class="flex gap-1 mt-1 scale-90 origin-right">
-                 <img :src="`https://gitee.com/${giteeMap[repo.name]}/badge/star.svg?theme=dark`" alt="Gitee Star" />
-                 <img :src="`https://gitee.com/${giteeMap[repo.name]}/badge/fork.svg?theme=dark`" alt="Gitee Fork" />
+          <div class="relative z-10 flex flex-col h-full">
+            <div class="flex justify-between items-start mb-4">
+              <div 
+                class="p-2 bg-gray-900/50 rounded-lg transition-colors border border-white/10 shrink-0"
+                :class="repo.fork ? 'group-hover:bg-neon-purple/20' : 'group-hover:bg-neon-cyan/20'"
+              >
+                <ShareIcon v-if="repo.fork" class="w-6 h-6" :class="repo.fork ? 'text-neon-purple' : 'text-neon-cyan'" />
+                <CodeBracketIcon v-else class="w-6 h-6 text-neon-cyan" />
+              </div>
+              
+              <div class="flex flex-col items-end gap-1 flex-1 min-w-0 ml-2">
+                 <div class="flex items-center gap-2 mb-1">
+                    <!-- Fork Label -->
+                   <span v-if="repo.fork" class="text-[10px] font-mono text-neon-purple bg-neon-purple/10 border border-neon-purple/20 px-1.5 py-0.5 rounded tracking-wider">
+                      FORKED
+                   </span>
+                 </div>
+
+                 <div class="flex gap-1 flex-wrap justify-end">
+                    <span class="text-xs font-mono text-gray-400 bg-black/40 px-2 py-1 rounded border border-white/5 whitespace-nowrap">
+                      {{ repo.language || 'Code' }}
+                    </span>
+                 </div>
+
+                <!-- Gitee Badges -->
+                <div v-if="getGiteeUrl(repo.name)" class="flex gap-1 mt-1 scale-90 origin-right">
+                   <img :src="`https://gitee.com/${giteeMap[repo.name]}/badge/star.svg?theme=dark`" alt="Gitee Star" />
+                   <img :src="`https://gitee.com/${giteeMap[repo.name]}/badge/fork.svg?theme=dark`" alt="Gitee Fork" />
+                </div>
               </div>
             </div>
+
+            <h3 
+              class="text-xl font-bold text-white mb-2 transition-colors break-words"
+              :class="repo.fork ? 'group-hover:text-neon-purple' : 'group-hover:text-neon-cyan'"
+            >
+              {{ repo.name }}
+            </h3>
+
+            <p class="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+              {{ repo.description || 'No description provided for this project.' }}
+            </p>
+
+            <div class="mt-auto pt-4 border-t border-white/5 flex flex-col gap-4 font-mono text-gray-500">
+               <!-- Footer Top: Stats & Action -->
+               <div class="flex items-center justify-between">
+                  <div class="flex gap-4">
+                      <!-- Live Demo (Moved here) -->
+                      <a 
+                         v-if="repo.homepage" 
+                         :href="repo.homepage" 
+                         target="_blank" 
+                         @click.stop
+                         class="flex items-center gap-1 text-[10px] font-bold text-neon-cyan bg-neon-cyan/5 border border-neon-cyan/20 px-2 py-1 rounded hover:bg-neon-cyan hover:text-black transition-colors"
+                       >
+                          LIVE_DEMO <ArrowTopRightOnSquareIcon class="w-3 h-3" />
+                       </a>
+                  </div>
+
+                  <div class="flex flex-col items-end">
+                      <span class="text-[10px] uppercase tracking-wider opacity-60">Updated</span>
+                      <span class="text-xs text-gray-400">{{ new Date(repo.updated_at).toLocaleDateString() }}</span>
+                   </div>
+               </div>
+
+               <!-- Footer Bottom: Metrics -->
+               <div class="flex items-center justify-between">
+                 <div class="flex gap-6">
+                    <div class="flex flex-col">
+                       <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Github Stars</span>
+                       <span class="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors flex items-center gap-1">
+                          <StarIconSolid class="w-4 h-4 text-yellow-500" />
+                          {{ repo.stargazers_count }}
+                       </span>
+                    </div>
+                    <div class="flex flex-col">
+                       <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Github Forks</span>
+                       <span class="text-lg font-bold text-white group-hover:text-neon-purple transition-colors flex items-center gap-1">
+                          <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 24 24"><path d="M15 5H18V8H15V5M15 15H18V18H15V15M5 5H8V8H5V5M11 5H13V19H11V5M5 15H8V18H5V15Z"/></svg>
+                          {{ repo.forks_count }}
+                       </span>
+                    </div>
+                 </div>
+               </div>
+            </div>
           </div>
-
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon-cyan transition-colors">
-            {{ repo.name }}
-          </h3>
-
-          <p class="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed">
-            {{ repo.description || 'No description provided for this project.' }}
-          </p>
-
-          <div class="mt-auto pt-4 border-t border-white/5 flex items-center justify-between font-mono text-gray-500">
-             <div class="flex gap-6">
-                <div class="flex flex-col">
-                   <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Github Stars</span>
-                   <span class="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors flex items-center gap-1">
-                      <StarIconSolid class="w-4 h-4 text-yellow-500" />
-                      {{ repo.stargazers_count }}
-                   </span>
-                </div>
-                <div class="flex flex-col">
-                   <span class="text-[10px] uppercase tracking-wider opacity-60 mb-1">Github Forks</span>
-                   <span class="text-lg font-bold text-white group-hover:text-neon-purple transition-colors flex items-center gap-1">
-                      <svg class="w-4 h-4 text-neon-purple" fill="currentColor" viewBox="0 0 24 24"><path d="M15 5H18V8H15V5M15 15H18V18H15V15M5 5H8V8H5V5M11 5H13V19H11V5M5 15H8V18H5V15Z"/></svg>
-                      {{ repo.forks_count }}
-                   </span>
-                </div>
-             </div>
-             
-             <div class="flex flex-col items-end">
-                <span class="text-[10px] uppercase tracking-wider opacity-60">Updated</span>
-                <span class="text-xs text-gray-400">{{ new Date(repo.updated_at).toLocaleDateString() }}</span>
-             </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- Loading Sentinel / Status -->
-    <div ref="sentinelRef" v-show="!isInitialLoading" class="py-12 border-t border-gray-800/30 flex justify-center items-center flex-col gap-4">
-      <!-- Append Loading State -->
-      <div v-if="hasMore && (loading || isAppending)" class="w-full">
-        <LoadingScanner :loading="true" text="Fetching next data cluster..." />
+        </a>
       </div>
-      
-      <!-- End of List -->
-      <div v-if="!hasMore && !loading && displayedRepos.length > 0" class="flex flex-col items-center gap-2">
-        <div class="flex gap-1">
-          <div v-for="i in 3" :key="i" class="w-1 h-4 bg-neon-cyan/20"></div>
-        </div>
-        <div class="text-gray-600 font-mono text-xs uppercase tracking-[0.3em]">
-          End of synchronized projects
-        </div>
-      </div>
+
+       <!-- Pagination -->
+      <Pagination 
+        :current-page="page" 
+        :total-items="totalItems" 
+        :items-per-page="itemsPerPage"
+        @page-change="handlePageChange"
+      />
     </div>
 
     <BackToTop />

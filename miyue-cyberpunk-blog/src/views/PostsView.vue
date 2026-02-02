@@ -3,18 +3,15 @@ import { ref, onMounted, computed, watch, nextTick } from 'vue';
 import { githubService, type PostMeta } from '@/services/github';
 import LoadingScanner from '@/components/core/LoadingScanner.vue';
 import BackToTop from '@/components/core/BackToTop.vue';
-import { CalendarIcon, ChevronRightIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
+import Pagination from '@/components/common/Pagination.vue';
+import { CalendarIcon, ChevronRightIcon, MagnifyingGlassIcon, DocumentTextIcon } from '@heroicons/vue/24/outline';
 import gsap from 'gsap';
 
 const posts = ref<PostMeta[]>([]);
-const displayedPosts = ref<PostMeta[]>([]);
 const loading = ref(true);
 const isInitialLoading = ref(true);
 const page = ref(1);
-const itemsPerPage = 12; // Increased to ensure fill screen
-const hasMore = ref(true);
-const isAppending = ref(false);
-const sentinelRef = ref<HTMLElement | null>(null);
+const itemsPerPage = 12;
 const searchQuery = ref('');
 
 // Computed filtered posts
@@ -27,6 +24,15 @@ const filteredPosts = computed(() => {
   );
 });
 
+// Computed paginated posts
+const displayedPosts = computed(() => {
+  const start = (page.value - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  return filteredPosts.value.slice(start, end);
+});
+
+const totalItems = computed(() => filteredPosts.value.length);
+
 const fetchData = async () => {
   loading.value = true;
   try {
@@ -34,96 +40,57 @@ const fetchData = async () => {
     const cached = sessionStorage.getItem('miyue_blog_posts');
     if (cached) {
       posts.value = JSON.parse(cached);
-      console.log('Loaded posts from cache');
     } else {
       const data = await githubService.getPosts();
       posts.value = data;
       sessionStorage.setItem('miyue_blog_posts', JSON.stringify(data));
     }
-    loadMoreItems(true);
   } catch (err) {
     console.error(err);
   } finally {
     loading.value = false;
     isInitialLoading.value = false;
+    // Animate initial load
+    nextTick(animateItems);
   }
 };
 
-const loadMoreItems = (reset = false) => {
-  if (reset) {
-    page.value = 1;
-    displayedPosts.value = [];
-    hasMore.value = true;
-    isAppending.value = false;
-  }
-  
-  const currentFiltered = filteredPosts.value;
-  const start = (page.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const newItems = currentFiltered.slice(start, end);
-  
-  if (displayedPosts.value.length + newItems.length >= currentFiltered.length) {
-    hasMore.value = false;
-  } else {
-    hasMore.value = true; // Ensure hasMore is correct when refiltering
-  }
-  
-  if (reset) {
-    displayedPosts.value = newItems;
-  } else {
-    displayedPosts.value = [...displayedPosts.value, ...newItems];
-  }
-  
-  if (newItems.length > 0) {
-    isAppending.value = true;
-    nextTick(() => {
-      animateNewItems();
-    });
-  }
+const handlePageChange = (newPage: number) => {
+  page.value = newPage;
 };
 
-// Search Watcher
+// Reset page on search
 watch(searchQuery, () => {
-  loadMoreItems(true);
+  page.value = 1;
 });
 
-const handleLoadMore = () => {
-  if (!hasMore.value || loading.value || isAppending.value) return;
-  page.value++;
-  loadMoreItems();
-};
+// Animate items whenever displayed list changes
+watch(displayedPosts, () => {
+  nextTick(animateItems);
+});
 
-const animateNewItems = () => {
-  const items = document.querySelectorAll('.post-card.opacity-0');
-  if (items.length === 0) {
-    isAppending.value = false;
-    return;
-  }
+const animateItems = () => {
+  const items = document.querySelectorAll('.post-card');
+  if (items.length === 0) return;
 
-  gsap.to(items, {
-    opacity: 1,
-    x: 0,
-    duration: 0.5,
-    stagger: 0.05, // Faster stagger
-    ease: 'power2.out',
-    onComplete: () => {
-      isAppending.value = false;
+  // Explicitly animate from invisible to visible
+  gsap.fromTo(items, 
+    { opacity: 0, x: -20 },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      stagger: 0.05,
+      ease: 'power2.out',
+      clearProps: 'transform' // Only clear transform to keep opacity info if needed, or 'all' but be careful with hover stats.
+                              // Actually clearProps: 'all' is fine as opacity 1 is default.
     }
-  });
+  );
 };
 
 onMounted(async () => {
   window.scrollTo(0, 0);
   await fetchData();
-  
-  // Robust Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !isInitialLoading.value && !loading.value && hasMore.value) {
-      handleLoadMore();
-    }
-  }, { rootMargin: '200px', threshold: 0.1 }); // Increased rootMargin for smoother infinite scroll logic
-  
-  if (sentinelRef.value) observer.observe(sentinelRef.value);
 });
 </script>
 
@@ -135,7 +102,7 @@ onMounted(async () => {
           Data <span class="text-neon-cyan">Streams</span>
         </h1>
         <p class="text-gray-400 font-mono text-sm max-w-xl">
-          Accessing encrypted knowledge archives. Total Entries: <span class="text-neon-cyan">{{ filteredPosts.length }}</span>
+          Accessing encrypted knowledge archives. Total Entries: <span class="text-neon-cyan">{{ totalItems }}</span>
         </p>
       </div>
 
@@ -159,52 +126,64 @@ onMounted(async () => {
       <LoadingScanner :loading="true" text="Decrypting Archives..." />
     </div>
 
-    <div v-else class="space-y-4 max-w-4xl mx-auto">
+    <div v-else class="max-w-4xl mx-auto flex flex-col gap-8">
       <div v-if="displayedPosts.length === 0" class="text-center py-20 text-gray-500 font-mono">
         [NO_DATA_FOUND] Refine your search query.
       </div>
 
-      <router-link 
-        v-for="post in displayedPosts" 
-        :key="post.sha" 
-        :to="`/posts/${encodeURIComponent(post.path)}`"
-        class="post-card opacity-0 -translate-x-4 group block p-6 bg-white/5 border border-white/10 hover:border-neon-cyan/50 rounded transition-all duration-300 backdrop-blur-md relative overflow-hidden"
-      >
-        <div class="absolute inset-0 bg-gradient-to-r from-neon-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        
-        <div class="relative z-10 flex flex-col items-start gap-4">
-          <div class="w-full space-y-2">
-            <div class="flex items-center gap-2 text-[10px] font-mono text-neon-cyan uppercase tracking-widest">
-              <span class="w-1.5 h-1.5 bg-neon-cyan animate-pulse"></span>
-              ARCHIVE_ENTRY
+      <div class="space-y-4">
+        <router-link 
+          v-for="post in displayedPosts" 
+          :key="post.sha" 
+          :to="`/posts/${encodeURIComponent(post.path)}`"
+          class="post-card group block p-6 bg-white/5 border border-white/10 hover:border-neon-cyan/50 rounded-xl transition-all duration-300 backdrop-blur-md relative overflow-hidden hover:bg-white/10 hover:-translate-y-1 shadow-lg"
+        >
+          <!-- Hover Gradient -->
+          <div class="absolute inset-0 bg-gradient-to-r from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div class="relative z-10 flex gap-6 items-start">
+            <!-- Icon Box -->
+            <div class="hidden md:flex p-3 bg-gray-900/50 rounded-lg group-hover:bg-neon-cyan/20 transition-colors border border-white/10 shrink-0">
+               <DocumentTextIcon class="w-6 h-6 text-neon-cyan" />
             </div>
-            <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-neon-cyan transition-colors pr-8">
-              {{ post.title }}
-            </h2>
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-gray-500">
-              <span class="flex items-center gap-1"><CalendarIcon class="w-3 h-3" /> {{ post.date }}</span>
-              <span class="whitespace-nowrap">READ_ACCESS: GRANTED</span>
-            </div>
-          </div>
-          <div class="absolute right-0 top-0 md:relative md:top-auto md:right-auto self-end md:self-center">
-            <ChevronRightIcon class="w-6 h-6 text-gray-700 group-hover:text-neon-cyan group-hover:translate-x-1 transition-all" />
-          </div>
-        </div>
-      </router-link>
-    </div>
 
-    <!-- Sentinel -->
-    <div ref="sentinelRef" v-show="!isInitialLoading" class="py-12 flex justify-center flex-col items-center gap-4 h-32">
-       <div v-if="hasMore" class="w-full flex justify-center opacity-70">
-          <div class="animate-spin h-6 w-6 border-2 border-neon-cyan border-t-transparent rounded-full"></div>
-       </div>
-      
-      <div v-if="!hasMore && !loading && displayedPosts.length > 0" class="text-center text-gray-600 font-mono text-xs uppercase tracking-[0.3em] flex flex-col items-center gap-2">
-         <div class="flex gap-1 mb-2">
-          <div v-for="i in 3" :key="i" class="w-1 h-4 bg-neon-cyan/20"></div>
-        </div>
-        --- End of Knowledge Stream ---
+            <div class="flex-1 min-w-0">
+               <!-- Meta Header -->
+               <div class="flex items-center gap-3 mb-3">
+                 <DocumentTextIcon class="w-4 h-4 text-neon-cyan md:hidden" />
+                 <span class="text-[10px] font-mono text-neon-cyan uppercase tracking-widest border border-neon-cyan/20 bg-neon-cyan/5 px-2 py-0.5 rounded">
+                    ARCHIVE_ENTRY
+                 </span>
+                 <span class="text-xs text-gray-500 font-mono ml-auto flex items-center gap-1 group-hover:text-gray-400 transition-colors">
+                    <CalendarIcon class="w-3 h-3" /> {{ post.date }}
+                 </span>
+               </div>
+
+               <!-- Title -->
+               <h2 class="text-xl md:text-2xl font-bold text-white group-hover:text-neon-cyan transition-colors mb-4 flex items-center gap-2">
+                 {{ post.title }}
+               </h2>
+
+               <!-- Footer Info -->
+               <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-gray-500">
+                  <div class="flex items-center gap-4">
+                     <span class="opacity-60">ID: {{ post.sha.substring(0, 7) }}</span>
+                     <span class="text-neon-purple opacity-80">READ_ACCESS: GRANTED</span>
+                  </div>
+                  <ChevronRightIcon class="w-4 h-4 group-hover:text-neon-cyan group-hover:translate-x-1 transition-all" />
+               </div>
+            </div>
+          </div>
+        </router-link>
       </div>
+      
+      <!-- Pagination -->
+      <Pagination 
+        :current-page="page" 
+        :total-items="totalItems" 
+        :items-per-page="itemsPerPage"
+        @page-change="handlePageChange"
+      />
     </div>
 
     <BackToTop />

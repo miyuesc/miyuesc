@@ -9,16 +9,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Initialize GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-// Initialize Lenis
-const lenis = new Lenis();
+// Initialize Lenis only on desktop (Native scroll is better on mobile)
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
+  );
 
-lenis.on("scroll", ScrollTrigger.update);
+if (!isMobile) {
+  const lenis = new Lenis();
 
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
+  lenis.on("scroll", ScrollTrigger.update);
 
-gsap.ticker.lagSmoothing(0);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+}
 
 const app = createApp(App);
 app.use(router);
