@@ -114,7 +114,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="keyboard-container absolute inset-0 overflow-hidden flex items-center justify-center">
+  <div class="keyboard-container absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none md:pointer-events-auto">
     <div class="keyboard-grid">
       <div 
         v-for="(row, rIndex) in rows" 
