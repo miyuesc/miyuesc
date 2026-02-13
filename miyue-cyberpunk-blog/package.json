@@ -15,7 +15,7 @@
     "gsap": "^3.12.5",
     "highlight.js": "^11.11.1",
     "lenis": "^1.0.42",
-    "markdown-it": "^14.1.0",
+    "markdown-it": "^14.1.1",
     "three": "^0.161.0",
     "typed.js": "^2.1.0",
     "vue": "^3.4.15",
